@@ -1,5 +1,5 @@
 //
-//  MMViewController.h
+//  MMCalenderViewController.h
 //  MealReport
 //
 //  Created by minami on 2014/09/15.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MMViewController : UIViewController
+@interface MMCalenderViewController : UIViewController
 
 @end
