@@ -9,5 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @interface MMInputInfoViewController : UIViewController
+- (IBAction)breakfastButtonPressed:(id)sender;
+- (IBAction)lunchButtonPressed:(id)sender;
+- (IBAction)dinnerButtonPressed:(id)sender;
+@property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
+@property (nonatomic) NSInteger selectedButtonIndex;
+@property (nonatomic) NSString *selectedDateString;
 
 @end

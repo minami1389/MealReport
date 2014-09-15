@@ -7,6 +7,7 @@
 //
 
 #import "MMInputInfoViewController.h"
+#import "MMInputDetailInfoViewController.h"
 
 @interface MMInputInfoViewController ()
 
@@ -27,7 +28,19 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self.datePicker addTarget:self action:@selector(pickerDidChange:) forControlEvents:UIControlEventValueChanged];
+    }
+
+- (void)pickerDidChange:(UIDatePicker *)datePicker
+{
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    NSLocale *locale = [[NSLocale alloc] initWithLocaleIdentifier:@"jp_JP"];
+    [dateFormatter setLocale:locale];
+    [dateFormatter setDateFormat:@"yyyy/MM/dd"];
+    NSString *date = [dateFormatter stringFromDate:datePicker.date];
+    self.selectedDateString = date;
 }
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -46,4 +59,24 @@
 }
 */
 
+- (IBAction)breakfastButtonPressed:(id)sender {
+    self.selectedButtonIndex = 0;
+    MMInputDetailInfoViewController *nextViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"InputDetailInfoView"];
+    nextViewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    [self presentViewController:nextViewController animated:YES completion:nil];
+}
+
+- (IBAction)lunchButtonPressed:(id)sender {
+    self.selectedButtonIndex = 1;
+    MMInputDetailInfoViewController *nextViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"InputDetailInfoView"];
+    nextViewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    [self presentViewController:nextViewController animated:YES completion:nil];
+}
+
+- (IBAction)dinnerButtonPressed:(id)sender {
+    self.selectedButtonIndex = 2;
+    MMInputDetailInfoViewController *nextViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"InputDetailInfoView"];
+    nextViewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    [self presentViewController:nextViewController animated:YES completion:nil];
+}
 @end

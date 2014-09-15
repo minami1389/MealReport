@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E9756BF919C5E7F6007791FB /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E9756BF819C5E7F6007791FB /* README.md */; };
+		E9756BFC19C5EE49007791FB /* MMInputInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9756BFB19C5EE49007791FB /* MMInputInfoViewController.m */; };
+		E9756BFF19C5EE83007791FB /* MMInputDetailInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9756BFE19C5EE83007791FB /* MMInputDetailInfoViewController.m */; };
+		E9756C0219C5EE9F007791FB /* MMCalenderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9756C0119C5EE9F007791FB /* MMCalenderViewController.m */; };
+		E9756C0519C5EEEE007791FB /* MMInfoFromCalenderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9756C0419C5EEEE007791FB /* MMInfoFromCalenderViewController.m */; };
+		E9756C0819C5EF04007791FB /* MMListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9756C0719C5EF04007791FB /* MMListViewController.m */; };
+		E9756C0B19C5EF1B007791FB /* MMInfoFromListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9756C0A19C5EF1B007791FB /* MMInfoFromListViewController.m */; };
 		E9DD495619C5E6BC008E8739 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9DD495519C5E6BC008E8739 /* Foundation.framework */; };
 		E9DD495819C5E6BC008E8739 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9DD495719C5E6BC008E8739 /* CoreGraphics.framework */; };
 		E9DD495A19C5E6BC008E8739 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9DD495919C5E6BC008E8739 /* UIKit.framework */; };
@@ -14,13 +21,17 @@
 		E9DD496219C5E6BC008E8739 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E9DD496119C5E6BC008E8739 /* main.m */; };
 		E9DD496619C5E6BC008E8739 /* MMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E9DD496519C5E6BC008E8739 /* MMAppDelegate.m */; };
 		E9DD496919C5E6BC008E8739 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9DD496719C5E6BC008E8739 /* Main.storyboard */; };
-		E9DD496C19C5E6BC008E8739 /* MMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9DD496B19C5E6BC008E8739 /* MMViewController.m */; };
 		E9DD496E19C5E6BC008E8739 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9DD496D19C5E6BC008E8739 /* Images.xcassets */; };
 		E9DD497519C5E6BD008E8739 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9DD497419C5E6BD008E8739 /* XCTest.framework */; };
 		E9DD497619C5E6BD008E8739 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9DD495519C5E6BC008E8739 /* Foundation.framework */; };
 		E9DD497719C5E6BD008E8739 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9DD495919C5E6BC008E8739 /* UIKit.framework */; };
 		E9DD497F19C5E6BD008E8739 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E9DD497D19C5E6BD008E8739 /* InfoPlist.strings */; };
 		E9DD498119C5E6BD008E8739 /* MealReportTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E9DD498019C5E6BD008E8739 /* MealReportTests.m */; };
+		E9DDDC3719C7023600F1F160 /* pickerFrame.png in Resources */ = {isa = PBXBuildFile; fileRef = E9DDDC3619C7023600F1F160 /* pickerFrame.png */; };
+		E9DDDC3919C70B0400F1F160 /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = E9DDDC3819C70B0400F1F160 /* arrow.png */; };
+		E9DDDC3D19C7118200F1F160 /* buttonFrameBlue.png in Resources */ = {isa = PBXBuildFile; fileRef = E9DDDC3A19C7118200F1F160 /* buttonFrameBlue.png */; };
+		E9DDDC3E19C7118200F1F160 /* buttonFrameRed.png in Resources */ = {isa = PBXBuildFile; fileRef = E9DDDC3B19C7118200F1F160 /* buttonFrameRed.png */; };
+		E9DDDC3F19C7118200F1F160 /* buttonFrameYellow.png in Resources */ = {isa = PBXBuildFile; fileRef = E9DDDC3C19C7118200F1F160 /* buttonFrameYellow.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +45,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E9756BF819C5E7F6007791FB /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		E9756BFA19C5EE49007791FB /* MMInputInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMInputInfoViewController.h; sourceTree = "<group>"; };
+		E9756BFB19C5EE49007791FB /* MMInputInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMInputInfoViewController.m; sourceTree = "<group>"; };
+		E9756BFD19C5EE83007791FB /* MMInputDetailInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMInputDetailInfoViewController.h; sourceTree = "<group>"; };
+		E9756BFE19C5EE83007791FB /* MMInputDetailInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMInputDetailInfoViewController.m; sourceTree = "<group>"; };
+		E9756C0019C5EE9F007791FB /* MMCalenderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMCalenderViewController.h; sourceTree = "<group>"; };
+		E9756C0119C5EE9F007791FB /* MMCalenderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMCalenderViewController.m; sourceTree = "<group>"; };
+		E9756C0319C5EEEE007791FB /* MMInfoFromCalenderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMInfoFromCalenderViewController.h; sourceTree = "<group>"; };
+		E9756C0419C5EEEE007791FB /* MMInfoFromCalenderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMInfoFromCalenderViewController.m; sourceTree = "<group>"; };
+		E9756C0619C5EF04007791FB /* MMListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMListViewController.h; sourceTree = "<group>"; };
+		E9756C0719C5EF04007791FB /* MMListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMListViewController.m; sourceTree = "<group>"; };
+		E9756C0919C5EF1B007791FB /* MMInfoFromListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMInfoFromListViewController.h; sourceTree = "<group>"; };
+		E9756C0A19C5EF1B007791FB /* MMInfoFromListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMInfoFromListViewController.m; sourceTree = "<group>"; };
 		E9DD495219C5E6BC008E8739 /* MealReport.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MealReport.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9DD495519C5E6BC008E8739 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E9DD495719C5E6BC008E8739 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -45,14 +69,17 @@
 		E9DD496419C5E6BC008E8739 /* MMAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MMAppDelegate.h; sourceTree = "<group>"; };
 		E9DD496519C5E6BC008E8739 /* MMAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MMAppDelegate.m; sourceTree = "<group>"; };
 		E9DD496819C5E6BC008E8739 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		E9DD496A19C5E6BC008E8739 /* MMViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MMViewController.h; sourceTree = "<group>"; };
-		E9DD496B19C5E6BC008E8739 /* MMViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MMViewController.m; sourceTree = "<group>"; };
 		E9DD496D19C5E6BC008E8739 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E9DD497319C5E6BD008E8739 /* MealReportTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MealReportTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9DD497419C5E6BD008E8739 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		E9DD497C19C5E6BD008E8739 /* MealReportTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MealReportTests-Info.plist"; sourceTree = "<group>"; };
 		E9DD497E19C5E6BD008E8739 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E9DD498019C5E6BD008E8739 /* MealReportTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MealReportTests.m; sourceTree = "<group>"; };
+		E9DDDC3619C7023600F1F160 /* pickerFrame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pickerFrame.png; sourceTree = "<group>"; };
+		E9DDDC3819C70B0400F1F160 /* arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow.png; sourceTree = "<group>"; };
+		E9DDDC3A19C7118200F1F160 /* buttonFrameBlue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buttonFrameBlue.png; sourceTree = "<group>"; };
+		E9DDDC3B19C7118200F1F160 /* buttonFrameRed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buttonFrameRed.png; sourceTree = "<group>"; };
+		E9DDDC3C19C7118200F1F160 /* buttonFrameYellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buttonFrameYellow.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,9 +106,44 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E9756C0C19C5EF4A007791FB /* InputTab */ = {
+			isa = PBXGroup;
+			children = (
+				E9756BFA19C5EE49007791FB /* MMInputInfoViewController.h */,
+				E9756BFB19C5EE49007791FB /* MMInputInfoViewController.m */,
+				E9756BFD19C5EE83007791FB /* MMInputDetailInfoViewController.h */,
+				E9756BFE19C5EE83007791FB /* MMInputDetailInfoViewController.m */,
+			);
+			name = InputTab;
+			sourceTree = "<group>";
+		};
+		E9756C0D19C5EF8D007791FB /* CalenderTab */ = {
+			isa = PBXGroup;
+			children = (
+				E9756C0019C5EE9F007791FB /* MMCalenderViewController.h */,
+				E9756C0119C5EE9F007791FB /* MMCalenderViewController.m */,
+				E9756C0319C5EEEE007791FB /* MMInfoFromCalenderViewController.h */,
+				E9756C0419C5EEEE007791FB /* MMInfoFromCalenderViewController.m */,
+			);
+			name = CalenderTab;
+			sourceTree = "<group>";
+		};
+		E9756C0E19C5EF9B007791FB /* ListTab */ = {
+			isa = PBXGroup;
+			children = (
+				E9756C0619C5EF04007791FB /* MMListViewController.h */,
+				E9756C0719C5EF04007791FB /* MMListViewController.m */,
+				E9756C0919C5EF1B007791FB /* MMInfoFromListViewController.h */,
+				E9756C0A19C5EF1B007791FB /* MMInfoFromListViewController.m */,
+			);
+			name = ListTab;
+			sourceTree = "<group>";
+		};
 		E9DD494919C5E6BC008E8739 = {
 			isa = PBXGroup;
 			children = (
+				E9756BF819C5E7F6007791FB /* README.md */,
+				E9DDDC3319C601CA00F1F160 /* Resource */,
 				E9DD495B19C5E6BC008E8739 /* MealReport */,
 				E9DD497A19C5E6BD008E8739 /* MealReportTests */,
 				E9DD495419C5E6BC008E8739 /* Frameworks */,
@@ -114,9 +176,10 @@
 			children = (
 				E9DD496419C5E6BC008E8739 /* MMAppDelegate.h */,
 				E9DD496519C5E6BC008E8739 /* MMAppDelegate.m */,
+				E9756C0C19C5EF4A007791FB /* InputTab */,
+				E9756C0D19C5EF8D007791FB /* CalenderTab */,
+				E9756C0E19C5EF9B007791FB /* ListTab */,
 				E9DD496719C5E6BC008E8739 /* Main.storyboard */,
-				E9DD496A19C5E6BC008E8739 /* MMViewController.h */,
-				E9DD496B19C5E6BC008E8739 /* MMViewController.m */,
 				E9DD496D19C5E6BC008E8739 /* Images.xcassets */,
 				E9DD495C19C5E6BC008E8739 /* Supporting Files */,
 			);
@@ -150,6 +213,18 @@
 				E9DD497D19C5E6BD008E8739 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E9DDDC3319C601CA00F1F160 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				E9DDDC3819C70B0400F1F160 /* arrow.png */,
+				E9DDDC3619C7023600F1F160 /* pickerFrame.png */,
+				E9DDDC3A19C7118200F1F160 /* buttonFrameBlue.png */,
+				E9DDDC3B19C7118200F1F160 /* buttonFrameRed.png */,
+				E9DDDC3C19C7118200F1F160 /* buttonFrameYellow.png */,
+			);
+			name = Resource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,8 +305,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				E9DD496E19C5E6BC008E8739 /* Images.xcassets in Resources */,
+				E9DDDC3719C7023600F1F160 /* pickerFrame.png in Resources */,
 				E9DD496019C5E6BC008E8739 /* InfoPlist.strings in Resources */,
+				E9756BF919C5E7F6007791FB /* README.md in Resources */,
 				E9DD496919C5E6BC008E8739 /* Main.storyboard in Resources */,
+				E9DDDC3F19C7118200F1F160 /* buttonFrameYellow.png in Resources */,
+				E9DDDC3D19C7118200F1F160 /* buttonFrameBlue.png in Resources */,
+				E9DDDC3E19C7118200F1F160 /* buttonFrameRed.png in Resources */,
+				E9DDDC3919C70B0400F1F160 /* arrow.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,9 +331,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9756C0819C5EF04007791FB /* MMListViewController.m in Sources */,
+				E9756BFF19C5EE83007791FB /* MMInputDetailInfoViewController.m in Sources */,
 				E9DD496619C5E6BC008E8739 /* MMAppDelegate.m in Sources */,
-				E9DD496C19C5E6BC008E8739 /* MMViewController.m in Sources */,
+				E9756C0519C5EEEE007791FB /* MMInfoFromCalenderViewController.m in Sources */,
+				E9756BFC19C5EE49007791FB /* MMInputInfoViewController.m in Sources */,
 				E9DD496219C5E6BC008E8739 /* main.m in Sources */,
+				E9756C0B19C5EF1B007791FB /* MMInfoFromListViewController.m in Sources */,
+				E9756C0219C5EE9F007791FB /* MMCalenderViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -457,6 +543,7 @@
 				E9DD498619C5E6BD008E8739 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E9DD498719C5E6BD008E8739 /* Build configuration list for PBXNativeTarget "MealReportTests" */ = {
 			isa = XCConfigurationList;
@@ -465,6 +552,7 @@
 				E9DD498919C5E6BD008E8739 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
