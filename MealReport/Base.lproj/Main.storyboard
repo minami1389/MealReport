@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="GLZ-03-Tj4">
     <dependencies>
-        <deployment defaultVersion="1808" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
@@ -36,15 +35,28 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="ynF-vA-OqG"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7cw-KQ-LP5">
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                                                <state key="normal">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="dateButton:" destination="EJj-6W-CCj" eventType="touchUpInside" id="IId-v1-81c"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
+                                            <constraint firstItem="7cw-KQ-LP5" firstAttribute="leading" secondItem="CMW-15-xCb" secondAttribute="leading" id="0W1-Xd-hd6"/>
+                                            <constraint firstAttribute="bottom" secondItem="7cw-KQ-LP5" secondAttribute="bottom" id="99I-7R-jUQ"/>
                                             <constraint firstAttribute="bottom" secondItem="ivt-iG-9cg" secondAttribute="bottom" id="DCI-wz-v5F"/>
+                                            <constraint firstAttribute="trailing" secondItem="7cw-KQ-LP5" secondAttribute="trailing" id="Y3s-sz-mRd"/>
                                             <constraint firstAttribute="height" constant="50" id="dly-jM-cVM"/>
+                                            <constraint firstItem="7cw-KQ-LP5" firstAttribute="top" secondItem="CMW-15-xCb" secondAttribute="top" id="eZM-ut-JQJ"/>
                                             <constraint firstAttribute="trailing" secondItem="ivt-iG-9cg" secondAttribute="trailing" constant="10" id="of2-O5-vk3"/>
                                             <constraint firstItem="ivt-iG-9cg" firstAttribute="top" secondItem="CMW-15-xCb" secondAttribute="top" id="rEp-BF-hV5"/>
                                             <constraint firstItem="ivt-iG-9cg" firstAttribute="leading" secondItem="CMW-15-xCb" secondAttribute="leading" constant="10" id="z14-Nx-K5s"/>
@@ -196,7 +208,10 @@
                     <tabBarItem key="tabBarItem" systemItem="downloads" id="Dha-Q9-FGp"/>
                     <navigationItem key="navigationItem" id="RA9-jw-35g"/>
                     <connections>
-                        <segue destination="r79-HO-f5Z" kind="push" id="GDu-5q-AfA"/>
+                        <outlet property="containerView" destination="gzA-AH-pgU" id="JDt-Nd-vFG"/>
+                        <outlet property="dateLabel" destination="ivt-iG-9cg" id="6zo-Jg-kfL"/>
+                        <outlet property="underLine" destination="qRa-bA-ag8" id="zJH-Jj-rac"/>
+                        <segue destination="r79-HO-f5Z" kind="push" identifier="toNextView" id="GDu-5q-AfA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="15g-J0-QxL" userLabel="First Responder" sceneMemberID="firstResponder"/>
