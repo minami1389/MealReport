@@ -60,6 +60,7 @@
 */
 
 - (IBAction)breakfastButtonPressed:(id)sender {
+    NSLog(@"index:0");
     self.selectedButtonIndex = 0;
     MMInputDetailInfoViewController *nextViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"InputDetailInfoView"];
     nextViewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
@@ -67,6 +68,7 @@
 }
 
 - (IBAction)lunchButtonPressed:(id)sender {
+    NSLog(@"index:1");
     self.selectedButtonIndex = 1;
     MMInputDetailInfoViewController *nextViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"InputDetailInfoView"];
     nextViewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
@@ -74,6 +76,7 @@
 }
 
 - (IBAction)dinnerButtonPressed:(id)sender {
+    NSLog(@"index:2");
     self.selectedButtonIndex = 2;
     MMInputDetailInfoViewController *nextViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"InputDetailInfoView"];
     nextViewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;

@@ -275,6 +275,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Minami Baba";
 				TargetAttributes = {
+					E9DD495119C5E6BC008E8739 = {
+						DevelopmentTeam = RM3N4N4RRF;
+					};
 					E9DD497219C5E6BD008E8739 = {
 						TestTargetID = E9DD495119C5E6BC008E8739;
 					};
@@ -404,6 +407,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -422,6 +426,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "E839028F-A38C-406D-B0A0-8D108D5B3C38";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -442,6 +447,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
@@ -453,6 +459,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				PROVISIONING_PROFILE = "E839028F-A38C-406D-B0A0-8D108D5B3C38";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -463,10 +470,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MealReport/MealReport-Prefix.pch";
 				INFOPLIST_FILE = "MealReport/MealReport-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "E839028F-A38C-406D-B0A0-8D108D5B3C38";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "E839028F-A38C-406D-B0A0-8D108D5B3C38";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -476,10 +487,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MealReport/MealReport-Prefix.pch";
 				INFOPLIST_FILE = "MealReport/MealReport-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "E839028F-A38C-406D-B0A0-8D108D5B3C38";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "E839028F-A38C-406D-B0A0-8D108D5B3C38";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

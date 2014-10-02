@@ -236,9 +236,9 @@ t1397238884
 s20812
 
 N/Users/minami/iosAppDevelop/MealReport/MealReport/Base.lproj/Main.storyboard
-c000000005416DA1E000000000000C04D
-t1410783774
-s49229
+c0000000054179A10000000000000C113
+t1410832912
+s49427
 
 N/Users/minami/iosAppDevelop/MealReport/MealReport/Images.xcassets
 c000000005415AF3C0000000000000088
@@ -346,7 +346,7 @@ t1410782077
 s361
 
 N/Users/minami/iosAppDevelop/MealReport/build/Debug-iphonesimulator/MealReport.app
-t1410783775
+t1410832914
 s544
 
 N/Users/minami/iosAppDevelop/MealReport/build/Debug-iphonesimulator/MealReport.app.dSYM
@@ -354,7 +354,7 @@ t1410719331
 s102
 
 N/Users/minami/iosAppDevelop/MealReport/build/Debug-iphonesimulator/MealReport.app/Base.lproj/Main.storyboardc
-t1410783776
+t1410832914
 s340
 
 N/Users/minami/iosAppDevelop/MealReport/build/Debug-iphonesimulator/MealReport.app/Info.plist
@@ -639,7 +639,7 @@ r0
 
 CCheck dependencies
 r0
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies18"Check dependencies9fe9ed9e11c7b941^06d9fe9e11c7b941^---0#1#1#--18"Check dependencies36"50E40F52-6C83-4ABC-A739-E9AD298040F8-
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies18"Check dependencies789638ce94c8b941^f54a39ce94c8b941^---0#1#1#--18"Check dependencies36"0A9DB6EE-8380-489B-8F98-BAF1C47623D6-
 
 CCompileAssetCatalog /Users/minami/iosAppDevelop/MealReport/build/Debug-iphonesimulator/MealReport.app /Users/minami/iosAppDevelop/MealReport/MealReport/Images.xcassets
 s432400697.189927
@@ -789,13 +789,13 @@ lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection64"Compile
 b51608C4F-C304-4C42-AAD5-FEC9BA88E46B
 
 CCompileStoryboard /Users/minami/iosAppDevelop/MealReport/MealReport/Base.lproj/Main.storyboard
-s432476574.996825
-e432476576.952215
+s432525712.817138
+e432525714.974476
 r1
 xCompileStoryboard
 x/Users/minami/iosAppDevelop/MealReport/MealReport/Base.lproj/Main.storyboard
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection55"CompileStoryboard MealReport/Base.lproj/Main.storyboard55"CompileStoryboard MealReport/Base.lproj/Main.storyboarda54fff9e11c7b941^e3c4f3a011c7b941^---0#0#1#-19%DVTDocumentLocation2@83"file:///Users/minami/iosAppDevelop/MealReport/MealReport/Base.lproj/Main.storyboard0000000000000000^839"CompileStoryboard MealReport/Base.lproj/Main.storyboard    cd /Users/minami/iosAppDevelop/MealReport    export IBSC_MINIMUM_COMPATIBILITY_VERSION=7.1    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    export XCODE_DEVELOPER_USR_PATH=/Applications/Xcode.app/Contents/Developer/usr/bin/..    /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/ibtool --errors --warnings --notices --minimum-deployment-target 7.1 --output-format human-readable-text --compile /Users/minami/iosAppDevelop/MealReport/build/Debug-iphonesimulator/MealReport.app/Base.lproj/Main.storyboardc /Users/minami/iosAppDevelop/MealReport/MealReport/Base.lproj/Main.storyboard36"A426AB2E-C1D3-402A-99FC-9D9162BDCD7C-
-b54448EC4-6B71-47B2-A083-968AB36372D3
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection55"CompileStoryboard MealReport/Base.lproj/Main.storyboard55"CompileStoryboard MealReport/Base.lproj/Main.storyboard3947d190d1c7b941^9d81f992d1c7b941^---0#0#1#-19%DVTDocumentLocation2@83"file:///Users/minami/iosAppDevelop/MealReport/MealReport/Base.lproj/Main.storyboard0000000000000000^839"CompileStoryboard MealReport/Base.lproj/Main.storyboard    cd /Users/minami/iosAppDevelop/MealReport    export IBSC_MINIMUM_COMPATIBILITY_VERSION=7.1    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    export XCODE_DEVELOPER_USR_PATH=/Applications/Xcode.app/Contents/Developer/usr/bin/..    /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/ibtool --errors --warnings --notices --minimum-deployment-target 7.1 --output-format human-readable-text --compile /Users/minami/iosAppDevelop/MealReport/build/Debug-iphonesimulator/MealReport.app/Base.lproj/Main.storyboardc /Users/minami/iosAppDevelop/MealReport/MealReport/Base.lproj/Main.storyboard36"77B9FB8C-8A2D-45F2-B62D-D996CDB37B24-
+b4D07BAEC-E12B-4C83-B97B-ABD16AE9FB2A
 
 CCopyStringsFile /Users/minami/iosAppDevelop/MealReport/build/Debug-iphonesimulator/MealReport.app/en.lproj/InfoPlist.strings MealReport/en.lproj/InfoPlist.strings
 s432400697.188192
@@ -1001,11 +1001,11 @@ lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection43"Precomp
 b2BE7818B-E9D8-4544-9FBA-AF96BB785CA1
 
 CTouch /Users/minami/iosAppDevelop/MealReport/build/Debug-iphonesimulator/MealReport.app
-s432476576.954113
-e432476576.960697
+s432525714.976341
+e432525714.982468
 r1
 xTouch
 x/Users/minami/iosAppDevelop/MealReport/build/Debug-iphonesimulator/MealReport.app
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection87"Touch /Users/minami/iosAppDevelop/MealReport/build/Debug-iphonesimulator/MealReport.app48"Touch build/Debug-iphonesimulator/MealReport.app4850f4a011c7b941^5af1f5a011c7b941^---0#0#1#--394"Touch build/Debug-iphonesimulator/MealReport.app    cd /Users/minami/iosAppDevelop/MealReport    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/touch -c /Users/minami/iosAppDevelop/MealReport/build/Debug-iphonesimulator/MealReport.app36"F908F5F3-907E-4320-AF0D-A905F012F2B2-
-b54448EC4-6B71-47B2-A083-968AB36372D3
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection87"Touch /Users/minami/iosAppDevelop/MealReport/build/Debug-iphonesimulator/MealReport.app48"Touch build/Debug-iphonesimulator/MealReport.app4701fa92d1c7b941^a984fb92d1c7b941^---0#0#1#--394"Touch build/Debug-iphonesimulator/MealReport.app    cd /Users/minami/iosAppDevelop/MealReport    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/touch -c /Users/minami/iosAppDevelop/MealReport/build/Debug-iphonesimulator/MealReport.app36"C4A3F33D-3593-4F90-9A94-45B31F850762-
+b4D07BAEC-E12B-4C83-B97B-ABD16AE9FB2A
 
