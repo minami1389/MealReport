@@ -3,6 +3,7 @@
     <dependencies>
         <deployment defaultVersion="1808" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Input Info View Controller-->
@@ -17,177 +18,179 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XPq-2b-nue" userLabel="line1">
-                                <rect key="frame" x="0.0" y="104" width="320" height="1"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="1" id="MYj-F5-Ysx"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qRa-bA-ag8" userLabel="line2">
-                                <rect key="frame" x="0.0" y="165" width="320" height="1"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="1" id="bCS-JO-FDy"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="FgA-CQ-j8Z" userLabel="View - 朝食">
-                                <rect key="frame" x="60" y="196" width="200" height="40"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gzA-AH-pgU" userLabel="View - container">
+                                <rect key="frame" x="0.0" y="109" width="320" height="282"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dej-W9-e06">
-                                        <rect key="frame" x="0.0" y="0.0" width="200" height="40"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <state key="normal" backgroundImage="buttonFrameRed.png">
-                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="breakfastButtonPressed:" destination="EJj-6W-CCj" eventType="touchUpInside" id="gao-Kz-z3s"/>
-                                        </connections>
-                                    </button>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" 朝食を記録する" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R0C-lD-O7z">
-                                        <rect key="frame" x="38" y="0.0" width="124" height="40"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="R0C-lD-O7z" firstAttribute="centerX" secondItem="dej-W9-e06" secondAttribute="centerX" id="97t-zz-RVM"/>
-                                    <constraint firstItem="dej-W9-e06" firstAttribute="leading" secondItem="FgA-CQ-j8Z" secondAttribute="leading" id="Auz-Dr-Qbt"/>
-                                    <constraint firstAttribute="height" constant="40" id="DXB-Yj-WrQ"/>
-                                    <constraint firstItem="dej-W9-e06" firstAttribute="top" secondItem="FgA-CQ-j8Z" secondAttribute="top" id="LWg-5Q-IQS"/>
-                                    <constraint firstAttribute="trailing" secondItem="dej-W9-e06" secondAttribute="trailing" id="Vps-Ao-yKe"/>
-                                    <constraint firstAttribute="bottom" secondItem="dej-W9-e06" secondAttribute="bottom" id="ptZ-ko-xB5"/>
-                                    <constraint firstAttribute="width" constant="200" id="vI0-FT-ehK"/>
-                                    <constraint firstAttribute="bottom" secondItem="R0C-lD-O7z" secondAttribute="bottom" id="xMp-Pe-Hte"/>
-                                    <constraint firstItem="R0C-lD-O7z" firstAttribute="top" secondItem="FgA-CQ-j8Z" secondAttribute="top" id="yGd-Yc-K3v"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="H1u-MH-glI" userLabel="View - 昼食">
-                                <rect key="frame" x="60" y="266" width="200" height="40"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pyT-Bm-zyY">
-                                        <rect key="frame" x="0.0" y="0.0" width="200" height="40"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <state key="normal" backgroundImage="buttonFrameYellow.png">
-                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="lunchButtonPressed:" destination="EJj-6W-CCj" eventType="touchUpInside" id="3aG-Gv-4P3"/>
-                                        </connections>
-                                    </button>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" 昼食を記録する" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Npg-c7-pkb">
-                                        <rect key="frame" x="38" y="0.0" width="124" height="40"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XPq-2b-nue" userLabel="line1">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="1"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="hJ2-50-omS"/>
+                                            <constraint firstAttribute="height" constant="1" id="MYj-F5-Ysx"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="Npg-c7-pkb" firstAttribute="centerX" secondItem="pyT-Bm-zyY" secondAttribute="centerX" id="2ke-Gq-VdP"/>
-                                    <constraint firstItem="pyT-Bm-zyY" firstAttribute="top" secondItem="H1u-MH-glI" secondAttribute="top" id="9O1-fi-iFw"/>
-                                    <constraint firstItem="Npg-c7-pkb" firstAttribute="top" secondItem="H1u-MH-glI" secondAttribute="top" id="C3A-ul-P9C"/>
-                                    <constraint firstAttribute="bottom" secondItem="Npg-c7-pkb" secondAttribute="bottom" id="Vsm-0U-5LS"/>
-                                    <constraint firstAttribute="trailing" secondItem="pyT-Bm-zyY" secondAttribute="trailing" id="Xur-b4-t12"/>
-                                    <constraint firstAttribute="width" constant="200" id="YX9-YC-MaU"/>
-                                    <constraint firstItem="pyT-Bm-zyY" firstAttribute="leading" secondItem="H1u-MH-glI" secondAttribute="leading" id="bq2-Qy-BQw"/>
-                                    <constraint firstAttribute="bottom" secondItem="pyT-Bm-zyY" secondAttribute="bottom" id="nRS-RI-HyQ"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="59h-pq-rir" userLabel="View - 夕食">
-                                <rect key="frame" x="60" y="336" width="200" height="40"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yYe-hl-Q3W">
-                                        <rect key="frame" x="0.0" y="0.0" width="200" height="40"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CMW-15-xCb" userLabel="View - date">
+                                        <rect key="frame" x="0.0" y="6" width="320" height="50"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2014年10月2日 の" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ivt-iG-9cg">
+                                                <rect key="frame" x="10" y="0.0" width="300" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="ynF-vA-OqG"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
+                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="ZeG-TA-GCu"/>
+                                            <constraint firstAttribute="bottom" secondItem="ivt-iG-9cg" secondAttribute="bottom" id="DCI-wz-v5F"/>
+                                            <constraint firstAttribute="height" constant="50" id="dly-jM-cVM"/>
+                                            <constraint firstAttribute="trailing" secondItem="ivt-iG-9cg" secondAttribute="trailing" constant="10" id="of2-O5-vk3"/>
+                                            <constraint firstItem="ivt-iG-9cg" firstAttribute="top" secondItem="CMW-15-xCb" secondAttribute="top" id="rEp-BF-hV5"/>
+                                            <constraint firstItem="ivt-iG-9cg" firstAttribute="leading" secondItem="CMW-15-xCb" secondAttribute="leading" constant="10" id="z14-Nx-K5s"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <state key="normal" backgroundImage="buttonFrameBlue.png">
-                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="dinnerButtonPressed:" destination="EJj-6W-CCj" eventType="touchUpInside" id="x1h-nd-Fyp"/>
-                                        </connections>
-                                    </button>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" 夕食を記録する" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j8y-7E-768">
-                                        <rect key="frame" x="38" y="0.0" width="124" height="40"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="yYe-hl-Q3W" firstAttribute="top" secondItem="59h-pq-rir" secondAttribute="top" id="5Je-nC-pWy"/>
-                                    <constraint firstAttribute="width" constant="200" id="A41-1b-YOE"/>
-                                    <constraint firstAttribute="bottom" secondItem="yYe-hl-Q3W" secondAttribute="bottom" id="AZZ-XJ-lqD"/>
-                                    <constraint firstAttribute="bottom" secondItem="j8y-7E-768" secondAttribute="bottom" id="OGD-dT-o5c"/>
-                                    <constraint firstItem="j8y-7E-768" firstAttribute="centerX" secondItem="yYe-hl-Q3W" secondAttribute="centerX" id="W5C-Re-C5K"/>
-                                    <constraint firstItem="j8y-7E-768" firstAttribute="top" secondItem="59h-pq-rir" secondAttribute="top" id="aW4-o7-8ev"/>
-                                    <constraint firstItem="yYe-hl-Q3W" firstAttribute="leading" secondItem="59h-pq-rir" secondAttribute="leading" id="oNk-t6-gNa"/>
-                                    <constraint firstAttribute="trailing" secondItem="yYe-hl-Q3W" secondAttribute="trailing" id="xcC-fJ-9wa"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CMW-15-xCb" userLabel="View - date">
-                                <rect key="frame" x="0.0" y="110" width="320" height="50"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2014年10月2日　" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ivt-iG-9cg">
-                                        <rect key="frame" x="10" y="0.0" width="260" height="50"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qRa-bA-ag8" userLabel="line2">
+                                        <rect key="frame" x="0.0" y="61" width="320" height="1"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="260" id="QrO-ra-JjJ"/>
-                                            <constraint firstAttribute="height" constant="50" id="ynF-vA-OqG"/>
+                                            <constraint firstAttribute="height" constant="1" id="bCS-JO-FDy"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
-                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="の" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GW9-pT-EgF">
-                                        <rect key="frame" x="275" y="0.0" width="30" height="50"/>
+                                    </view>
+                                    <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="FgA-CQ-j8Z" userLabel="View - 朝食">
+                                        <rect key="frame" x="60" y="102" width="200" height="40"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dej-W9-e06">
+                                                <rect key="frame" x="0.0" y="0.0" width="200" height="40"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <state key="normal" backgroundImage="buttonFrameRed.png">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="breakfastButtonPressed:" destination="EJj-6W-CCj" eventType="touchUpInside" id="gao-Kz-z3s"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" 朝食を記録する" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R0C-lD-O7z">
+                                                <rect key="frame" x="38" y="0.0" width="124" height="40"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="VJ5-Pj-U72"/>
+                                            <constraint firstItem="R0C-lD-O7z" firstAttribute="centerX" secondItem="dej-W9-e06" secondAttribute="centerX" id="97t-zz-RVM"/>
+                                            <constraint firstItem="dej-W9-e06" firstAttribute="leading" secondItem="FgA-CQ-j8Z" secondAttribute="leading" id="Auz-Dr-Qbt"/>
+                                            <constraint firstItem="dej-W9-e06" firstAttribute="top" secondItem="FgA-CQ-j8Z" secondAttribute="top" id="LWg-5Q-IQS"/>
+                                            <constraint firstAttribute="trailing" secondItem="dej-W9-e06" secondAttribute="trailing" id="Vps-Ao-yKe"/>
+                                            <constraint firstAttribute="height" constant="40" id="kkM-O7-DfP"/>
+                                            <constraint firstAttribute="width" secondItem="FgA-CQ-j8Z" secondAttribute="height" multiplier="5:1" id="n3c-qx-LY5"/>
+                                            <constraint firstAttribute="bottom" secondItem="dej-W9-e06" secondAttribute="bottom" id="ptZ-ko-xB5"/>
+                                            <constraint firstAttribute="bottom" secondItem="R0C-lD-O7z" secondAttribute="bottom" id="xMp-Pe-Hte"/>
+                                            <constraint firstItem="R0C-lD-O7z" firstAttribute="top" secondItem="FgA-CQ-j8Z" secondAttribute="top" id="yGd-Yc-K3v"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    </view>
+                                    <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="H1u-MH-glI" userLabel="View - 昼食">
+                                        <rect key="frame" x="60" y="172" width="200" height="40"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pyT-Bm-zyY">
+                                                <rect key="frame" x="0.0" y="0.0" width="200" height="40"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <state key="normal" backgroundImage="buttonFrameYellow.png">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="lunchButtonPressed:" destination="EJj-6W-CCj" eventType="touchUpInside" id="3aG-Gv-4P3"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" 昼食を記録する" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Npg-c7-pkb">
+                                                <rect key="frame" x="38" y="0.0" width="124" height="40"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="Npg-c7-pkb" firstAttribute="centerX" secondItem="pyT-Bm-zyY" secondAttribute="centerX" id="2ke-Gq-VdP"/>
+                                            <constraint firstItem="pyT-Bm-zyY" firstAttribute="top" secondItem="H1u-MH-glI" secondAttribute="top" id="9O1-fi-iFw"/>
+                                            <constraint firstItem="Npg-c7-pkb" firstAttribute="top" secondItem="H1u-MH-glI" secondAttribute="top" id="C3A-ul-P9C"/>
+                                            <constraint firstAttribute="bottom" secondItem="Npg-c7-pkb" secondAttribute="bottom" id="Vsm-0U-5LS"/>
+                                            <constraint firstAttribute="trailing" secondItem="pyT-Bm-zyY" secondAttribute="trailing" id="Xur-b4-t12"/>
+                                            <constraint firstItem="pyT-Bm-zyY" firstAttribute="leading" secondItem="H1u-MH-glI" secondAttribute="leading" id="bq2-Qy-BQw"/>
+                                            <constraint firstAttribute="width" secondItem="H1u-MH-glI" secondAttribute="height" multiplier="5:1" id="cR0-8e-qhz"/>
+                                            <constraint firstAttribute="bottom" secondItem="pyT-Bm-zyY" secondAttribute="bottom" id="nRS-RI-HyQ"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="59h-pq-rir" userLabel="View - 夕食">
+                                        <rect key="frame" x="60" y="242" width="200" height="40"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yYe-hl-Q3W">
+                                                <rect key="frame" x="0.0" y="0.0" width="200" height="40"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <state key="normal" backgroundImage="buttonFrameBlue.png">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="dinnerButtonPressed:" destination="EJj-6W-CCj" eventType="touchUpInside" id="x1h-nd-Fyp"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" 夕食を記録する" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j8y-7E-768">
+                                                <rect key="frame" x="38" y="0.0" width="124" height="40"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="yYe-hl-Q3W" firstAttribute="top" secondItem="59h-pq-rir" secondAttribute="top" id="5Je-nC-pWy"/>
+                                            <constraint firstAttribute="width" secondItem="59h-pq-rir" secondAttribute="height" multiplier="5:1" id="7f4-x0-Ocv"/>
+                                            <constraint firstAttribute="bottom" secondItem="yYe-hl-Q3W" secondAttribute="bottom" id="AZZ-XJ-lqD"/>
+                                            <constraint firstAttribute="bottom" secondItem="j8y-7E-768" secondAttribute="bottom" id="OGD-dT-o5c"/>
+                                            <constraint firstItem="j8y-7E-768" firstAttribute="centerX" secondItem="yYe-hl-Q3W" secondAttribute="centerX" id="W5C-Re-C5K"/>
+                                            <constraint firstItem="j8y-7E-768" firstAttribute="top" secondItem="59h-pq-rir" secondAttribute="top" id="aW4-o7-8ev"/>
+                                            <constraint firstItem="yYe-hl-Q3W" firstAttribute="leading" secondItem="59h-pq-rir" secondAttribute="leading" id="oNk-t6-gNa"/>
+                                            <constraint firstAttribute="trailing" secondItem="yYe-hl-Q3W" secondAttribute="trailing" id="xcC-fJ-9wa"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="GW9-pT-EgF" firstAttribute="top" secondItem="CMW-15-xCb" secondAttribute="top" id="BZO-Sc-FLi"/>
-                                    <constraint firstAttribute="bottom" secondItem="ivt-iG-9cg" secondAttribute="bottom" id="DCI-wz-v5F"/>
-                                    <constraint firstItem="GW9-pT-EgF" firstAttribute="leading" secondItem="ivt-iG-9cg" secondAttribute="trailing" constant="5" id="YIJ-nD-cKw"/>
-                                    <constraint firstAttribute="bottom" secondItem="GW9-pT-EgF" secondAttribute="bottom" id="bg8-Cg-sLV"/>
-                                    <constraint firstItem="ivt-iG-9cg" firstAttribute="leading" secondItem="CMW-15-xCb" secondAttribute="leading" constant="10" id="lNI-K9-vyW"/>
-                                    <constraint firstItem="ivt-iG-9cg" firstAttribute="top" secondItem="CMW-15-xCb" secondAttribute="top" id="rEp-BF-hV5"/>
+                                    <constraint firstAttribute="centerX" secondItem="59h-pq-rir" secondAttribute="centerX" id="0eQ-bG-d36"/>
+                                    <constraint firstAttribute="trailing" secondItem="CMW-15-xCb" secondAttribute="trailing" id="1EM-hR-J8O"/>
+                                    <constraint firstItem="CMW-15-xCb" firstAttribute="top" secondItem="XPq-2b-nue" secondAttribute="bottom" constant="5" id="5BV-UX-ymC"/>
+                                    <constraint firstItem="CMW-15-xCb" firstAttribute="leading" secondItem="gzA-AH-pgU" secondAttribute="leading" id="5cA-aV-SPi"/>
+                                    <constraint firstAttribute="trailing" secondItem="qRa-bA-ag8" secondAttribute="trailing" id="8Pl-qn-Qfd"/>
+                                    <constraint firstItem="XPq-2b-nue" firstAttribute="top" secondItem="gzA-AH-pgU" secondAttribute="top" id="CaO-hj-2ba"/>
+                                    <constraint firstAttribute="trailing" secondItem="FgA-CQ-j8Z" secondAttribute="trailing" constant="60" id="EGl-S1-LBh"/>
+                                    <constraint firstAttribute="trailing" secondItem="XPq-2b-nue" secondAttribute="trailing" id="Jmf-hd-B0B"/>
+                                    <constraint firstAttribute="centerX" secondItem="H1u-MH-glI" secondAttribute="centerX" id="Pur-DL-al4"/>
+                                    <constraint firstItem="H1u-MH-glI" firstAttribute="height" secondItem="FgA-CQ-j8Z" secondAttribute="height" id="S5s-Lb-vdR"/>
+                                    <constraint firstItem="FgA-CQ-j8Z" firstAttribute="leading" secondItem="gzA-AH-pgU" secondAttribute="leading" constant="60" id="VPd-Dc-6Zd"/>
+                                    <constraint firstItem="H1u-MH-glI" firstAttribute="width" secondItem="FgA-CQ-j8Z" secondAttribute="width" id="YfY-R1-ajG"/>
+                                    <constraint firstAttribute="centerX" secondItem="FgA-CQ-j8Z" secondAttribute="centerX" id="Ym9-Lu-SWb"/>
+                                    <constraint firstItem="H1u-MH-glI" firstAttribute="width" secondItem="59h-pq-rir" secondAttribute="width" id="bMJ-6b-ba7"/>
+                                    <constraint firstItem="FgA-CQ-j8Z" firstAttribute="top" secondItem="qRa-bA-ag8" secondAttribute="bottom" constant="40" id="iqD-dj-23R"/>
+                                    <constraint firstItem="XPq-2b-nue" firstAttribute="leading" secondItem="gzA-AH-pgU" secondAttribute="leading" id="kd1-ei-K2S"/>
+                                    <constraint firstItem="H1u-MH-glI" firstAttribute="top" secondItem="FgA-CQ-j8Z" secondAttribute="bottom" constant="30" id="mR9-nv-Noq"/>
+                                    <constraint firstItem="H1u-MH-glI" firstAttribute="height" secondItem="59h-pq-rir" secondAttribute="height" id="nOu-IB-eIL"/>
+                                    <constraint firstItem="qRa-bA-ag8" firstAttribute="top" secondItem="CMW-15-xCb" secondAttribute="bottom" constant="5" id="rFJ-SA-XHp"/>
+                                    <constraint firstItem="59h-pq-rir" firstAttribute="top" secondItem="H1u-MH-glI" secondAttribute="bottom" constant="30" id="svJ-Mm-QdW"/>
+                                    <constraint firstAttribute="bottom" secondItem="59h-pq-rir" secondAttribute="bottom" id="vxb-eL-xTh"/>
+                                    <constraint firstItem="qRa-bA-ag8" firstAttribute="leading" secondItem="gzA-AH-pgU" secondAttribute="leading" id="yjP-o7-NKR"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="XPq-2b-nue" firstAttribute="leading" secondItem="y9h-B6-n5H" secondAttribute="leading" id="5ep-eQ-q5K"/>
-                            <constraint firstAttribute="trailing" secondItem="qRa-bA-ag8" secondAttribute="trailing" id="BrE-dc-0Re"/>
-                            <constraint firstItem="CMW-15-xCb" firstAttribute="top" secondItem="XPq-2b-nue" secondAttribute="bottom" constant="5" id="HOO-Go-v2u"/>
-                            <constraint firstItem="CMW-15-xCb" firstAttribute="leading" secondItem="y9h-B6-n5H" secondAttribute="leading" id="Hc0-S9-cYf"/>
-                            <constraint firstItem="qRa-bA-ag8" firstAttribute="top" secondItem="CMW-15-xCb" secondAttribute="bottom" constant="5" id="HpO-bK-1M6"/>
-                            <constraint firstItem="qRa-bA-ag8" firstAttribute="leading" secondItem="y9h-B6-n5H" secondAttribute="leading" id="Mhd-Dn-cin"/>
-                            <constraint firstItem="FgA-CQ-j8Z" firstAttribute="top" secondItem="qRa-bA-ag8" secondAttribute="bottom" constant="30" id="OXm-2M-a18"/>
-                            <constraint firstItem="FgA-CQ-j8Z" firstAttribute="centerX" secondItem="CMW-15-xCb" secondAttribute="centerX" id="SaP-6b-zUM"/>
-                            <constraint firstAttribute="trailing" secondItem="CMW-15-xCb" secondAttribute="trailing" id="Y8D-sC-8if"/>
-                            <constraint firstItem="FgA-CQ-j8Z" firstAttribute="centerX" secondItem="59h-pq-rir" secondAttribute="centerX" id="dkL-63-JhF"/>
-                            <constraint firstItem="H1u-MH-glI" firstAttribute="top" secondItem="FgA-CQ-j8Z" secondAttribute="bottom" constant="30" id="ehS-sF-kM8"/>
-                            <constraint firstAttribute="trailing" secondItem="XPq-2b-nue" secondAttribute="trailing" id="ggr-aY-qaz"/>
-                            <constraint firstItem="XPq-2b-nue" firstAttribute="top" secondItem="Hhr-yy-mv3" secondAttribute="bottom" constant="40" id="rfL-Bd-lrq"/>
-                            <constraint firstItem="59h-pq-rir" firstAttribute="top" secondItem="H1u-MH-glI" secondAttribute="bottom" constant="30" id="y6v-th-xLZ"/>
-                            <constraint firstItem="FgA-CQ-j8Z" firstAttribute="centerX" secondItem="H1u-MH-glI" secondAttribute="centerX" id="yAc-qi-n2t"/>
+                            <constraint firstItem="gzA-AH-pgU" firstAttribute="leading" secondItem="y9h-B6-n5H" secondAttribute="leading" id="0qv-ym-P6S"/>
+                            <constraint firstAttribute="trailing" secondItem="gzA-AH-pgU" secondAttribute="trailing" id="L7M-Xe-Cqs"/>
+                            <constraint firstItem="fOA-Sf-8hM" firstAttribute="top" relation="greaterThanOrEqual" secondItem="gzA-AH-pgU" secondAttribute="bottom" constant="30" id="RAb-P0-h2R"/>
+                            <constraint firstItem="gzA-AH-pgU" firstAttribute="top" secondItem="Hhr-yy-mv3" secondAttribute="bottom" constant="45" id="dYk-Ek-cHl"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="downloads" id="Dha-Q9-FGp"/>
