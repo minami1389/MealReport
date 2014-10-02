@@ -39,6 +39,7 @@
     self.datePicker = [[UIDatePicker alloc] init];
     self.dateView = [[UIView alloc] init];
     [self.dateView addSubview:self.datePicker];
+    [self.datePicker addTarget:self action:@selector(pickerDidChange:) forControlEvents:UIControlEventValueChanged];
 }
 
 
@@ -132,7 +133,7 @@
         
         //DatePickerの見えている時のRectを指定
         CGFloat buttonHeight = 40;
-        CGRect pickerRect = CGRectMake(0.0, self.screenRect.origin.y + self.containerView.frame.origin.y + self.underLine.frame.origin.y + buttonHeight / 2, pickerSize.width, self.screenRect.size.height);
+        CGRect pickerRect = CGRectMake(0.0, self.screenRect.origin.y + self.containerView.frame.origin.y + self.underLine.frame.origin.y + buttonHeight / 4, pickerSize.width, self.screenRect.size.height);
         
         //アニメーション処理
         [UIView animateWithDuration:0.5f
@@ -153,6 +154,7 @@
 - (void)pickerDidChange:(UIDatePicker *)datePicker
 {
     NSString *date = [[self dateFormatter] stringFromDate:datePicker.date];
+    self.dateLabel.text = date;
     self.selectedDateString = date;
 }
 
