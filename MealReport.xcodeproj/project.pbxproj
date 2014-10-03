@@ -15,7 +15,6 @@
 		E9756C0519C5EEEE007791FB /* MMInfoFromCalenderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9756C0419C5EEEE007791FB /* MMInfoFromCalenderViewController.m */; };
 		E9756C0819C5EF04007791FB /* MMListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9756C0719C5EF04007791FB /* MMListViewController.m */; };
 		E9756C0B19C5EF1B007791FB /* MMInfoFromListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9756C0A19C5EF1B007791FB /* MMInfoFromListViewController.m */; };
-		E979164219DD50840065A322 /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E979164119DD50840065A322 /* Launch Screen.xib */; };
 		E9DD495619C5E6BC008E8739 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9DD495519C5E6BC008E8739 /* Foundation.framework */; };
 		E9DD495819C5E6BC008E8739 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9DD495719C5E6BC008E8739 /* CoreGraphics.framework */; };
 		E9DD495A19C5E6BC008E8739 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9DD495919C5E6BC008E8739 /* UIKit.framework */; };
@@ -29,11 +28,14 @@
 		E9DD497719C5E6BD008E8739 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9DD495919C5E6BC008E8739 /* UIKit.framework */; };
 		E9DD497F19C5E6BD008E8739 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E9DD497D19C5E6BD008E8739 /* InfoPlist.strings */; };
 		E9DD498119C5E6BD008E8739 /* MealReportTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E9DD498019C5E6BD008E8739 /* MealReportTests.m */; };
-		E9DDDC3719C7023600F1F160 /* pickerFrame.png in Resources */ = {isa = PBXBuildFile; fileRef = E9DDDC3619C7023600F1F160 /* pickerFrame.png */; };
-		E9DDDC3919C70B0400F1F160 /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = E9DDDC3819C70B0400F1F160 /* arrow.png */; };
-		E9DDDC3D19C7118200F1F160 /* buttonFrameBlue.png in Resources */ = {isa = PBXBuildFile; fileRef = E9DDDC3A19C7118200F1F160 /* buttonFrameBlue.png */; };
-		E9DDDC3E19C7118200F1F160 /* buttonFrameRed.png in Resources */ = {isa = PBXBuildFile; fileRef = E9DDDC3B19C7118200F1F160 /* buttonFrameRed.png */; };
-		E9DDDC3F19C7118200F1F160 /* buttonFrameYellow.png in Resources */ = {isa = PBXBuildFile; fileRef = E9DDDC3C19C7118200F1F160 /* buttonFrameYellow.png */; };
+		E9E981C619DF1F4900AD254B /* buttonFrameBlue.png in Resources */ = {isa = PBXBuildFile; fileRef = E9E981BF19DF1F4900AD254B /* buttonFrameBlue.png */; };
+		E9E981C719DF1F4900AD254B /* buttonFrameRed.png in Resources */ = {isa = PBXBuildFile; fileRef = E9E981C019DF1F4900AD254B /* buttonFrameRed.png */; };
+		E9E981C819DF1F4900AD254B /* buttonFrameYellow.png in Resources */ = {isa = PBXBuildFile; fileRef = E9E981C119DF1F4900AD254B /* buttonFrameYellow.png */; };
+		E9E981C919DF1F4900AD254B /* iconBlack.png in Resources */ = {isa = PBXBuildFile; fileRef = E9E981C219DF1F4900AD254B /* iconBlack.png */; };
+		E9E981CA19DF1F4900AD254B /* iconBlue.png in Resources */ = {isa = PBXBuildFile; fileRef = E9E981C319DF1F4900AD254B /* iconBlue.png */; };
+		E9E981CB19DF1F4900AD254B /* iconRed.png in Resources */ = {isa = PBXBuildFile; fileRef = E9E981C419DF1F4900AD254B /* iconRed.png */; };
+		E9E981CC19DF1F4900AD254B /* iconYellow.png in Resources */ = {isa = PBXBuildFile; fileRef = E9E981C519DF1F4900AD254B /* iconYellow.png */; };
+		E9E981CE19DF1F5800AD254B /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9E981CD19DF1F5800AD254B /* Launch Screen.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,7 +63,6 @@
 		E9756C0719C5EF04007791FB /* MMListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMListViewController.m; sourceTree = "<group>"; };
 		E9756C0919C5EF1B007791FB /* MMInfoFromListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMInfoFromListViewController.h; sourceTree = "<group>"; };
 		E9756C0A19C5EF1B007791FB /* MMInfoFromListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMInfoFromListViewController.m; sourceTree = "<group>"; };
-		E979164119DD50840065A322 /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Launch Screen.xib"; sourceTree = "<group>"; };
 		E9DD495219C5E6BC008E8739 /* MealReport.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MealReport.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9DD495519C5E6BC008E8739 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E9DD495719C5E6BC008E8739 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -79,11 +80,14 @@
 		E9DD497C19C5E6BD008E8739 /* MealReportTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MealReportTests-Info.plist"; sourceTree = "<group>"; };
 		E9DD497E19C5E6BD008E8739 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E9DD498019C5E6BD008E8739 /* MealReportTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MealReportTests.m; sourceTree = "<group>"; };
-		E9DDDC3619C7023600F1F160 /* pickerFrame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pickerFrame.png; sourceTree = "<group>"; };
-		E9DDDC3819C70B0400F1F160 /* arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow.png; sourceTree = "<group>"; };
-		E9DDDC3A19C7118200F1F160 /* buttonFrameBlue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buttonFrameBlue.png; sourceTree = "<group>"; };
-		E9DDDC3B19C7118200F1F160 /* buttonFrameRed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buttonFrameRed.png; sourceTree = "<group>"; };
-		E9DDDC3C19C7118200F1F160 /* buttonFrameYellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buttonFrameYellow.png; sourceTree = "<group>"; };
+		E9E981BF19DF1F4900AD254B /* buttonFrameBlue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = buttonFrameBlue.png; path = image/buttonFrameBlue.png; sourceTree = "<group>"; };
+		E9E981C019DF1F4900AD254B /* buttonFrameRed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = buttonFrameRed.png; path = image/buttonFrameRed.png; sourceTree = "<group>"; };
+		E9E981C119DF1F4900AD254B /* buttonFrameYellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = buttonFrameYellow.png; path = image/buttonFrameYellow.png; sourceTree = "<group>"; };
+		E9E981C219DF1F4900AD254B /* iconBlack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iconBlack.png; path = image/iconBlack.png; sourceTree = "<group>"; };
+		E9E981C319DF1F4900AD254B /* iconBlue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iconBlue.png; path = image/iconBlue.png; sourceTree = "<group>"; };
+		E9E981C419DF1F4900AD254B /* iconRed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iconRed.png; path = image/iconRed.png; sourceTree = "<group>"; };
+		E9E981C519DF1F4900AD254B /* iconYellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iconYellow.png; path = image/iconYellow.png; sourceTree = "<group>"; };
+		E9E981CD19DF1F5800AD254B /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = "Launch Screen.xib"; path = "image/Launch Screen.xib"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -222,13 +226,15 @@
 		E9DDDC3319C601CA00F1F160 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				E9E981BF19DF1F4900AD254B /* buttonFrameBlue.png */,
+				E9E981C019DF1F4900AD254B /* buttonFrameRed.png */,
+				E9E981C119DF1F4900AD254B /* buttonFrameYellow.png */,
+				E9E981C219DF1F4900AD254B /* iconBlack.png */,
+				E9E981C319DF1F4900AD254B /* iconBlue.png */,
+				E9E981C419DF1F4900AD254B /* iconRed.png */,
+				E9E981C519DF1F4900AD254B /* iconYellow.png */,
 				E9130B3819DDA40C0004CBC1 /* background.png */,
-				E9DDDC3819C70B0400F1F160 /* arrow.png */,
-				E9DDDC3619C7023600F1F160 /* pickerFrame.png */,
-				E9DDDC3A19C7118200F1F160 /* buttonFrameBlue.png */,
-				E9DDDC3B19C7118200F1F160 /* buttonFrameRed.png */,
-				E9DDDC3C19C7118200F1F160 /* buttonFrameYellow.png */,
-				E979164119DD50840065A322 /* Launch Screen.xib */,
+				E9E981CD19DF1F5800AD254B /* Launch Screen.xib */,
 			);
 			name = Resource;
 			sourceTree = "<group>";
@@ -313,17 +319,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9E981C719DF1F4900AD254B /* buttonFrameRed.png in Resources */,
 				E9DD496E19C5E6BC008E8739 /* Images.xcassets in Resources */,
-				E9DDDC3719C7023600F1F160 /* pickerFrame.png in Resources */,
 				E9DD496019C5E6BC008E8739 /* InfoPlist.strings in Resources */,
+				E9E981C819DF1F4900AD254B /* buttonFrameYellow.png in Resources */,
+				E9E981CA19DF1F4900AD254B /* iconBlue.png in Resources */,
 				E9756BF919C5E7F6007791FB /* README.md in Resources */,
+				E9E981C919DF1F4900AD254B /* iconBlack.png in Resources */,
+				E9E981CB19DF1F4900AD254B /* iconRed.png in Resources */,
 				E9DD496919C5E6BC008E8739 /* Main.storyboard in Resources */,
-				E9DDDC3F19C7118200F1F160 /* buttonFrameYellow.png in Resources */,
-				E9DDDC3D19C7118200F1F160 /* buttonFrameBlue.png in Resources */,
-				E9DDDC3E19C7118200F1F160 /* buttonFrameRed.png in Resources */,
-				E9DDDC3919C70B0400F1F160 /* arrow.png in Resources */,
+				E9E981CE19DF1F5800AD254B /* Launch Screen.xib in Resources */,
 				E9130B3919DDA40C0004CBC1 /* background.png in Resources */,
-				E979164219DD50840065A322 /* Launch Screen.xib in Resources */,
+				E9E981CC19DF1F4900AD254B /* iconYellow.png in Resources */,
+				E9E981C619DF1F4900AD254B /* buttonFrameBlue.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

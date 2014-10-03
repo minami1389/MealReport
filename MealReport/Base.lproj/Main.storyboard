@@ -250,9 +250,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BJS-Cb-LxE" userLabel="View - container">
                                 <rect key="frame" x="0.0" y="110" width="320" height="348"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sos-dc-Guf">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconRed.png" translatesAutoresizingMaskIntoConstraints="NO" id="sos-dc-Guf">
                                         <rect key="frame" x="40" y="0.0" width="240" height="130"/>
-                                        <color key="backgroundColor" red="0.99521940949999999" green="0.77837973829999996" blue="0.57039886709999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="240" id="5OZ-BH-H15"/>
                                             <constraint firstAttribute="height" constant="130" id="9W5-HE-T9R"/>
@@ -584,9 +583,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="buttonFrameBlue.png" width="230" height="32"/>
-        <image name="buttonFrameRed.png" width="230" height="32"/>
-        <image name="buttonFrameYellow.png" width="230" height="32"/>
+        <image name="buttonFrameBlue.png" width="200" height="45"/>
+        <image name="buttonFrameRed.png" width="200" height="45"/>
+        <image name="buttonFrameYellow.png" width="200" height="45"/>
+        <image name="iconRed.png" width="242" height="132"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
