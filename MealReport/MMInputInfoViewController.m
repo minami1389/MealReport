@@ -52,6 +52,9 @@
     returnButton.titleLabel.font = [UIFont systemFontOfSize:30];
     [returnButton addTarget:self action:@selector(closeDatePicker) forControlEvents:UIControlEventTouchDown];
     [self.dateView addSubview:returnButton];
+    
+    //navigation bar title
+    //self.navigationItem.title = @"記録";
 }
 
 

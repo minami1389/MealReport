@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E9130B3919DDA40C0004CBC1 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = E9130B3819DDA40C0004CBC1 /* background.png */; };
 		E9756BF919C5E7F6007791FB /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E9756BF819C5E7F6007791FB /* README.md */; };
 		E9756BFC19C5EE49007791FB /* MMInputInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9756BFB19C5EE49007791FB /* MMInputInfoViewController.m */; };
 		E9756BFF19C5EE83007791FB /* MMInputDetailInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9756BFE19C5EE83007791FB /* MMInputDetailInfoViewController.m */; };
@@ -46,6 +47,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E9130B3819DDA40C0004CBC1 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background.png; path = MealReport/background.png; sourceTree = "<group>"; };
 		E9756BF819C5E7F6007791FB /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		E9756BFA19C5EE49007791FB /* MMInputInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMInputInfoViewController.h; sourceTree = "<group>"; };
 		E9756BFB19C5EE49007791FB /* MMInputInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMInputInfoViewController.m; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 		E9DDDC3319C601CA00F1F160 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				E9130B3819DDA40C0004CBC1 /* background.png */,
 				E9DDDC3819C70B0400F1F160 /* arrow.png */,
 				E9DDDC3619C7023600F1F160 /* pickerFrame.png */,
 				E9DDDC3A19C7118200F1F160 /* buttonFrameBlue.png */,
@@ -319,6 +322,7 @@
 				E9DDDC3D19C7118200F1F160 /* buttonFrameBlue.png in Resources */,
 				E9DDDC3E19C7118200F1F160 /* buttonFrameRed.png in Resources */,
 				E9DDDC3919C70B0400F1F160 /* arrow.png in Resources */,
+				E9130B3919DDA40C0004CBC1 /* background.png in Resources */,
 				E979164219DD50840065A322 /* Launch Screen.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
