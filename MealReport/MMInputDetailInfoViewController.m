@@ -32,7 +32,7 @@
     self.imageView.layer.borderWidth = 1.5;
     self.imageView.layer.borderColor = [[UIColor lightGrayColor] CGColor];
     self.imageView.clipsToBounds = YES;
-    
+
 }
 
 - (void)didReceiveMemoryWarning

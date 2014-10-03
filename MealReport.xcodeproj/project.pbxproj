@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		30E4D0FEDDF5C47B4EA044B9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DCBEE6DA0655A2958DBBAAD /* libPods.a */; };
 		E9130B3919DDA40C0004CBC1 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = E9130B3819DDA40C0004CBC1 /* background.png */; };
 		E9756BF919C5E7F6007791FB /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E9756BF819C5E7F6007791FB /* README.md */; };
 		E9756BFC19C5EE49007791FB /* MMInputInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9756BFB19C5EE49007791FB /* MMInputInfoViewController.m */; };
@@ -15,6 +16,7 @@
 		E9756C0519C5EEEE007791FB /* MMInfoFromCalenderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9756C0419C5EEEE007791FB /* MMInfoFromCalenderViewController.m */; };
 		E9756C0819C5EF04007791FB /* MMListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9756C0719C5EF04007791FB /* MMListViewController.m */; };
 		E9756C0B19C5EF1B007791FB /* MMInfoFromListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9756C0A19C5EF1B007791FB /* MMInfoFromListViewController.m */; };
+		E977382D19DF2B8500FA5805 /* Record.m in Sources */ = {isa = PBXBuildFile; fileRef = E977382C19DF2B8500FA5805 /* Record.m */; };
 		E9DD495619C5E6BC008E8739 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9DD495519C5E6BC008E8739 /* Foundation.framework */; };
 		E9DD495819C5E6BC008E8739 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9DD495719C5E6BC008E8739 /* CoreGraphics.framework */; };
 		E9DD495A19C5E6BC008E8739 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9DD495919C5E6BC008E8739 /* UIKit.framework */; };
@@ -36,6 +38,7 @@
 		E9E981CB19DF1F4900AD254B /* iconRed.png in Resources */ = {isa = PBXBuildFile; fileRef = E9E981C419DF1F4900AD254B /* iconRed.png */; };
 		E9E981CC19DF1F4900AD254B /* iconYellow.png in Resources */ = {isa = PBXBuildFile; fileRef = E9E981C519DF1F4900AD254B /* iconYellow.png */; };
 		E9E981CE19DF1F5800AD254B /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9E981CD19DF1F5800AD254B /* Launch Screen.xib */; };
+		E9E981D219DF214000AD254B /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E9E981D019DF214000AD254B /* Model.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6DCBEE6DA0655A2958DBBAAD /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D21C2FF0273E808B0F87E5C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		B79E2607FA705862839FDE04 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		E9130B3819DDA40C0004CBC1 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background.png; path = MealReport/background.png; sourceTree = "<group>"; };
 		E9756BF819C5E7F6007791FB /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		E9756BFA19C5EE49007791FB /* MMInputInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMInputInfoViewController.h; sourceTree = "<group>"; };
@@ -63,6 +69,10 @@
 		E9756C0719C5EF04007791FB /* MMListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMListViewController.m; sourceTree = "<group>"; };
 		E9756C0919C5EF1B007791FB /* MMInfoFromListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMInfoFromListViewController.h; sourceTree = "<group>"; };
 		E9756C0A19C5EF1B007791FB /* MMInfoFromListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMInfoFromListViewController.m; sourceTree = "<group>"; };
+		E977382119DF256400FA5805 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		E977382619DF26E800FA5805 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		E977382B19DF2B8500FA5805 /* Record.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Record.h; sourceTree = "<group>"; };
+		E977382C19DF2B8500FA5805 /* Record.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Record.m; sourceTree = "<group>"; };
 		E9DD495219C5E6BC008E8739 /* MealReport.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MealReport.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9DD495519C5E6BC008E8739 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E9DD495719C5E6BC008E8739 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -88,6 +98,7 @@
 		E9E981C419DF1F4900AD254B /* iconRed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iconRed.png; path = image/iconRed.png; sourceTree = "<group>"; };
 		E9E981C519DF1F4900AD254B /* iconYellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iconYellow.png; path = image/iconYellow.png; sourceTree = "<group>"; };
 		E9E981CD19DF1F5800AD254B /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = "Launch Screen.xib"; path = "image/Launch Screen.xib"; sourceTree = "<group>"; };
+		E9E981D119DF214000AD254B /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +109,7 @@
 				E9DD495819C5E6BC008E8739 /* CoreGraphics.framework in Frameworks */,
 				E9DD495A19C5E6BC008E8739 /* UIKit.framework in Frameworks */,
 				E9DD495619C5E6BC008E8739 /* Foundation.framework in Frameworks */,
+				30E4D0FEDDF5C47B4EA044B9 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,6 +126,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		74A72F7028FC3847B7F07BDA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B79E2607FA705862839FDE04 /* Pods.debug.xcconfig */,
+				8D21C2FF0273E808B0F87E5C /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		E9756C0C19C5EF4A007791FB /* InputTab */ = {
 			isa = PBXGroup;
 			children = (
@@ -156,6 +177,7 @@
 				E9DD497A19C5E6BD008E8739 /* MealReportTests */,
 				E9DD495419C5E6BC008E8739 /* Frameworks */,
 				E9DD495319C5E6BC008E8739 /* Products */,
+				74A72F7028FC3847B7F07BDA /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -171,10 +193,13 @@
 		E9DD495419C5E6BC008E8739 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E977382619DF26E800FA5805 /* CoreLocation.framework */,
+				E977382119DF256400FA5805 /* CoreData.framework */,
 				E9DD495519C5E6BC008E8739 /* Foundation.framework */,
 				E9DD495719C5E6BC008E8739 /* CoreGraphics.framework */,
 				E9DD495919C5E6BC008E8739 /* UIKit.framework */,
 				E9DD497419C5E6BD008E8739 /* XCTest.framework */,
+				6DCBEE6DA0655A2958DBBAAD /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -187,6 +212,7 @@
 				E9756C0C19C5EF4A007791FB /* InputTab */,
 				E9756C0D19C5EF8D007791FB /* CalenderTab */,
 				E9756C0E19C5EF9B007791FB /* ListTab */,
+				E9E981CF19DF20FD00AD254B /* CoreData */,
 				E9DD496719C5E6BC008E8739 /* Main.storyboard */,
 				E9DD496D19C5E6BC008E8739 /* Images.xcassets */,
 				E9DD495C19C5E6BC008E8739 /* Supporting Files */,
@@ -239,6 +265,16 @@
 			name = Resource;
 			sourceTree = "<group>";
 		};
+		E9E981CF19DF20FD00AD254B /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				E9E981D019DF214000AD254B /* Model.xcdatamodeld */,
+				E977382B19DF2B8500FA5805 /* Record.h */,
+				E977382C19DF2B8500FA5805 /* Record.m */,
+			);
+			name = CoreData;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -246,9 +282,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E9DD498419C5E6BD008E8739 /* Build configuration list for PBXNativeTarget "MealReport" */;
 			buildPhases = (
+				456F0801B99190EE42F5DAC6 /* Check Pods Manifest.lock */,
 				E9DD494E19C5E6BC008E8739 /* Sources */,
 				E9DD494F19C5E6BC008E8739 /* Frameworks */,
 				E9DD495019C5E6BC008E8739 /* Resources */,
+				2A38DE22B59989C8C37E6CA0 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -345,16 +383,51 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2A38DE22B59989C8C37E6CA0 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		456F0801B99190EE42F5DAC6 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E9DD494E19C5E6BC008E8739 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E977382D19DF2B8500FA5805 /* Record.m in Sources */,
 				E9756C0819C5EF04007791FB /* MMListViewController.m in Sources */,
 				E9756BFF19C5EE83007791FB /* MMInputDetailInfoViewController.m in Sources */,
 				E9DD496619C5E6BC008E8739 /* MMAppDelegate.m in Sources */,
 				E9756C0519C5EEEE007791FB /* MMInfoFromCalenderViewController.m in Sources */,
 				E9756BFC19C5EE49007791FB /* MMInputInfoViewController.m in Sources */,
+				E9E981D219DF214000AD254B /* Model.xcdatamodeld in Sources */,
 				E9DD496219C5E6BC008E8739 /* main.m in Sources */,
 				E9756C0B19C5EF1B007791FB /* MMInfoFromListViewController.m in Sources */,
 				E9756C0219C5EE9F007791FB /* MMCalenderViewController.m in Sources */,
@@ -483,6 +556,7 @@
 		};
 		E9DD498519C5E6BD008E8739 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B79E2607FA705862839FDE04 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -500,6 +574,7 @@
 		};
 		E9DD498619C5E6BD008E8739 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8D21C2FF0273E808B0F87E5C /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -587,6 +662,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E9E981D019DF214000AD254B /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E9E981D119DF214000AD254B /* Model.xcdatamodel */,
+			);
+			currentVersion = E9E981D119DF214000AD254B /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = E9DD494A19C5E6BC008E8739 /* Project object */;
 }
