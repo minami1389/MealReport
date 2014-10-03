@@ -13,6 +13,10 @@
 {
     CGRect startRect;
     CGRect pickerRect;
+    
+    CGRect screenRect;
+    UIDatePicker *recordDatePicker;
+    UIView *recordDatePickerView;
 }
 
 @end
@@ -34,24 +38,24 @@
     [super viewDidLoad];
     
     //アプリ画面サイズを取得
-    self.screenRect = [[UIScreen mainScreen] bounds];
+    screenRect = [[UIScreen mainScreen] bounds];
     
     //表示される日付を今日に
     self.dateLabel.text = [NSString stringWithFormat:@"%@",[[self dateFormatter] stringFromDate:[NSDate date]]];
     
     //UIDateViewを準備
-    self.dateView = [[UIView alloc] init];
+    recordDatePickerView = [[UIView alloc] init];
     
-    self.datePicker = [[UIDatePicker alloc] init];
-    [self.dateView addSubview:self.datePicker];
-    [self.datePicker addTarget:self action:@selector(pickerDidChange:) forControlEvents:UIControlEventValueChanged];
+    recordDatePicker = [[UIDatePicker alloc] init];
+    [recordDatePickerView addSubview:recordDatePicker];
+    [recordDatePicker addTarget:self action:@selector(pickerDidChange:) forControlEvents:UIControlEventValueChanged];
     
     UIButton *returnButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    returnButton.frame = CGRectMake(50, self.datePicker.frame.size.height, self.screenRect.size.width - 100, 50);
+    returnButton.frame = CGRectMake(50, recordDatePicker.frame.size.height, screenRect.size.width - 100, 50);
     [returnButton setTitle:@"決定" forState:UIControlStateNormal];
     returnButton.titleLabel.font = [UIFont systemFontOfSize:30];
     [returnButton addTarget:self action:@selector(closeDatePicker) forControlEvents:UIControlEventTouchDown];
-    [self.dateView addSubview:returnButton];
+    [recordDatePickerView addSubview:returnButton];
     
     //navigation bar title
     //self.navigationItem.title = @"記録";
@@ -123,30 +127,30 @@
 //DatePickerを出す
 - (void)showUpDatePicker
 {
-    self.dateView.backgroundColor = [UIColor whiteColor];
+    recordDatePickerView.backgroundColor = [UIColor whiteColor];
 
     //DatePickerに日付を指定
-    self.datePicker.date = [[self dateFormatter] dateFromString:self.dateLabel.text];
+    recordDatePicker.date = [[self dateFormatter] dateFromString:self.dateLabel.text];
     
     //DatePickerの設定
-    self.datePicker.datePickerMode = UIDatePickerModeDate;
+    recordDatePicker.datePickerMode = UIDatePickerModeDate;
     
     //viewにaddされているか否かによって条件分岐
-    if (self.dateView.superview == nil || self.dateView.frame.origin.y == startRect.origin.y) {
+    if (recordDatePickerView.superview == nil || recordDatePickerView.frame.origin.y == startRect.origin.y) {
         
         //superviewにadd
-        [self.view.window addSubview:self.dateView];
+        [self.view.window addSubview:recordDatePickerView];
         
         //DatePickerのsizeと隠れている時のRectを指定
-        CGSize pickerSize = [self.datePicker sizeThatFits:CGSizeZero];
-        startRect = CGRectMake(0.0, self.screenRect.origin.y + self.screenRect.size.height, pickerSize.width, pickerSize.height);
+        CGSize pickerSize = [recordDatePicker sizeThatFits:CGSizeZero];
+        startRect = CGRectMake(0.0, screenRect.origin.y + screenRect.size.height, pickerSize.width, pickerSize.height);
         
         //隠しRectに指定
-        self.dateView.frame = startRect;
+        recordDatePickerView.frame = startRect;
         
         //DatePickerの見えている時のRectを指定
         CGFloat buttonHeight = 40;
-        pickerRect = CGRectMake(0.0, self.screenRect.origin.y + self.containerView.frame.origin.y + self.underLine.frame.origin.y + buttonHeight / 4, pickerSize.width, self.screenRect.size.height);
+        pickerRect = CGRectMake(0.0, screenRect.origin.y + self.containerView.frame.origin.y + self.underLine.frame.origin.y + buttonHeight / 4, pickerSize.width, screenRect.size.height);
         
         [self presentDatePicker];
         
@@ -170,7 +174,7 @@
 {
     [UIView animateWithDuration:0.5f
                      animations:^{
-                         self.dateView.frame = pickerRect;
+                         recordDatePickerView.frame = pickerRect;
                      }];
 }
 
@@ -178,7 +182,7 @@
 {
     [UIView animateWithDuration:0.5f
                      animations:^{
-                         self.dateView.frame = startRect;
+                         recordDatePickerView.frame = startRect;
                      }];
 }
 

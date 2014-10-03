@@ -258,6 +258,16 @@
                                             <constraint firstAttribute="height" constant="130" id="9W5-HE-T9R"/>
                                         </constraints>
                                     </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pKh-4m-mhM">
+                                        <rect key="frame" x="40" y="0.0" width="240" height="130"/>
+                                        <state key="normal" title="写真登録はここから">
+                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="imageSelectButton:" destination="r79-HO-f5Z" eventType="touchUpInside" id="gSq-Ku-yfB"/>
+                                        </connections>
+                                    </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="abx-1L-hPF" userLabel="View - subContainer">
                                         <rect key="frame" x="10" y="160" width="300" height="113"/>
                                         <subviews>
@@ -295,6 +305,9 @@
                                                 <state key="normal" title="250円">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="yen200Button:" destination="r79-HO-f5Z" eventType="touchUpInside" id="2J1-T3-ctt"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OXM-fz-rYW">
                                                 <rect key="frame" x="157" y="80" width="46" height="33"/>
@@ -302,6 +315,9 @@
                                                 <state key="normal" title="500円">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="yen500Button:" destination="r79-HO-f5Z" eventType="touchUpInside" id="wvU-qR-JMV"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cTy-gX-68S">
                                                 <rect key="frame" x="215" y="80" width="55" height="33"/>
@@ -309,6 +325,9 @@
                                                 <state key="normal" title="1000円">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="yen1000Button:" destination="r79-HO-f5Z" eventType="touchUpInside" id="MhO-w2-pus"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -366,12 +385,16 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="sos-dc-Guf" firstAttribute="width" secondItem="pKh-4m-mhM" secondAttribute="width" id="3ZB-C7-CFq"/>
                                     <constraint firstAttribute="width" secondItem="BJS-Cb-LxE" secondAttribute="height" multiplier="80:87" id="8w5-aD-rZc"/>
+                                    <constraint firstItem="sos-dc-Guf" firstAttribute="centerY" secondItem="pKh-4m-mhM" secondAttribute="centerY" id="AfZ-QV-lH7"/>
                                     <constraint firstAttribute="bottom" secondItem="Afp-Dz-LtC" secondAttribute="bottom" id="CrH-lH-3ME"/>
                                     <constraint firstAttribute="trailing" secondItem="Afp-Dz-LtC" secondAttribute="trailing" constant="60" id="D0q-vp-dKR"/>
+                                    <constraint firstItem="sos-dc-Guf" firstAttribute="height" secondItem="pKh-4m-mhM" secondAttribute="height" id="FQq-xw-c2w"/>
                                     <constraint firstItem="Afp-Dz-LtC" firstAttribute="leading" secondItem="BJS-Cb-LxE" secondAttribute="leading" constant="60" id="Igd-bT-Axe"/>
                                     <constraint firstItem="Afp-Dz-LtC" firstAttribute="top" relation="greaterThanOrEqual" secondItem="abx-1L-hPF" secondAttribute="bottom" constant="30" id="Vad-yV-cho"/>
                                     <constraint firstItem="abx-1L-hPF" firstAttribute="top" secondItem="sos-dc-Guf" secondAttribute="bottom" constant="30" id="dsN-Np-Oan"/>
+                                    <constraint firstItem="sos-dc-Guf" firstAttribute="centerX" secondItem="pKh-4m-mhM" secondAttribute="centerX" id="g20-OR-wfc"/>
                                     <constraint firstAttribute="centerX" secondItem="sos-dc-Guf" secondAttribute="centerX" id="kFg-0Q-Dyp"/>
                                     <constraint firstAttribute="centerX" secondItem="abx-1L-hPF" secondAttribute="centerX" id="n8K-h1-1zX"/>
                                     <constraint firstItem="sos-dc-Guf" firstAttribute="top" secondItem="BJS-Cb-LxE" secondAttribute="top" id="uuL-7H-cTx"/>
@@ -386,6 +409,13 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="8N1-Ap-p3U"/>
+                    <connections>
+                        <outlet property="costTextField" destination="6DU-un-wgw" id="Mjq-83-NlJ"/>
+                        <outlet property="imageSelectButton" destination="pKh-4m-mhM" id="2he-Gl-QQE"/>
+                        <outlet property="imageView" destination="sos-dc-Guf" id="Ccr-yR-yBs"/>
+                        <outlet property="recordButton" destination="SeT-zh-p0b" id="ly8-VC-cgD"/>
+                        <outlet property="titleTextField" destination="zIE-na-6CV" id="nfo-5h-oDm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GeE-8m-SYr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
