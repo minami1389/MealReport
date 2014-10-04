@@ -251,7 +251,7 @@
                                 <rect key="frame" x="0.0" y="123" width="320" height="323"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="abx-1L-hPF" userLabel="View - subContainer">
-                                        <rect key="frame" x="10" y="0.0" width="300" height="133"/>
+                                        <rect key="frame" x="10" y="0.0" width="300" height="90"/>
                                         <subviews>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="タイトル" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8bv-rQ-pHK">
                                                 <rect key="frame" x="0.0" y="10" width="80" height="24"/>
@@ -281,54 +281,18 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IeB-vc-vB8">
-                                                <rect key="frame" x="90" y="100" width="46" height="33"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                                <state key="normal" title="250円">
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="yen200Button:" destination="r79-HO-f5Z" eventType="touchUpInside" id="2J1-T3-ctt"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OXM-fz-rYW">
-                                                <rect key="frame" x="157" y="100" width="46" height="33"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                                <state key="normal" title="500円">
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="yen500Button:" destination="r79-HO-f5Z" eventType="touchUpInside" id="wvU-qR-JMV"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cTy-gX-68S">
-                                                <rect key="frame" x="215" y="100" width="55" height="33"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                                <state key="normal" title="1000円">
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="yen1000Button:" destination="r79-HO-f5Z" eventType="touchUpInside" id="MhO-w2-pus"/>
-                                                </connections>
-                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="OXM-fz-rYW" firstAttribute="top" secondItem="cTy-gX-68S" secondAttribute="top" id="0EE-5W-abI"/>
                                             <constraint firstItem="6DU-un-wgw" firstAttribute="width" secondItem="zIE-na-6CV" secondAttribute="width" id="0hg-hE-Qdk"/>
                                             <constraint firstItem="zIE-na-6CV" firstAttribute="top" secondItem="abx-1L-hPF" secondAttribute="top" constant="10" id="2bd-Hb-kXH"/>
-                                            <constraint firstItem="OXM-fz-rYW" firstAttribute="top" secondItem="IeB-vc-vB8" secondAttribute="top" id="3uG-n1-6Xr"/>
                                             <constraint firstItem="8bv-rQ-pHK" firstAttribute="top" secondItem="abx-1L-hPF" secondAttribute="top" constant="10" id="6JA-rx-l7s"/>
                                             <constraint firstItem="zIE-na-6CV" firstAttribute="leading" secondItem="8bv-rQ-pHK" secondAttribute="trailing" constant="10" id="7PQ-F6-mgE"/>
-                                            <constraint firstAttribute="bottom" secondItem="IeB-vc-vB8" secondAttribute="bottom" id="KiV-m2-j0u"/>
-                                            <constraint firstItem="6DU-un-wgw" firstAttribute="centerX" secondItem="OXM-fz-rYW" secondAttribute="centerX" id="OcG-kt-4ZZ"/>
+                                            <constraint firstAttribute="bottom" secondItem="6DU-un-wgw" secondAttribute="bottom" id="ErM-Y4-OO9"/>
                                             <constraint firstItem="8gM-yp-tUQ" firstAttribute="centerY" secondItem="1B8-pS-sbc" secondAttribute="centerY" id="PQY-zT-c0I"/>
-                                            <constraint firstItem="IeB-vc-vB8" firstAttribute="top" secondItem="6DU-un-wgw" secondAttribute="bottom" constant="10" id="UCZ-vD-a62"/>
                                             <constraint firstItem="6DU-un-wgw" firstAttribute="leading" secondItem="zIE-na-6CV" secondAttribute="leading" id="Zf2-7V-pHl"/>
                                             <constraint firstItem="8gM-yp-tUQ" firstAttribute="leading" secondItem="abx-1L-hPF" secondAttribute="leading" id="bxl-a6-aoZ"/>
-                                            <constraint firstItem="6DU-un-wgw" firstAttribute="trailing" secondItem="cTy-gX-68S" secondAttribute="trailing" id="exD-cQ-BCc"/>
                                             <constraint firstItem="8bv-rQ-pHK" firstAttribute="leading" secondItem="abx-1L-hPF" secondAttribute="leading" id="fvL-Zs-fi6"/>
-                                            <constraint firstItem="6DU-un-wgw" firstAttribute="leading" secondItem="IeB-vc-vB8" secondAttribute="leading" id="sOL-ra-4di"/>
                                             <constraint firstAttribute="trailing" secondItem="1B8-pS-sbc" secondAttribute="trailing" id="thR-yH-M2D"/>
                                             <constraint firstItem="6DU-un-wgw" firstAttribute="top" secondItem="zIE-na-6CV" secondAttribute="bottom" constant="20" id="unn-6J-piy"/>
                                             <constraint firstItem="8gM-yp-tUQ" firstAttribute="centerY" secondItem="6DU-un-wgw" secondAttribute="centerY" id="vsf-S7-6aL"/>
@@ -336,14 +300,14 @@
                                         </constraints>
                                     </view>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconRed.png" translatesAutoresizingMaskIntoConstraints="NO" id="sos-dc-Guf">
-                                        <rect key="frame" x="35" y="183" width="250" height="140"/>
+                                        <rect key="frame" x="35" y="140" width="250" height="140"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="5OZ-BH-H15"/>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="140" id="9W5-HE-T9R"/>
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pKh-4m-mhM">
-                                        <rect key="frame" x="35" y="183" width="250" height="140"/>
+                                        <rect key="frame" x="35" y="140" width="250" height="140"/>
                                         <state key="normal" title="写真登録はここから">
                                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
