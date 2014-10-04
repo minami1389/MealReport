@@ -57,8 +57,6 @@
     [returnButton addTarget:self action:@selector(closeDatePicker) forControlEvents:UIControlEventTouchDown];
     [recordDatePickerView addSubview:returnButton];
     
-    //navigation bar title
-    //self.navigationItem.title = @"記録";
 }
 
 

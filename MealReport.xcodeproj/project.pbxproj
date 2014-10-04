@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		30E4D0FEDDF5C47B4EA044B9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DCBEE6DA0655A2958DBBAAD /* libPods.a */; };
-		E9130B3919DDA40C0004CBC1 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = E9130B3819DDA40C0004CBC1 /* background.png */; };
 		E9756BF919C5E7F6007791FB /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E9756BF819C5E7F6007791FB /* README.md */; };
 		E9756BFC19C5EE49007791FB /* MMInputInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9756BFB19C5EE49007791FB /* MMInputInfoViewController.m */; };
 		E9756BFF19C5EE83007791FB /* MMInputDetailInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9756BFE19C5EE83007791FB /* MMInputDetailInfoViewController.m */; };
@@ -17,6 +16,7 @@
 		E9756C0819C5EF04007791FB /* MMListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9756C0719C5EF04007791FB /* MMListViewController.m */; };
 		E9756C0B19C5EF1B007791FB /* MMInfoFromListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9756C0A19C5EF1B007791FB /* MMInfoFromListViewController.m */; };
 		E977382D19DF2B8500FA5805 /* Record.m in Sources */ = {isa = PBXBuildFile; fileRef = E977382C19DF2B8500FA5805 /* Record.m */; };
+		E977382F19E0238D00FA5805 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = E977382E19E0238D00FA5805 /* background.png */; };
 		E9DD495619C5E6BC008E8739 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9DD495519C5E6BC008E8739 /* Foundation.framework */; };
 		E9DD495819C5E6BC008E8739 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9DD495719C5E6BC008E8739 /* CoreGraphics.framework */; };
 		E9DD495A19C5E6BC008E8739 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9DD495919C5E6BC008E8739 /* UIKit.framework */; };
@@ -55,7 +55,6 @@
 		6DCBEE6DA0655A2958DBBAAD /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D21C2FF0273E808B0F87E5C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		B79E2607FA705862839FDE04 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		E9130B3819DDA40C0004CBC1 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background.png; path = MealReport/background.png; sourceTree = "<group>"; };
 		E9756BF819C5E7F6007791FB /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		E9756BFA19C5EE49007791FB /* MMInputInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMInputInfoViewController.h; sourceTree = "<group>"; };
 		E9756BFB19C5EE49007791FB /* MMInputInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMInputInfoViewController.m; sourceTree = "<group>"; };
@@ -73,6 +72,7 @@
 		E977382619DF26E800FA5805 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		E977382B19DF2B8500FA5805 /* Record.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Record.h; sourceTree = "<group>"; };
 		E977382C19DF2B8500FA5805 /* Record.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Record.m; sourceTree = "<group>"; };
+		E977382E19E0238D00FA5805 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background.png; path = image/background.png; sourceTree = "<group>"; };
 		E9DD495219C5E6BC008E8739 /* MealReport.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MealReport.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9DD495519C5E6BC008E8739 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E9DD495719C5E6BC008E8739 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -259,7 +259,7 @@
 				E9E981C319DF1F4900AD254B /* iconBlue.png */,
 				E9E981C419DF1F4900AD254B /* iconRed.png */,
 				E9E981C519DF1F4900AD254B /* iconYellow.png */,
-				E9130B3819DDA40C0004CBC1 /* background.png */,
+				E977382E19E0238D00FA5805 /* background.png */,
 				E9E981CD19DF1F5800AD254B /* Launch Screen.xib */,
 			);
 			name = Resource;
@@ -366,8 +366,8 @@
 				E9E981C919DF1F4900AD254B /* iconBlack.png in Resources */,
 				E9E981CB19DF1F4900AD254B /* iconRed.png in Resources */,
 				E9DD496919C5E6BC008E8739 /* Main.storyboard in Resources */,
+				E977382F19E0238D00FA5805 /* background.png in Resources */,
 				E9E981CE19DF1F5800AD254B /* Launch Screen.xib in Resources */,
-				E9130B3919DDA40C0004CBC1 /* background.png in Resources */,
 				E9E981CC19DF1F4900AD254B /* iconYellow.png in Resources */,
 				E9E981C619DF1F4900AD254B /* buttonFrameBlue.png in Resources */,
 			);

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="GLZ-03-Tj4">
     <dependencies>
-        <deployment defaultVersion="1808" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
@@ -18,6 +17,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background.png" translatesAutoresizingMaskIntoConstraints="NO" id="leD-AY-lVR" userLabel="background">
+                                <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gzA-AH-pgU" userLabel="View - container">
                                 <rect key="frame" x="0.0" y="121" width="320" height="327"/>
                                 <subviews>
@@ -201,7 +203,11 @@
                         <constraints>
                             <constraint firstItem="gzA-AH-pgU" firstAttribute="leading" secondItem="y9h-B6-n5H" secondAttribute="leading" id="0qv-ym-P6S"/>
                             <constraint firstAttribute="trailing" secondItem="gzA-AH-pgU" secondAttribute="trailing" id="L7M-Xe-Cqs"/>
+                            <constraint firstAttribute="trailing" secondItem="leD-AY-lVR" secondAttribute="trailing" id="X1D-VB-2UB"/>
+                            <constraint firstItem="leD-AY-lVR" firstAttribute="top" secondItem="Hhr-yy-mv3" secondAttribute="bottom" id="jac-Xb-924"/>
+                            <constraint firstItem="leD-AY-lVR" firstAttribute="leading" secondItem="y9h-B6-n5H" secondAttribute="leading" id="kjV-EH-ZFZ"/>
                             <constraint firstAttribute="centerY" secondItem="gzA-AH-pgU" secondAttribute="centerY" id="oOi-4d-LTA"/>
+                            <constraint firstItem="fOA-Sf-8hM" firstAttribute="top" secondItem="leD-AY-lVR" secondAttribute="bottom" id="pUg-3z-nZr"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="downloads" id="Dha-Q9-FGp"/>
@@ -247,6 +253,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background.png" translatesAutoresizingMaskIntoConstraints="NO" id="kFf-kH-0Ah" userLabel="background">
+                                <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BJS-Cb-LxE" userLabel="View - container">
                                 <rect key="frame" x="0.0" y="123" width="320" height="323"/>
                                 <subviews>
@@ -282,7 +291,6 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="6DU-un-wgw" firstAttribute="width" secondItem="zIE-na-6CV" secondAttribute="width" id="0hg-hE-Qdk"/>
                                             <constraint firstItem="zIE-na-6CV" firstAttribute="top" secondItem="abx-1L-hPF" secondAttribute="top" constant="10" id="2bd-Hb-kXH"/>
@@ -299,8 +307,9 @@
                                             <constraint firstItem="1B8-pS-sbc" firstAttribute="leading" secondItem="6DU-un-wgw" secondAttribute="trailing" constant="10" id="zfY-Sl-kxP"/>
                                         </constraints>
                                     </view>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconRed.png" translatesAutoresizingMaskIntoConstraints="NO" id="sos-dc-Guf">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sos-dc-Guf">
                                         <rect key="frame" x="35" y="140" width="250" height="140"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="5OZ-BH-H15"/>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="140" id="9W5-HE-T9R"/>
@@ -317,7 +326,6 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="sos-dc-Guf" firstAttribute="width" secondItem="pKh-4m-mhM" secondAttribute="width" id="3ZB-C7-CFq"/>
                                     <constraint firstItem="abx-1L-hPF" firstAttribute="top" secondItem="BJS-Cb-LxE" secondAttribute="top" id="6qo-85-0ad"/>
@@ -336,11 +344,19 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="BJS-Cb-LxE" secondAttribute="trailing" id="PL9-4t-I8O"/>
                             <constraint firstAttribute="centerY" secondItem="BJS-Cb-LxE" secondAttribute="centerY" id="W95-5w-HFs"/>
+                            <constraint firstAttribute="trailing" secondItem="kFf-kH-0Ah" secondAttribute="trailing" id="Z7N-5N-zeW"/>
+                            <constraint firstItem="kFf-kH-0Ah" firstAttribute="leading" secondItem="iSD-uY-pdZ" secondAttribute="leading" id="jKf-Ph-Ln5"/>
+                            <constraint firstItem="kFf-kH-0Ah" firstAttribute="top" secondItem="AcA-iM-VJt" secondAttribute="bottom" id="jgI-Fn-Mbe"/>
+                            <constraint firstItem="vrP-oz-YOA" firstAttribute="top" secondItem="kFf-kH-0Ah" secondAttribute="bottom" id="lkW-XR-Gdv"/>
                             <constraint firstItem="BJS-Cb-LxE" firstAttribute="leading" secondItem="iSD-uY-pdZ" secondAttribute="leading" id="sKR-Nh-Dgs"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="6xz-VW-mpa">
-                        <barButtonItem key="rightBarButtonItem" title="保存" id="z2v-j6-FHu"/>
+                        <barButtonItem key="rightBarButtonItem" title="保存" id="z2v-j6-FHu">
+                            <connections>
+                                <action selector="saveButton:" destination="r79-HO-f5Z" id="dUN-UA-uSU"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="costTextField" destination="6DU-un-wgw" id="Mjq-83-NlJ"/>
@@ -516,14 +532,15 @@
         </scene>
     </scenes>
     <resources>
+        <image name="background.png" width="320" height="455"/>
         <image name="buttonFrameBlue.png" width="200" height="45"/>
         <image name="buttonFrameRed.png" width="200" height="45"/>
         <image name="buttonFrameYellow.png" width="200" height="45"/>
-        <image name="iconRed.png" width="242" height="132"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <color key="tintColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
 </document>

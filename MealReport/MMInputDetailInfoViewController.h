@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MMInputDetailInfoViewController : UIViewController<UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+@interface MMInputDetailInfoViewController : UIViewController<UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextFieldDelegate>
 
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
@@ -17,9 +17,12 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *titleTextField;
 @property (weak, nonatomic) IBOutlet UITextField *costTextField;
+- (IBAction)saveButton:(id)sender;
 
 //Databaseで管理するもの
-@property (weak) UIImage *selectedImage;
+@property (nonatomic) UIImage *selectedImage;
+@property (nonatomic) NSString *mealTitle;
+@property (nonatomic) NSInteger mealCost;
 
 
 

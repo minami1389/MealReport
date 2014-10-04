@@ -34,8 +34,16 @@
     self.imageView.clipsToBounds = YES;
     
     //textFieldの設定
-    self.titleTextField.clearButtonMode = UITextFieldViewModeAlways;
-    self.costTextField.clearButtonMode = UITextFieldViewModeAlways;
+    self.titleTextField.clearButtonMode = UITextFieldViewModeWhileEditing;
+    self.titleTextField.placeholder = @"朝食";
+    self.titleTextField.keyboardType = UIKeyboardTypeDefault;
+    self.titleTextField.delegate = self;
+    self.titleTextField.returnKeyType = UIReturnKeyDone;
+    
+    self.costTextField.clearButtonMode = UITextFieldViewModeWhileEditing;
+    self.costTextField.placeholder = @"500";
+    self.costTextField.keyboardType = UIKeyboardTypeNumberPad;
+    self.titleTextField.delegate = self;
     
     
     
@@ -106,17 +114,26 @@
 }
 
 
-- (IBAction)yen200Button:(id)sender {
+#pragma mark - textField
+
+//画面の何もない部分を触ればキーボードが閉じる
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [self.view endEditing:YES];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
 }
 
 
-- (IBAction)yen500Button:(id)sender {
+#pragma mark - save
+- (IBAction)saveButton:(id)sender {
     
+    self.mealTitle = self.titleTextField.text;
+    NSString *string = self.costTextField.text;
+    self.mealCost = string.integerValue;
 }
-
-- (IBAction)yen1000Button:(id)sender {
-}
-
-
-
 @end
