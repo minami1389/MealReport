@@ -20,6 +20,8 @@
 @property (weak, nonatomic) IBOutlet UIView *underLine;
 
 @property (nonatomic) NSInteger selectedButtonIndex;
+
+//Databaseで管理するもの
 @property (nonatomic) NSString *selectedDateString;
 
 

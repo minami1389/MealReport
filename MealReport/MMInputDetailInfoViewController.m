@@ -32,6 +32,13 @@
     self.imageView.layer.borderWidth = 1.5;
     self.imageView.layer.borderColor = [[UIColor lightGrayColor] CGColor];
     self.imageView.clipsToBounds = YES;
+    
+    //textFieldの設定
+    self.titleTextField.clearButtonMode = UITextFieldViewModeAlways;
+    self.costTextField.clearButtonMode = UITextFieldViewModeAlways;
+    
+    
+    
 
 }
 
@@ -42,7 +49,10 @@
 }
 
 
+
 #pragma mark - photo
+
+//写真部分をタップした時に呼ばれる
 - (IBAction)imageSelectButton:(id)sender
 {
     [self showPhotoLibrary];
@@ -51,8 +61,25 @@
 - (void)showPhotoLibrary
 {
     //photoLibaryが使えるかどうかの判断
-    //TODO:alert実装
     if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]) {
+        
+        //アラート表示
+        Class class = NSClassFromString(@"UIAlertController");
+        if (class) {
+            
+            //iOS8時の処理
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"フォトアルバム" message:@"使うことが出来ません" preferredStyle:UIAlertControllerStyleAlert];
+            [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
+            [self presentViewController:alert animated:YES completion:nil];
+            
+        } else {
+            
+            //iOS7時の処理
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"フォトアルバム" message:@"使うことが出来ません" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+            [alert show];
+        
+        }
+        
         return;
     }
     
@@ -61,6 +88,7 @@
     photoLibrary.delegate = self;
     [photoLibrary setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
     [self presentViewController:photoLibrary animated:YES completion:nil];
+    
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info

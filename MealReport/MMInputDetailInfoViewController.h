@@ -24,6 +24,7 @@
 
 @property (weak, nonatomic) IBOutlet UIView *recordButton;
 
+//Databaseで管理するもの
 @property (weak) UIImage *selectedImage;
 
 

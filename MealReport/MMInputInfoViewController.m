@@ -72,7 +72,6 @@
 //朝食ボタンをタップ
 - (IBAction)breakfastButtonPressed:(id)sender
 {
-    
     //押したボタンのindex取得
     self.selectedButtonIndex = 0;
     
