@@ -29,7 +29,7 @@
 @property (nonatomic, retain) NSData * image;
 @property (nonatomic, retain) NSString * mealTitle;
 @property (nonatomic, retain) NSNumber * mealCost;
-@property (nonatomic, retain) NSNumber * idNumber;
+@property (nonatomic, retain) NSString * idNumber;
 
 
 

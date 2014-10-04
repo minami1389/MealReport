@@ -162,29 +162,63 @@
     }
     
     self.image = [[NSData alloc] initWithData:UIImagePNGRepresentation(self.imageView.image)];
+    self.idNumber = [NSString stringWithFormat:@"%@%@",self.time,self.day];
     
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSInteger number = [defaults integerForKey:@"id"];
-    self.idNumber = @(number);
-    number++;
-    [defaults setInteger:number forKey:@"id"];
-    [defaults synchronize];
-
+    [self saveData];
+    
+    //アラート表示
+    Class class = NSClassFromString(@"UIAlertController");
+    if (class) {
+        
+        //iOS8時の処理
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"保存しますか？" message:nil preferredStyle:UIAlertControllerStyleAlert];
+        [alert addAction:[UIAlertAction actionWithTitle:@"いいえ" style:UIAlertActionStyleDefault handler:nil]];
+        [alert addAction:[UIAlertAction actionWithTitle:@"はい" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
+            
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"保存が完了しました" message:nil preferredStyle:UIAlertControllerStyleAlert];
+            [alert addAction:[UIAlertAction actionWithTitle:@"はい" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
+                [self.navigationController popViewControllerAnimated:YES];
+            }]];
+            [self presentViewController:alert animated:YES completion:nil];
+        }]];
+        [self presentViewController:alert animated:YES completion:nil];
+        
+    } else {
+        
+        //iOS7時の処理
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"保存が完了しました" message:nil delegate:nil cancelButtonTitle:nil otherButtonTitles:@"はい", nil];
+        [alert show];
+        
+    }
 }
 
 //データを保存
-/*
 - (void)saveData
 {
-    
     Record *record = [Record MR_createEntity];
-    record.day = self.selectedDateString;
-    record.time = self.selectedTime;
+    record.day = self.day;
+    record.time = self.time;
+    record.image = self.image;
+    record.title = self.mealTitle;
+    record.cost = self.mealCost;
+    record.primaryId= self.idNumber;
+    
     [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
     
+    [self checkData];
+}
+
+- (void)checkData
+{
     NSNumber *count = [Record MR_numberOfEntities];
     NSLog(@"count:%@",count);
+    
+    NSLog(@"ID:%@",self.idNumber);
+    
+    NSString *num = self.idNumber;
+    Record *record = [Record MR_findFirstWithPredicate:[NSPredicate predicateWithFormat:@"primaryId = %@",num]];
+    NSLog(@"info:%@,%@,%@,%@,%@,%@",record.day,record.time,record.image,record.title,record.cost,record.primaryId);
 }
-*/
+
 
 @end

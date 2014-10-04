@@ -40,8 +40,8 @@
     screenRect = [[UIScreen mainScreen] bounds];
     
     //表示される日付を今日に
-    self.selectedDateString = [NSString stringWithFormat:@"%@",[[self dateFormatter] stringFromDate:[NSDate date]]];
-    self.dateLabel.text = self.selectedDateString;
+    self.selectedDateString = [NSString stringWithFormat:@"%@",[[self dateFormatterForDB] stringFromDate:[NSDate date]]];
+    self.dateLabel.text = [NSString stringWithFormat:@"%@",[[self dateFormatter] stringFromDate:[NSDate date]]];;
     
     //UIDateViewを準備
     recordDatePickerView = [[UIView alloc] init];
@@ -129,6 +129,16 @@
     return dateFormatter;
 }
 
+- (NSDateFormatter *)dateFormatterForDB
+{
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    NSLocale *locale = [[NSLocale alloc] initWithLocaleIdentifier:@"jp_JP"];
+    [dateFormatter setLocale:locale];
+    [dateFormatter setDateFormat:@"yyyyMMdd"];
+    
+    return dateFormatter;
+}
+
 //日付をタップすると呼ばれる
 //DatePickerを出す
 - (void)showUpDatePicker
@@ -173,7 +183,9 @@
 {
     NSString *date = [[self dateFormatter] stringFromDate:datePicker.date];
     self.dateLabel.text = date;
-    self.selectedDateString = date;
+    
+    NSString *dateForDB = [[self dateFormatterForDB] stringFromDate:datePicker.date];
+    self.selectedDateString = dateForDB;
 }
 
 - (void)presentDatePicker

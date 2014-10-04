@@ -17,6 +17,6 @@
 @property (nonatomic, retain) NSData * image;
 @property (nonatomic, retain) NSString * title;
 @property (nonatomic, retain) NSNumber * cost;
-@property (nonatomic, retain) NSNumber * primaryId;
+@property (nonatomic, retain) NSString * primaryId;
 
 @end
