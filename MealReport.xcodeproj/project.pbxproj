@@ -15,8 +15,8 @@
 		E9756C0519C5EEEE007791FB /* MMInfoFromCalenderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9756C0419C5EEEE007791FB /* MMInfoFromCalenderViewController.m */; };
 		E9756C0819C5EF04007791FB /* MMListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9756C0719C5EF04007791FB /* MMListViewController.m */; };
 		E9756C0B19C5EF1B007791FB /* MMInfoFromListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9756C0A19C5EF1B007791FB /* MMInfoFromListViewController.m */; };
-		E977382D19DF2B8500FA5805 /* Record.m in Sources */ = {isa = PBXBuildFile; fileRef = E977382C19DF2B8500FA5805 /* Record.m */; };
 		E977382F19E0238D00FA5805 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = E977382E19E0238D00FA5805 /* background.png */; };
+		E977383B19E068FA00FA5805 /* Record.m in Sources */ = {isa = PBXBuildFile; fileRef = E977383A19E068FA00FA5805 /* Record.m */; };
 		E9DD495619C5E6BC008E8739 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9DD495519C5E6BC008E8739 /* Foundation.framework */; };
 		E9DD495819C5E6BC008E8739 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9DD495719C5E6BC008E8739 /* CoreGraphics.framework */; };
 		E9DD495A19C5E6BC008E8739 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9DD495919C5E6BC008E8739 /* UIKit.framework */; };
@@ -70,9 +70,9 @@
 		E9756C0A19C5EF1B007791FB /* MMInfoFromListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMInfoFromListViewController.m; sourceTree = "<group>"; };
 		E977382119DF256400FA5805 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		E977382619DF26E800FA5805 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		E977382B19DF2B8500FA5805 /* Record.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Record.h; sourceTree = "<group>"; };
-		E977382C19DF2B8500FA5805 /* Record.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Record.m; sourceTree = "<group>"; };
 		E977382E19E0238D00FA5805 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background.png; path = image/background.png; sourceTree = "<group>"; };
+		E977383919E068FA00FA5805 /* Record.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Record.h; sourceTree = "<group>"; };
+		E977383A19E068FA00FA5805 /* Record.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Record.m; sourceTree = "<group>"; };
 		E9DD495219C5E6BC008E8739 /* MealReport.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MealReport.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9DD495519C5E6BC008E8739 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E9DD495719C5E6BC008E8739 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -269,8 +269,8 @@
 			isa = PBXGroup;
 			children = (
 				E9E981D019DF214000AD254B /* Model.xcdatamodeld */,
-				E977382B19DF2B8500FA5805 /* Record.h */,
-				E977382C19DF2B8500FA5805 /* Record.m */,
+				E977383919E068FA00FA5805 /* Record.h */,
+				E977383A19E068FA00FA5805 /* Record.m */,
 			);
 			name = CoreData;
 			sourceTree = "<group>";
@@ -421,7 +421,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E977382D19DF2B8500FA5805 /* Record.m in Sources */,
+				E977383B19E068FA00FA5805 /* Record.m in Sources */,
 				E9756C0819C5EF04007791FB /* MMListViewController.m in Sources */,
 				E9756BFF19C5EE83007791FB /* MMInputDetailInfoViewController.m in Sources */,
 				E9DD496619C5E6BC008E8739 /* MMAppDelegate.m in Sources */,

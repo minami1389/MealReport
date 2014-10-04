@@ -2,7 +2,7 @@
 //  Record.h
 //  MealReport
 //
-//  Created by minami on 2014/10/04.
+//  Created by minami on 2014/10/05.
 //  Copyright (c) 2014年 Minami Baba. All rights reserved.
 //
 
@@ -17,5 +17,6 @@
 @property (nonatomic, retain) NSData * image;
 @property (nonatomic, retain) NSString * title;
 @property (nonatomic, retain) NSNumber * cost;
+@property (nonatomic, retain) NSNumber * primaryId;
 
 @end

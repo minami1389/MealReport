@@ -7,6 +7,7 @@
 //
 
 #import "MMInputDetailInfoViewController.h"
+#import "Record.h"
 
 @interface MMInputDetailInfoViewController ()
 
@@ -26,11 +27,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     
     //imageViewの設定
     self.imageView.layer.borderWidth = 1.5;
     self.imageView.layer.borderColor = [[UIColor lightGrayColor] CGColor];
+    self.imageView.layer.cornerRadius = 10.0f;
     self.imageView.clipsToBounds = YES;
     
     //textFieldの設定
@@ -45,8 +46,26 @@
     self.costTextField.keyboardType = UIKeyboardTypeNumberPad;
     self.titleTextField.delegate = self;
     
-    
-    
+    //デフォルト値設定
+    switch (self.selectedButtonIndex) {
+        case 0:
+            self.mealTitle = @"朝食";
+            self.mealCost = @(500);
+            break;
+        
+        case 1:
+            self.mealTitle = @"昼食";
+            self.mealCost = @(500);
+            break;
+        
+        case 2:
+            self.mealTitle = @"夕食";
+            self.mealCost = @(500);
+            break;
+            
+        default:
+            break;
+    }
 
 }
 
@@ -109,8 +128,9 @@
     [self.imageView setImage:image];
     self.selectedImage = image;
     
-    //imageSelectButtonメッセージ非表示
+    //imageSelectButtonメッセージ,枠線非表示
     [self.imageSelectButton setTitle:@"" forState:UIControlStateNormal];
+    self.imageView.layer.borderWidth = 0;
 }
 
 
@@ -132,8 +152,39 @@
 #pragma mark - save
 - (IBAction)saveButton:(id)sender {
     
-    self.mealTitle = self.titleTextField.text;
-    NSString *string = self.costTextField.text;
-    self.mealCost = string.integerValue;
+    if (![self.titleTextField.text isEqualToString:@""]) {
+        self.mealTitle = self.titleTextField.text;
+    }
+    
+    if (![self.costTextField.text isEqualToString:@""]) {
+        NSString *string = self.costTextField.text;
+        self.mealCost = @(string.integerValue);
+    }
+    
+    self.image = [[NSData alloc] initWithData:UIImagePNGRepresentation(self.imageView.image)];
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSInteger number = [defaults integerForKey:@"id"];
+    self.idNumber = @(number);
+    number++;
+    [defaults setInteger:number forKey:@"id"];
+    [defaults synchronize];
+
 }
+
+//データを保存
+/*
+- (void)saveData
+{
+    
+    Record *record = [Record MR_createEntity];
+    record.day = self.selectedDateString;
+    record.time = self.selectedTime;
+    [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
+    
+    NSNumber *count = [Record MR_numberOfEntities];
+    NSLog(@"count:%@",count);
+}
+*/
+
 @end

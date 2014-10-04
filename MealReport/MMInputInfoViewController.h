@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MMInputDetailInfoViewController.h"
+
 
 @interface MMInputInfoViewController : UIViewController
 
@@ -23,6 +25,7 @@
 
 //Databaseで管理するもの
 @property (nonatomic) NSString *selectedDateString;
+@property (nonatomic) NSNumber *selectedTime;
 
 
 @end

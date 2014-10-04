@@ -19,10 +19,17 @@
 @property (weak, nonatomic) IBOutlet UITextField *costTextField;
 - (IBAction)saveButton:(id)sender;
 
-//Databaseで管理するもの
 @property (nonatomic) UIImage *selectedImage;
-@property (nonatomic) NSString *mealTitle;
-@property (nonatomic) NSInteger mealCost;
+
+@property (nonatomic) NSInteger selectedButtonIndex;
+
+//Databaseで管理するもの
+@property (nonatomic, retain) NSString * day;
+@property (nonatomic, retain) NSNumber * time;
+@property (nonatomic, retain) NSData * image;
+@property (nonatomic, retain) NSString * mealTitle;
+@property (nonatomic, retain) NSNumber * mealCost;
+@property (nonatomic, retain) NSNumber * idNumber;
 
 
 

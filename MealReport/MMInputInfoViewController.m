@@ -7,7 +7,6 @@
 //
 
 #import "MMInputInfoViewController.h"
-#import "MMInputDetailInfoViewController.h"
 
 @interface MMInputInfoViewController ()
 {
@@ -41,7 +40,8 @@
     screenRect = [[UIScreen mainScreen] bounds];
     
     //表示される日付を今日に
-    self.dateLabel.text = [NSString stringWithFormat:@"%@",[[self dateFormatter] stringFromDate:[NSDate date]]];
+    self.selectedDateString = [NSString stringWithFormat:@"%@",[[self dateFormatter] stringFromDate:[NSDate date]]];
+    self.dateLabel.text = self.selectedDateString;
     
     //UIDateViewを準備
     recordDatePickerView = [[UIView alloc] init];
@@ -72,10 +72,10 @@
 {
     //押したボタンのindex取得
     self.selectedButtonIndex = 0;
+    self.selectedTime = @(self.selectedButtonIndex);
     
     //画面遷移
-    MMInputDetailInfoViewController *nextViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"InputDetailInfoView"];
-    [self.navigationController pushViewController:nextViewController animated:YES];
+    [self performSegueWithIdentifier:@"toNextView" sender:self];
 }
 
 //昼食ボタンをタップ
@@ -84,21 +84,30 @@
     
     //押したボタンのindex取得
     self.selectedButtonIndex = 1;
+    self.selectedTime = @(self.selectedButtonIndex);
     
     //画面遷移
-    MMInputDetailInfoViewController *nextViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"InputDetailInfoView"];
-    [self.navigationController pushViewController:nextViewController animated:YES];
+    [self performSegueWithIdentifier:@"toNextView" sender:self];
+
 }
 
 //夕食ボタンをタップ
 - (IBAction)dinnerButtonPressed:(id)sender {
     
     self.selectedButtonIndex = 2;
+    self.selectedTime = @(self.selectedButtonIndex);
     
-    MMInputDetailInfoViewController *nextViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"InputDetailInfoView"];
-    [self.navigationController pushViewController:nextViewController animated:YES];
+    [self performSegueWithIdentifier:@"toNextView" sender:self];
+
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    MMInputDetailInfoViewController *nextView = [segue destinationViewController];
+    nextView.day = self.selectedDateString;
+    nextView.time = self.selectedTime;
+    nextView.selectedButtonIndex = self.selectedButtonIndex;
+}
 
 #pragma mark - datePicker
 //日付をタップ
