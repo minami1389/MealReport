@@ -210,7 +210,6 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="CXh-mm-0bh">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.99376624820000004" green="0.78428071050000003" blue="0.46768706560000001" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="EJj-6W-CCj" kind="relationship" relationship="rootViewController" id="biY-cj-iTa"/>
@@ -521,5 +520,5 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
-    <color key="tintColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+    <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
 </document>
