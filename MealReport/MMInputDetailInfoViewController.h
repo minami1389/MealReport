@@ -20,8 +20,9 @@
 - (IBAction)saveButton:(id)sender;
 
 @property (nonatomic) UIImage *selectedImage;
-
 @property (nonatomic) NSInteger selectedButtonIndex;
+
+@property (nonatomic) NSString *dateNotForDB;
 
 //Databaseで管理するもの
 @property (nonatomic, retain) NSString * day;

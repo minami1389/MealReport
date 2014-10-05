@@ -34,30 +34,18 @@
     self.imageView.layer.cornerRadius = 10.0f;
     self.imageView.clipsToBounds = YES;
     
-    //textFieldの設定
-    self.titleTextField.clearButtonMode = UITextFieldViewModeWhileEditing;
-    self.titleTextField.placeholder = @"朝食";
-    self.titleTextField.keyboardType = UIKeyboardTypeDefault;
-    self.titleTextField.delegate = self;
-    self.titleTextField.returnKeyType = UIReturnKeyDone;
-    
-    self.costTextField.clearButtonMode = UITextFieldViewModeWhileEditing;
-    self.costTextField.placeholder = @"500";
-    self.costTextField.keyboardType = UIKeyboardTypeNumberPad;
-    self.titleTextField.delegate = self;
-    
     //デフォルト値設定
     switch (self.selectedButtonIndex) {
         case 0:
             self.mealTitle = @"朝食";
             self.mealCost = @(500);
             break;
-        
+            
         case 1:
             self.mealTitle = @"昼食";
             self.mealCost = @(500);
             break;
-        
+            
         case 2:
             self.mealTitle = @"夕食";
             self.mealCost = @(500);
@@ -67,6 +55,18 @@
             break;
     }
 
+    //textFieldの設定
+    self.titleTextField.clearButtonMode = UITextFieldViewModeWhileEditing;
+    self.titleTextField.placeholder = self.mealTitle;
+    self.titleTextField.keyboardType = UIKeyboardTypeDefault;
+    self.titleTextField.delegate = self;
+    self.titleTextField.returnKeyType = UIReturnKeyDone;
+    
+    self.costTextField.clearButtonMode = UITextFieldViewModeWhileEditing;
+    self.costTextField.placeholder = @"500";
+    self.costTextField.keyboardType = UIKeyboardTypeNumberPad;
+    self.titleTextField.delegate = self;
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -91,21 +91,11 @@
     if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]) {
         
         //アラート表示
-        Class class = NSClassFromString(@"UIAlertController");
-        if (class) {
-            
-            //iOS8時の処理
-            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"フォトアルバム" message:@"使うことが出来ません" preferredStyle:UIAlertControllerStyleAlert];
-            [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
-            [self presentViewController:alert animated:YES completion:nil];
-            
-        } else {
-            
-            //iOS7時の処理
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"フォトアルバム" message:@"使うことが出来ません" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
-            [alert show];
+        //iOS8時の処理
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"フォトアルバム" message:@"使うことが出来ません" preferredStyle:UIAlertControllerStyleAlert];
+        [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
+        [self presentViewController:alert animated:YES completion:nil];
         
-        }
         
         return;
     }
@@ -164,32 +154,38 @@
     self.image = [[NSData alloc] initWithData:UIImagePNGRepresentation(self.imageView.image)];
     self.idNumber = [NSString stringWithFormat:@"%@%@",self.time,self.day];
     
-    [self saveData];
-    
     //アラート表示
-    Class class = NSClassFromString(@"UIAlertController");
-    if (class) {
+    NSString *num = self.idNumber;
+    Record *record = [Record MR_findFirstWithPredicate:[NSPredicate predicateWithFormat:@"primaryId = %@",num]];
+    if (record) {
         
-        //iOS8時の処理
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"保存しますか？" message:nil preferredStyle:UIAlertControllerStyleAlert];
-        [alert addAction:[UIAlertAction actionWithTitle:@"いいえ" style:UIAlertActionStyleDefault handler:nil]];
-        [alert addAction:[UIAlertAction actionWithTitle:@"はい" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
-            
-            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"保存が完了しました" message:nil preferredStyle:UIAlertControllerStyleAlert];
-            [alert addAction:[UIAlertAction actionWithTitle:@"はい" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
-                [self.navigationController popViewControllerAnimated:YES];
-            }]];
-            [self presentViewController:alert animated:YES completion:nil];
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:[NSString stringWithFormat:@"%@%@",self.dateNotForDB,self.titleTextField.placeholder] message:@"すでに登録されています" preferredStyle:UIAlertControllerStyleAlert];
+        [alert addAction:[UIAlertAction actionWithTitle:@"保存しない" style:UIAlertActionStyleDefault handler:nil]];
+        [alert addAction:[UIAlertAction actionWithTitle:@"上書き保存する" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
+            [self saveFinishedAlert];
         }]];
         [self presentViewController:alert animated:YES completion:nil];
-        
+    
     } else {
-        
-        //iOS7時の処理
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"保存が完了しました" message:nil delegate:nil cancelButtonTitle:nil otherButtonTitles:@"はい", nil];
-        [alert show];
-        
+    
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:[NSString stringWithFormat:@"%@%@",self.dateNotForDB,self.titleTextField.placeholder] message:@"保存しますか？" preferredStyle:UIAlertControllerStyleAlert];
+        [alert addAction:[UIAlertAction actionWithTitle:@"いいえ" style:UIAlertActionStyleDefault handler:nil]];
+        [alert addAction:[UIAlertAction actionWithTitle:@"はい" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
+            [self saveFinishedAlert];
+        }]];
+        [self presentViewController:alert animated:YES completion:nil];
     }
+    
+    [self saveData];
+}
+
+- (void)saveFinishedAlert
+{
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"保存が完了しました" message:nil preferredStyle:UIAlertControllerStyleAlert];
+    [alert addAction:[UIAlertAction actionWithTitle:@"はい" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
+        [self.navigationController popViewControllerAnimated:YES];
+    }]];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 //データを保存

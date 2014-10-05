@@ -57,6 +57,11 @@
     [returnButton addTarget:self action:@selector(closeDatePicker) forControlEvents:UIControlEventTouchDown];
     [recordDatePickerView addSubview:returnButton];
     
+    //dateLabel設定
+    self.dateLabel.layer.borderWidth = 1.0f;
+    self.dateLabel.layer.borderColor = [[UIColor lightGrayColor] CGColor];
+    self.dateLabel.layer.cornerRadius = 10.0f;
+
 }
 
 
@@ -107,6 +112,7 @@
     nextView.day = self.selectedDateString;
     nextView.time = self.selectedTime;
     nextView.selectedButtonIndex = self.selectedButtonIndex;
+    nextView.dateNotForDB = self.dateLabel.text;
 }
 
 #pragma mark - datePicker
@@ -124,7 +130,7 @@
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     NSLocale *locale = [[NSLocale alloc] initWithLocaleIdentifier:@"jp_JP"];
     [dateFormatter setLocale:locale];
-    [dateFormatter setDateFormat:@"yyyy年MM月dd日 の"];
+    [dateFormatter setDateFormat:@"yyyy年MM月dd日"];
     
     return dateFormatter;
 }
@@ -166,7 +172,7 @@
         
         //DatePickerの見えている時のRectを指定
         CGFloat buttonHeight = 40;
-        pickerRect = CGRectMake(0.0, screenRect.origin.y + self.containerView.frame.origin.y + self.underLine.frame.origin.y + buttonHeight / 4, pickerSize.width, screenRect.size.height);
+        pickerRect = CGRectMake(0.0, screenRect.origin.y + self.containerView.frame.origin.y + self.dateLabel.frame.size.height + buttonHeight, pickerSize.width, screenRect.size.height);
         
         [self presentDatePicker];
         

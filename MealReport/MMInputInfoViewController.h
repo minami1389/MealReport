@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "MMInputDetailInfoViewController.h"
 
-
 @interface MMInputInfoViewController : UIViewController
 
 - (IBAction)breakfastButtonPressed:(id)sender;
@@ -19,7 +18,6 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 @property (weak, nonatomic) IBOutlet UIView *containerView;
-@property (weak, nonatomic) IBOutlet UIView *underLine;
 
 @property (nonatomic) NSInteger selectedButtonIndex;
 
