@@ -130,7 +130,7 @@
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     NSLocale *locale = [[NSLocale alloc] initWithLocaleIdentifier:@"jp_JP"];
     [dateFormatter setLocale:locale];
-    [dateFormatter setDateFormat:@"yyyy年MM月dd日"];
+    [dateFormatter setDateFormat:@"yyyy年M月d日"];
     
     return dateFormatter;
 }

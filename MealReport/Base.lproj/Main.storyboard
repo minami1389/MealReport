@@ -164,12 +164,12 @@
                                     <constraint firstItem="CMW-15-xCb" firstAttribute="leading" secondItem="gzA-AH-pgU" secondAttribute="leading" id="5cA-aV-SPi"/>
                                     <constraint firstItem="FgA-CQ-j8Z" firstAttribute="top" secondItem="CMW-15-xCb" secondAttribute="bottom" constant="70" id="6V7-rG-PdS"/>
                                     <constraint firstAttribute="trailing" secondItem="FgA-CQ-j8Z" secondAttribute="trailing" constant="60" id="EGl-S1-LBh"/>
+                                    <constraint firstAttribute="width" secondItem="gzA-AH-pgU" secondAttribute="height" multiplier="64:65" id="L1d-dp-eKc"/>
                                     <constraint firstAttribute="centerX" secondItem="H1u-MH-glI" secondAttribute="centerX" id="Pur-DL-al4"/>
                                     <constraint firstItem="H1u-MH-glI" firstAttribute="height" secondItem="FgA-CQ-j8Z" secondAttribute="height" id="S5s-Lb-vdR"/>
                                     <constraint firstItem="FgA-CQ-j8Z" firstAttribute="leading" secondItem="gzA-AH-pgU" secondAttribute="leading" constant="60" id="VPd-Dc-6Zd"/>
                                     <constraint firstItem="H1u-MH-glI" firstAttribute="width" secondItem="FgA-CQ-j8Z" secondAttribute="width" id="YfY-R1-ajG"/>
                                     <constraint firstAttribute="centerX" secondItem="FgA-CQ-j8Z" secondAttribute="centerX" id="Ym9-Lu-SWb"/>
-                                    <constraint firstAttribute="width" secondItem="gzA-AH-pgU" secondAttribute="height" multiplier="64:65" id="ahq-7M-aiq"/>
                                     <constraint firstItem="H1u-MH-glI" firstAttribute="width" secondItem="59h-pq-rir" secondAttribute="width" id="bMJ-6b-ba7"/>
                                     <constraint firstItem="CMW-15-xCb" firstAttribute="top" secondItem="gzA-AH-pgU" secondAttribute="top" constant="10" id="e3g-L2-wR8"/>
                                     <constraint firstItem="H1u-MH-glI" firstAttribute="top" secondItem="FgA-CQ-j8Z" secondAttribute="bottom" constant="30" id="mR9-nv-Noq"/>
@@ -190,7 +190,7 @@
                             <constraint firstItem="fOA-Sf-8hM" firstAttribute="top" secondItem="leD-AY-lVR" secondAttribute="bottom" id="pUg-3z-nZr"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="downloads" id="Dha-Q9-FGp"/>
+                    <tabBarItem key="tabBarItem" title="" id="Dha-Q9-FGp"/>
                     <navigationItem key="navigationItem" id="RA9-jw-35g"/>
                     <connections>
                         <outlet property="containerView" destination="gzA-AH-pgU" id="JDt-Nd-vFG"/>
@@ -206,7 +206,7 @@
         <scene sceneID="Jyy-e6-lel">
             <objects>
                 <navigationController id="Oe5-yj-m3k" userLabel="inputTab" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="LwJ-R3-Fq3"/>
+                    <tabBarItem key="tabBarItem" title="記録" image="barIcon1.png" id="LwJ-R3-Fq3"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="CXh-mm-0bh">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -441,30 +441,65 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QaX-xA-sUe" userLabel="titleView">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xPl-23-iya" userLabel="View - header">
+                                <rect key="frame" x="0.0" y="64" width="320" height="88"/>
                                 <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="カレンダー" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b77-i8-hCv">
-                                        <rect key="frame" x="0.0" y="24" width="320" height="21"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9月" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TfR-8f-dTZ" userLabel="9月">
+                                        <rect key="frame" x="0.0" y="5" width="320" height="48"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="平均 520円" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AQ0-ie-CBI">
+                                        <rect key="frame" x="211" y="64" width="99" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="合計 15800円" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="erk-Py-coP">
+                                        <rect key="frame" x="10" y="64" width="121" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E89-or-EWg" userLabel="underLine">
+                                        <rect key="frame" x="0.0" y="58" width="320" height="1"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="1ps-lG-hdv"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
-                                <color key="backgroundColor" red="0.99376624820000004" green="0.78428071050000003" blue="0.46768706560000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="4ax-ni-HdP"/>
-                                    <constraint firstItem="b77-i8-hCv" firstAttribute="leading" secondItem="QaX-xA-sUe" secondAttribute="leading" id="6qg-OR-lym"/>
-                                    <constraint firstAttribute="trailing" secondItem="b77-i8-hCv" secondAttribute="trailing" id="7vD-FQ-Gm8"/>
-                                    <constraint firstAttribute="bottom" secondItem="b77-i8-hCv" secondAttribute="bottom" constant="5" id="BUO-Gw-DAN"/>
+                                    <constraint firstAttribute="trailing" secondItem="TfR-8f-dTZ" secondAttribute="trailing" id="6XP-Fe-TdZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="E89-or-EWg" secondAttribute="trailing" id="IIF-9Y-S12"/>
+                                    <constraint firstItem="erk-Py-coP" firstAttribute="leading" secondItem="xPl-23-iya" secondAttribute="leading" constant="10" id="WGi-bA-0Zj"/>
+                                    <constraint firstAttribute="trailing" secondItem="AQ0-ie-CBI" secondAttribute="trailing" constant="10" id="WxY-tF-fUL"/>
+                                    <constraint firstItem="AQ0-ie-CBI" firstAttribute="top" secondItem="E89-or-EWg" secondAttribute="bottom" constant="5" id="YZk-Yr-2zx"/>
+                                    <constraint firstItem="TfR-8f-dTZ" firstAttribute="top" secondItem="xPl-23-iya" secondAttribute="top" constant="5" id="ckV-6W-Dn1"/>
+                                    <constraint firstItem="E89-or-EWg" firstAttribute="top" secondItem="TfR-8f-dTZ" secondAttribute="bottom" constant="5" id="coh-am-ekK"/>
+                                    <constraint firstItem="erk-Py-coP" firstAttribute="top" secondItem="E89-or-EWg" secondAttribute="bottom" constant="5" id="gEe-74-LxW"/>
+                                    <constraint firstItem="TfR-8f-dTZ" firstAttribute="leading" secondItem="xPl-23-iya" secondAttribute="leading" id="h0M-Dp-QlY"/>
+                                    <constraint firstAttribute="bottom" secondItem="AQ0-ie-CBI" secondAttribute="bottom" id="i1L-mW-6hQ"/>
+                                    <constraint firstAttribute="bottom" secondItem="erk-Py-coP" secondAttribute="bottom" id="pXJ-Ju-RKw"/>
+                                    <constraint firstItem="E89-or-EWg" firstAttribute="leading" secondItem="xPl-23-iya" secondAttribute="leading" id="qKa-Aj-Nzd"/>
                                 </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="udH-BQ-On8" userLabel="View - calender">
+                                <rect key="frame" x="0.0" y="182" width="320" height="307"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="QaX-xA-sUe" firstAttribute="leading" secondItem="LpQ-Ux-h0F" secondAttribute="leading" id="JBh-oT-Yee"/>
-                            <constraint firstAttribute="trailing" secondItem="QaX-xA-sUe" secondAttribute="trailing" id="YlW-7R-4Fg"/>
-                            <constraint firstItem="QaX-xA-sUe" firstAttribute="top" secondItem="LpQ-Ux-h0F" secondAttribute="top" id="yrs-MJ-SnT"/>
+                            <constraint firstItem="xPl-23-iya" firstAttribute="leading" secondItem="LpQ-Ux-h0F" secondAttribute="leading" id="4S0-OO-sD5"/>
+                            <constraint firstItem="X4f-fp-ep6" firstAttribute="top" secondItem="udH-BQ-On8" secondAttribute="bottom" constant="30" id="4w0-dr-Yzm"/>
+                            <constraint firstAttribute="trailing" secondItem="xPl-23-iya" secondAttribute="trailing" id="68b-Mm-gnV"/>
+                            <constraint firstItem="udH-BQ-On8" firstAttribute="leading" secondItem="LpQ-Ux-h0F" secondAttribute="leading" id="DIn-Pm-uYO"/>
+                            <constraint firstItem="xPl-23-iya" firstAttribute="top" secondItem="UAS-UK-OXG" secondAttribute="bottom" id="Oaf-Tj-lMm"/>
+                            <constraint firstItem="udH-BQ-On8" firstAttribute="top" secondItem="xPl-23-iya" secondAttribute="bottom" constant="30" id="m8V-kS-YP7"/>
+                            <constraint firstAttribute="trailing" secondItem="udH-BQ-On8" secondAttribute="trailing" id="tph-xs-czR"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="history" id="Eyf-35-rLI"/>
@@ -478,7 +513,7 @@
         <scene sceneID="JqB-mI-01G">
             <objects>
                 <navigationController id="uJ5-e9-tie" userLabel="ListTab" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="zKt-7O-zFy"/>
+                    <tabBarItem key="tabBarItem" title="カレンダー" image="barIcon2.png" id="zKt-7O-zFy"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="41y-QT-4pS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -491,26 +526,11 @@
             </objects>
             <point key="canvasLocation" x="710" y="174"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="quy-7B-0sd">
-            <objects>
-                <viewController id="nxQ-bk-FKi" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="nE8-uT-wSs"/>
-                        <viewControllerLayoutGuide type="bottom" id="A8z-oO-Ogz"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="2Ja-U2-Opc">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="EvU-te-zsY" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-        </scene>
     </scenes>
     <resources>
         <image name="background.png" width="320" height="455"/>
+        <image name="barIcon1.png" width="30" height="30"/>
+        <image name="barIcon2.png" width="30" height="27"/>
         <image name="buttonFrameBlue.png" width="200" height="45"/>
         <image name="buttonFrameRed.png" width="200" height="45"/>
         <image name="buttonFrameYellow.png" width="200" height="45"/>

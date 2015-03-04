@@ -12,10 +12,14 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
-    
+    //MagicalRecord
     [MagicalRecord setupCoreDataStack];
     
+    //Parse
+    [Parse setApplicationId:@"zjXY2eV5SAfMADZpKmZMas66V8nqmzFAQsUWitpd"     clientKey:@"tW69MD8v206MMiPOXyYCHIsD82fzPQfvTJat7rvF"];
+    [PFUser enableAutomaticUser];
+    PFACL *defaultACL = [PFACL ACL];
+    [PFACL setDefaultACL:defaultACL withAccessForCurrentUser:YES];
     
     return YES;
 }
