@@ -11,13 +11,16 @@
 
 @interface MMInputDetailInfoViewController ()
 {
-    UIImage *_selectedImage;
+    UIImage *selectedImage_;
     
     //DBで管理するもの
-    NSData *_image;
-    NSString *_mealTitle;
-    NSNumber *_mealCost;
-    NSString *_idNumber;
+    NSData *image_;
+    NSString *mealTitle_;
+    NSNumber *mealCost_;
+    NSString *comment_;
+    NSString *idNumber_;
+    
+    BOOL saveNewData;
 }
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
@@ -46,43 +49,52 @@
 {
     [super viewDidLoad];
     
-    //imageViewの設定
-    _imageView.layer.borderWidth = 1.5;
-    _imageView.layer.borderColor = [[UIColor lightGrayColor] CGColor];
-    _imageView.layer.cornerRadius = 10.0f;
-    
-    //commentTextFieldの設定
-    _commentTextView.layer.borderWidth = 0.5;
-    _commentTextView.layer.borderColor = [[UIColor lightGrayColor] CGColor];
-    _commentTextView.layer.cornerRadius = 5.0f;
-    
     //デフォルト値設定
+    mealCost_ = @(500);
+    comment_ = @"";
+    image_ = nil;
     switch (_selectedButtonIndex) {
         case 0:
-            _mealTitle = @"朝食";
-            _mealCost = @(500);
+            mealTitle_ = @"朝食";
             break;
             
         case 1:
-            _mealTitle = @"昼食";
-            _mealCost = @(500);
+            mealTitle_ = @"昼食";
             break;
             
         case 2:
-            _mealTitle = @"夕食";
-            _mealCost = @(500);
+            mealTitle_ = @"夕食";
             break;
             
         default:
             break;
     }
-
-    //textFieldの設定
-    _titleTextField.clearButtonMode = UITextFieldViewModeWhileEditing;
-    _titleTextField.placeholder = _mealTitle;
     
+    //タイトルの設定
+    self.navigationItem.title = _dateNotForDB;
+    
+    //titleTextFieldの設定
+    _titleTextField.layer.borderWidth = 0.3;
+    _titleTextField.layer.borderColor = [[UIColor lightGrayColor] CGColor];
+    _titleTextField.layer.cornerRadius = 5.0f;
+    _titleTextField.clearButtonMode = UITextFieldViewModeWhileEditing;
+    _titleTextField.placeholder = mealTitle_;
+    
+    //costTextFieldの設定
+    _costTextField.layer.borderWidth = 0.3;
+    _costTextField.layer.borderColor = [[UIColor lightGrayColor] CGColor];
+    _costTextField.layer.cornerRadius = 5.0f;
     _costTextField.clearButtonMode = UITextFieldViewModeWhileEditing;
     
+    //commentTextFieldの設定
+    _commentTextView.layer.borderWidth = 0.3;
+    _commentTextView.layer.borderColor = [[UIColor lightGrayColor] CGColor];
+    _commentTextView.layer.cornerRadius = 5.0f;
+
+    //imageViewの設定
+    _imageView.layer.borderWidth = 1.5;
+    _imageView.layer.borderColor = [[UIColor lightGrayColor] CGColor];
+    _imageView.layer.cornerRadius = 10.0f;
 }
 
 - (void)didReceiveMemoryWarning
@@ -106,13 +118,8 @@
 {
     //photoLibaryが使えるかどうかの判断
     if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]) {
-        
-        //アラート表示
-        //iOS8時の処理
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"フォトアルバム" message:@"使うことが出来ません" preferredStyle:UIAlertControllerStyleAlert];
-        [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
-        [self presentViewController:alert animated:YES completion:nil];
-        
+        MMAlertView *alert = [[MMAlertView alloc] init];
+        [alert showAlertWithTitle:@"フォトアルバム" message:@"使うことが出来ません" selfVC:self];
         return;
     }
     
@@ -133,7 +140,7 @@
     //photo取得
     UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
     [_imageView setImage:image];
-    _selectedImage = image;
+    selectedImage_ = image;
     
     //imageSelectButtonメッセージ,枠線非表示
     [_imageSelectButton setTitle:@"" forState:UIControlStateNormal];
@@ -164,58 +171,57 @@
     //キーボードを閉じる
     [self.view endEditing:YES];
     
-    //未入力の場合はデフォルト値を代入
-    if (![_titleTextField.text isEqualToString:@""]) {
-        _mealTitle = _titleTextField.text;
+    //未入力(もしくはwhitespace)の場合はデフォルト値を代入
+    if (![[MMString eliminateWhitespace:_titleTextField.text] isEqualToString:@""]) {
+        mealTitle_ = _titleTextField.text;
     }
-    if (![_costTextField.text isEqualToString:@""]) {
-        NSString *string = _costTextField.text;
-        _mealCost = @(string.integerValue);
+    if (![[MMString eliminateWhitespace:_costTextField.text] isEqualToString:@""]) {
+        mealCost_ = @(_costTextField.text.integerValue);
     }
-    
+    if (![[MMString eliminateWhitespace:_commentTextView.text] isEqualToString:@""]) {
+        comment_ = _commentTextView.text;
+    }
     
     //値のセット
-    _image = [[NSData alloc] initWithData:UIImagePNGRepresentation(_imageView.image)];
-    _idNumber = [NSString stringWithFormat:@"%@%@",_time,_day];
+    if (_imageView.image) {
+        image_ = [[NSData alloc] initWithData:UIImagePNGRepresentation(_imageView.image)];
+    }
+    idNumber_ = [NSString stringWithFormat:@"%@%@",_time,_day];
     
     
     //アラート表示
-    NSString *num = _idNumber;
+    NSString *num = idNumber_;
     Record *record = [Record MR_findFirstWithPredicate:[NSPredicate predicateWithFormat:@"primaryId = %@",num]];
     if (record) {
         
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:[NSString stringWithFormat:@"%@%@",_dateNotForDB,_titleTextField.placeholder] message:@"すでに登録されています" preferredStyle:UIAlertControllerStyleAlert];
-        
-        [alert addAction:[UIAlertAction actionWithTitle:@"保存しない" style:UIAlertActionStyleDefault handler:nil]];
-        
-        [alert addAction:[UIAlertAction actionWithTitle:@"上書き保存する" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
-            
-            //上書き保存
-            [self saveDataWithNew:NO];
-            [self saveFinishedAlert];
-            
-        }]];
-        
-        [self presentViewController:alert animated:YES completion:nil];
+        saveNewData = NO;
+        MMAlertView *alert = [[MMAlertView alloc] init];
+        [alert showAlertWithTitle:[NSString stringWithFormat:@"%@%@",_dateNotForDB,_titleTextField.placeholder]
+                          message:@"すでに登録されています"
+                           selfVC:self
+                           cancel:@"保存しない"
+                               ok:@"上書き保存する" action:^(void){
+                                   //上書き保存
+                                   [self saveDataWithNew:saveNewData];
+                                   [self saveFinishedAlert];
+                               }];
     
     } else {
-    
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:[NSString stringWithFormat:@"%@%@",_dateNotForDB,_titleTextField.placeholder] message:@"保存しますか？" preferredStyle:UIAlertControllerStyleAlert];
         
-        [alert addAction:[UIAlertAction actionWithTitle:@"いいえ" style:UIAlertActionStyleDefault handler:nil]];
-        
-        [alert addAction:[UIAlertAction actionWithTitle:@"はい" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
-            
-            //新規保存
-            [self saveDataWithNew:YES];
-            [self saveFinishedAlert];
-            
-        }]];
-        
-        [self presentViewController:alert animated:YES completion:nil];
+        saveNewData = YES;
+        MMAlertView *alert = [[MMAlertView alloc] init];
+        [alert showAlertWithTitle:[NSString stringWithFormat:@"%@%@",_dateNotForDB,_titleTextField.placeholder]
+                          message:@"保存しますか"
+                           selfVC:self
+                           cancel:@"いいえ"
+                               ok:@"はい"
+                           action:^(void){
+                               //新規保存
+                               [self saveDataWithNew:saveNewData];
+                               [self saveFinishedAlert];
+                           }];
     }
 }
-
 
 //データを保存
 - (void)saveDataWithNew:(BOOL)new
@@ -224,17 +230,17 @@
     if (new) {
         record = [Record MR_createEntity];
     } else {
-        NSString *num = _idNumber;
+        NSString *num = idNumber_;
         record = [Record MR_findFirstWithPredicate:[NSPredicate predicateWithFormat:@"primaryId = %@",num]];
     }
     
     record.day = _day;
     record.time = _time;
-    record.image = _image;
-    record.title = _mealTitle;
-    record.cost = _mealCost;
-    record.primaryId= _idNumber;
-
+    record.image = image_;
+    record.title = mealTitle_;
+    record.cost = mealCost_;
+    record.comment = comment_;
+    record.primaryId= idNumber_;
     
     [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
     
@@ -247,21 +253,37 @@
     NSNumber *count = [Record MR_numberOfEntities];
     NSLog(@"count:%@",count);
     
-    NSLog(@"ID:%@",_idNumber);
+    NSLog(@"ID:%@",idNumber_);
     
-    NSString *num = _idNumber;
+    NSString *num = idNumber_;
     Record *record = [Record MR_findFirstWithPredicate:[NSPredicate predicateWithFormat:@"primaryId = %@",num]];
-    NSLog(@"info:%@,%@,%@,%@,%@,%@",record.day,record.time,record.image,record.title,record.cost,record.primaryId);
+    NSLog(@"\ninfo{\n day:%@\n time:%@\n image:%@\n title:%@\n cost:%@\n comment:%@\n id:%@\n}",record.day,record.time,record.image,record.title,record.cost,record.comment,record.primaryId);
 }
 
 //"保存が完了しました"alertを表示
 - (void)saveFinishedAlert
 {
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"保存が完了しました" message:nil preferredStyle:UIAlertControllerStyleAlert];
-    [alert addAction:[UIAlertAction actionWithTitle:@"はい" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
+    MMAlertView *alert = [[MMAlertView alloc] init];
+    [alert showAlertWithTitle:@"保存が完了しました" message:nil selfVC:self cancel:nil ok:@"はい" action:^(void){
         [self.navigationController popViewControllerAnimated:YES];
-    }]];
-    [self presentViewController:alert animated:YES completion:nil];
+    }];
 }
+
+//AlertAction
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    switch (buttonIndex) {
+        case 0:
+            // 保存が完了しました->"はいボタンが押された時の処理
+            [self.navigationController popViewControllerAnimated:YES];
+            break;
+        case 1:
+            // 保存or上書き保存ボタンが押されたときの処理
+            [self saveDataWithNew:saveNewData];
+            [self saveFinishedAlert];
+            break;
+    }
+}
+
 
 @end

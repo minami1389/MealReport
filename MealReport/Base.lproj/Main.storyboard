@@ -250,7 +250,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="180" id="qAk-jf-gdx"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                                 <connections>
                                                     <outlet property="delegate" destination="r79-HO-f5Z" id="xQy-Bg-9gZ"/>
@@ -268,7 +268,7 @@
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="252" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="500" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6DU-un-wgw" userLabel="costTextField">
                                                 <rect key="frame" x="90" y="60" width="180" height="30"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                 <connections>
                                                     <outlet property="delegate" destination="r79-HO-f5Z" id="L87-dR-ocL"/>

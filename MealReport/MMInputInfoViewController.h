@@ -11,19 +11,5 @@
 
 @interface MMInputInfoViewController : UIViewController
 
-- (IBAction)breakfastButtonPressed:(id)sender;
-- (IBAction)lunchButtonPressed:(id)sender;
-- (IBAction)dinnerButtonPressed:(id)sender;
-- (IBAction)dateButton:(id)sender;
-
-@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
-@property (weak, nonatomic) IBOutlet UIView *containerView;
-
-@property (nonatomic) NSInteger selectedButtonIndex;
-
-//Databaseで管理するもの
-@property (nonatomic) NSString *selectedDateString;
-@property (nonatomic) NSNumber *selectedTime;
-
 
 @end

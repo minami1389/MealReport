@@ -10,13 +10,27 @@
 
 @interface MMInputInfoViewController ()
 {
-    CGRect startRect;
-    CGRect pickerRect;
+    CGRect startRect_;
+    CGRect pickerRect_;
     
-    CGRect screenRect;
-    UIDatePicker *recordDatePicker;
-    UIView *recordDatePickerView;
+    CGRect screenRect_;
+    UIDatePicker *recordDatePicker_;
+    UIView *recordDatePickerView_;
+    
+    //DBで管理するもの
+    NSString *selectedDateString_;
+    NSNumber *selectedTime_;
+
+    NSInteger selectedButtonIndex_;
 }
+
+- (IBAction)breakfastButtonPressed:(id)sender;
+- (IBAction)lunchButtonPressed:(id)sender;
+- (IBAction)dinnerButtonPressed:(id)sender;
+- (IBAction)dateButton:(id)sender;
+
+@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
+@property (weak, nonatomic) IBOutlet UIView *containerView;
 
 @end
 
@@ -37,30 +51,30 @@
     [super viewDidLoad];
     
     //アプリ画面サイズを取得
-    screenRect = [[UIScreen mainScreen] bounds];
+    screenRect_ = [[UIScreen mainScreen] bounds];
     
     //表示される日付を今日に
-    self.selectedDateString = [NSString stringWithFormat:@"%@",[[self dateFormatterForDB] stringFromDate:[NSDate date]]];
-    self.dateLabel.text = [NSString stringWithFormat:@"%@",[[self dateFormatter] stringFromDate:[NSDate date]]];;
+    selectedDateString_ = [NSString stringWithFormat:@"%@",[[self dateFormatterForDB] stringFromDate:[NSDate date]]];
+    _dateLabel.text = [NSString stringWithFormat:@"%@",[[self dateFormatter] stringFromDate:[NSDate date]]];;
     
     //UIDateViewを準備
-    recordDatePickerView = [[UIView alloc] init];
+    recordDatePickerView_ = [[UIView alloc] init];
     
-    recordDatePicker = [[UIDatePicker alloc] init];
-    [recordDatePickerView addSubview:recordDatePicker];
-    [recordDatePicker addTarget:self action:@selector(pickerDidChange:) forControlEvents:UIControlEventValueChanged];
+    recordDatePicker_ = [[UIDatePicker alloc] init];
+    [recordDatePickerView_ addSubview:recordDatePicker_];
+    [recordDatePicker_ addTarget:self action:@selector(pickerDidChange:) forControlEvents:UIControlEventValueChanged];
     
     UIButton *returnButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    returnButton.frame = CGRectMake(50, recordDatePicker.frame.size.height, screenRect.size.width - 100, 50);
+    returnButton.frame = CGRectMake(50, recordDatePicker_.frame.size.height, screenRect_.size.width - 100, 50);
     [returnButton setTitle:@"決定" forState:UIControlStateNormal];
     returnButton.titleLabel.font = [UIFont systemFontOfSize:30];
     [returnButton addTarget:self action:@selector(closeDatePicker) forControlEvents:UIControlEventTouchDown];
-    [recordDatePickerView addSubview:returnButton];
+    [recordDatePickerView_ addSubview:returnButton];
     
     //dateLabel設定
-    self.dateLabel.layer.borderWidth = 1.0f;
-    self.dateLabel.layer.borderColor = [[UIColor lightGrayColor] CGColor];
-    self.dateLabel.layer.cornerRadius = 10.0f;
+    _dateLabel.layer.borderWidth = 1.0f;
+    _dateLabel.layer.borderColor = [[UIColor lightGrayColor] CGColor];
+    _dateLabel.layer.cornerRadius = 10.0f;
 
 }
 
@@ -76,8 +90,8 @@
 - (IBAction)breakfastButtonPressed:(id)sender
 {
     //押したボタンのindex取得
-    self.selectedButtonIndex = 0;
-    self.selectedTime = @(self.selectedButtonIndex);
+    selectedButtonIndex_ = 0;
+    selectedTime_ = @(selectedButtonIndex_);
     
     //画面遷移
     [self performSegueWithIdentifier:@"toNextView" sender:self];
@@ -88,8 +102,8 @@
 {
     
     //押したボタンのindex取得
-    self.selectedButtonIndex = 1;
-    self.selectedTime = @(self.selectedButtonIndex);
+    selectedButtonIndex_ = 1;
+    selectedTime_ = @(selectedButtonIndex_);
     
     //画面遷移
     [self performSegueWithIdentifier:@"toNextView" sender:self];
@@ -99,8 +113,8 @@
 //夕食ボタンをタップ
 - (IBAction)dinnerButtonPressed:(id)sender {
     
-    self.selectedButtonIndex = 2;
-    self.selectedTime = @(self.selectedButtonIndex);
+    selectedButtonIndex_ = 2;
+    selectedTime_ = @(selectedButtonIndex_);
     
     [self performSegueWithIdentifier:@"toNextView" sender:self];
 
@@ -109,10 +123,10 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     MMInputDetailInfoViewController *nextView = [segue destinationViewController];
-    nextView.day = self.selectedDateString;
-    nextView.time = self.selectedTime;
-    nextView.selectedButtonIndex = self.selectedButtonIndex;
-    nextView.dateNotForDB = self.dateLabel.text;
+    nextView.day = selectedDateString_;
+    nextView.time = selectedTime_;
+    nextView.selectedButtonIndex = selectedButtonIndex_;
+    nextView.dateNotForDB = _dateLabel.text;
 }
 
 #pragma mark - datePicker
@@ -149,30 +163,30 @@
 //DatePickerを出す
 - (void)showUpDatePicker
 {
-    recordDatePickerView.backgroundColor = [UIColor whiteColor];
+    recordDatePickerView_.backgroundColor = [UIColor whiteColor];
 
     //DatePickerに日付を指定
-    recordDatePicker.date = [[self dateFormatter] dateFromString:self.dateLabel.text];
+    recordDatePicker_.date = [[self dateFormatter] dateFromString:_dateLabel.text];
     
     //DatePickerの設定
-    recordDatePicker.datePickerMode = UIDatePickerModeDate;
+    recordDatePicker_.datePickerMode = UIDatePickerModeDate;
     
     //viewにaddされているか否かによって条件分岐
-    if (recordDatePickerView.superview == nil || recordDatePickerView.frame.origin.y == startRect.origin.y) {
+    if (recordDatePickerView_.superview == nil || recordDatePickerView_.frame.origin.y == startRect_.origin.y) {
         
         //superviewにadd
-        [self.view.window addSubview:recordDatePickerView];
+        [self.view.window addSubview:recordDatePickerView_];
         
         //DatePickerのsizeと隠れている時のRectを指定
-        CGSize pickerSize = [recordDatePicker sizeThatFits:CGSizeZero];
-        startRect = CGRectMake(0.0, screenRect.origin.y + screenRect.size.height, pickerSize.width, pickerSize.height);
+        CGSize pickerSize = [recordDatePicker_ sizeThatFits:CGSizeZero];
+        startRect_ = CGRectMake(0.0, screenRect_.origin.y + screenRect_.size.height, pickerSize.width, pickerSize.height);
         
         //隠しRectに指定
-        recordDatePickerView.frame = startRect;
+        recordDatePickerView_.frame = startRect_;
         
         //DatePickerの見えている時のRectを指定
         CGFloat buttonHeight = 40;
-        pickerRect = CGRectMake(0.0, screenRect.origin.y + self.containerView.frame.origin.y + self.dateLabel.frame.size.height + buttonHeight, pickerSize.width, screenRect.size.height);
+        pickerRect_ = CGRectMake(0.0, screenRect_.origin.y + _containerView.frame.origin.y + _dateLabel.frame.size.height + buttonHeight, pickerSize.width, screenRect_.size.height);
         
         [self presentDatePicker];
         
@@ -188,17 +202,17 @@
 - (void)pickerDidChange:(UIDatePicker *)datePicker
 {
     NSString *date = [[self dateFormatter] stringFromDate:datePicker.date];
-    self.dateLabel.text = date;
+    _dateLabel.text = date;
     
     NSString *dateForDB = [[self dateFormatterForDB] stringFromDate:datePicker.date];
-    self.selectedDateString = dateForDB;
+    selectedDateString_ = dateForDB;
 }
 
 - (void)presentDatePicker
 {
     [UIView animateWithDuration:0.5f
                      animations:^{
-                         recordDatePickerView.frame = pickerRect;
+                         recordDatePickerView_.frame = pickerRect_;
                      }];
 }
 
@@ -206,7 +220,7 @@
 {
     [UIView animateWithDuration:0.5f
                      animations:^{
-                         recordDatePickerView.frame = startRect;
+                         recordDatePickerView_.frame = startRect_;
                      }];
 }
 

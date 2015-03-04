@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MMAlertView.h"
+#import "MMString.h"
 
 @interface MMInputDetailInfoViewController : UIViewController<UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextFieldDelegate>
 
