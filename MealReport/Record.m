@@ -2,8 +2,8 @@
 //  Record.m
 //  MealReport
 //
-//  Created by minami on 2014/10/05.
-//  Copyright (c) 2014年 Minami Baba. All rights reserved.
+//  Created by minami on 3/5/15.
+//  Copyright (c) 2015 Minami Baba. All rights reserved.
 //
 
 #import "Record.h"
@@ -11,11 +11,12 @@
 
 @implementation Record
 
-@dynamic day;
-@dynamic time;
-@dynamic image;
-@dynamic title;
 @dynamic cost;
+@dynamic day;
+@dynamic image;
 @dynamic primaryId;
+@dynamic time;
+@dynamic title;
+@dynamic comment;
 
 @end

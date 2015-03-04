@@ -10,6 +10,24 @@
 #import "Record.h"
 
 @interface MMInputDetailInfoViewController ()
+{
+    UIImage *_selectedImage;
+    
+    //DBで管理するもの
+    NSData *_image;
+    NSString *_mealTitle;
+    NSNumber *_mealCost;
+    NSString *_idNumber;
+}
+
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UIButton *imageSelectButton;
+- (IBAction)imageSelectButton:(id)sender;
+
+@property (weak, nonatomic) IBOutlet UITextField *titleTextField;
+@property (weak, nonatomic) IBOutlet UITextField *costTextField;
+@property (weak, nonatomic) IBOutlet UITextView *commentTextView;
+- (IBAction)saveButton:(id)sender;
 
 @end
 
@@ -29,26 +47,30 @@
     [super viewDidLoad];
     
     //imageViewの設定
-    self.imageView.layer.borderWidth = 1.5;
-    self.imageView.layer.borderColor = [[UIColor lightGrayColor] CGColor];
-    self.imageView.layer.cornerRadius = 10.0f;
-    self.imageView.clipsToBounds = YES;
+    _imageView.layer.borderWidth = 1.5;
+    _imageView.layer.borderColor = [[UIColor lightGrayColor] CGColor];
+    _imageView.layer.cornerRadius = 10.0f;
+    
+    //commentTextFieldの設定
+    _commentTextView.layer.borderWidth = 0.5;
+    _commentTextView.layer.borderColor = [[UIColor lightGrayColor] CGColor];
+    _commentTextView.layer.cornerRadius = 5.0f;
     
     //デフォルト値設定
-    switch (self.selectedButtonIndex) {
+    switch (_selectedButtonIndex) {
         case 0:
-            self.mealTitle = @"朝食";
-            self.mealCost = @(500);
+            _mealTitle = @"朝食";
+            _mealCost = @(500);
             break;
             
         case 1:
-            self.mealTitle = @"昼食";
-            self.mealCost = @(500);
+            _mealTitle = @"昼食";
+            _mealCost = @(500);
             break;
             
         case 2:
-            self.mealTitle = @"夕食";
-            self.mealCost = @(500);
+            _mealTitle = @"夕食";
+            _mealCost = @(500);
             break;
             
         default:
@@ -56,16 +78,10 @@
     }
 
     //textFieldの設定
-    self.titleTextField.clearButtonMode = UITextFieldViewModeWhileEditing;
-    self.titleTextField.placeholder = self.mealTitle;
-    self.titleTextField.keyboardType = UIKeyboardTypeDefault;
-    self.titleTextField.delegate = self;
-    self.titleTextField.returnKeyType = UIReturnKeyDone;
+    _titleTextField.clearButtonMode = UITextFieldViewModeWhileEditing;
+    _titleTextField.placeholder = _mealTitle;
     
-    self.costTextField.clearButtonMode = UITextFieldViewModeWhileEditing;
-    self.costTextField.placeholder = @"500";
-    self.costTextField.keyboardType = UIKeyboardTypeNumberPad;
-    self.costTextField.delegate = self;
+    _costTextField.clearButtonMode = UITextFieldViewModeWhileEditing;
     
 }
 
@@ -116,12 +132,12 @@
     
     //photo取得
     UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
-    [self.imageView setImage:image];
-    self.selectedImage = image;
+    [_imageView setImage:image];
+    _selectedImage = image;
     
     //imageSelectButtonメッセージ,枠線非表示
-    [self.imageSelectButton setTitle:@"" forState:UIControlStateNormal];
-    self.imageView.layer.borderWidth = 0;
+    [_imageSelectButton setTitle:@"" forState:UIControlStateNormal];
+    _imageView.layer.borderWidth = 0;
 }
 
 
@@ -149,26 +165,26 @@
     [self.view endEditing:YES];
     
     //未入力の場合はデフォルト値を代入
-    if (![self.titleTextField.text isEqualToString:@""]) {
-        self.mealTitle = self.titleTextField.text;
+    if (![_titleTextField.text isEqualToString:@""]) {
+        _mealTitle = _titleTextField.text;
     }
-    if (![self.costTextField.text isEqualToString:@""]) {
-        NSString *string = self.costTextField.text;
-        self.mealCost = @(string.integerValue);
+    if (![_costTextField.text isEqualToString:@""]) {
+        NSString *string = _costTextField.text;
+        _mealCost = @(string.integerValue);
     }
     
     
     //値のセット
-    self.image = [[NSData alloc] initWithData:UIImagePNGRepresentation(self.imageView.image)];
-    self.idNumber = [NSString stringWithFormat:@"%@%@",self.time,self.day];
+    _image = [[NSData alloc] initWithData:UIImagePNGRepresentation(_imageView.image)];
+    _idNumber = [NSString stringWithFormat:@"%@%@",_time,_day];
     
     
     //アラート表示
-    NSString *num = self.idNumber;
+    NSString *num = _idNumber;
     Record *record = [Record MR_findFirstWithPredicate:[NSPredicate predicateWithFormat:@"primaryId = %@",num]];
     if (record) {
         
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:[NSString stringWithFormat:@"%@%@",self.dateNotForDB,self.titleTextField.placeholder] message:@"すでに登録されています" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:[NSString stringWithFormat:@"%@%@",_dateNotForDB,_titleTextField.placeholder] message:@"すでに登録されています" preferredStyle:UIAlertControllerStyleAlert];
         
         [alert addAction:[UIAlertAction actionWithTitle:@"保存しない" style:UIAlertActionStyleDefault handler:nil]];
         
@@ -184,7 +200,7 @@
     
     } else {
     
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:[NSString stringWithFormat:@"%@%@",self.dateNotForDB,self.titleTextField.placeholder] message:@"保存しますか？" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:[NSString stringWithFormat:@"%@%@",_dateNotForDB,_titleTextField.placeholder] message:@"保存しますか？" preferredStyle:UIAlertControllerStyleAlert];
         
         [alert addAction:[UIAlertAction actionWithTitle:@"いいえ" style:UIAlertActionStyleDefault handler:nil]];
         
@@ -208,16 +224,16 @@
     if (new) {
         record = [Record MR_createEntity];
     } else {
-        NSString *num = self.idNumber;
+        NSString *num = _idNumber;
         record = [Record MR_findFirstWithPredicate:[NSPredicate predicateWithFormat:@"primaryId = %@",num]];
     }
     
-    record.day = self.day;
-    record.time = self.time;
-    record.image = self.image;
-    record.title = self.mealTitle;
-    record.cost = self.mealCost;
-    record.primaryId= self.idNumber;
+    record.day = _day;
+    record.time = _time;
+    record.image = _image;
+    record.title = _mealTitle;
+    record.cost = _mealCost;
+    record.primaryId= _idNumber;
 
     
     [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
@@ -231,9 +247,9 @@
     NSNumber *count = [Record MR_numberOfEntities];
     NSLog(@"count:%@",count);
     
-    NSLog(@"ID:%@",self.idNumber);
+    NSLog(@"ID:%@",_idNumber);
     
-    NSString *num = self.idNumber;
+    NSString *num = _idNumber;
     Record *record = [Record MR_findFirstWithPredicate:[NSPredicate predicateWithFormat:@"primaryId = %@",num]];
     NSLog(@"info:%@,%@,%@,%@,%@,%@",record.day,record.time,record.image,record.title,record.cost,record.primaryId);
 }

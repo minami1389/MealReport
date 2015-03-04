@@ -10,28 +10,11 @@
 
 @interface MMInputDetailInfoViewController : UIViewController<UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextFieldDelegate>
 
-
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
-@property (weak, nonatomic) IBOutlet UIButton *imageSelectButton;
-- (IBAction)imageSelectButton:(id)sender;
-
-@property (weak, nonatomic) IBOutlet UITextField *titleTextField;
-@property (weak, nonatomic) IBOutlet UITextField *costTextField;
-- (IBAction)saveButton:(id)sender;
-
-@property (nonatomic) UIImage *selectedImage;
 @property (nonatomic) NSInteger selectedButtonIndex;
-
 @property (nonatomic) NSString *dateNotForDB;
 
-//Databaseで管理するもの
+//DBで管理するもの
 @property (nonatomic, retain) NSString * day;
 @property (nonatomic, retain) NSNumber * time;
-@property (nonatomic, retain) NSData * image;
-@property (nonatomic, retain) NSString * mealTitle;
-@property (nonatomic, retain) NSNumber * mealCost;
-@property (nonatomic, retain) NSString * idNumber;
-
-
 
 @end
