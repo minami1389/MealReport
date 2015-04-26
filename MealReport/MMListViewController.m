@@ -7,12 +7,19 @@
 //
 
 #import "MMListViewController.h"
+#import "MMListTableViewCell.h"
+#import "Record.h"
 
-@interface MMListViewController ()
+@interface MMListViewController () <UITableViewDataSource,UITableViewDelegate>
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
 @implementation MMListViewController
+{
+    NSArray *mealRecords;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -27,7 +34,42 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    mealRecords = [Record MR_findAll];
 }
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [mealRecords count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    Record *record = [mealRecords objectAtIndex:indexPath.row];
+    MMListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"listCell"];
+    if (!cell) {
+        cell = [[MMListTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"listCell"];
+    }
+    
+    if (record.image) {
+        [cell.photo setImage:[UIImage imageWithData:record.image]];
+    }
+    cell.dayLabel.text = [NSString stringWithFormat:@"%@",record.day];
+    
+    
+    return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 70;
+}
+
+
+
+
+
+
 
 - (void)didReceiveMemoryWarning
 {

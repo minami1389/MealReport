@@ -14,6 +14,7 @@
     CGRect pickerRect_;
     
     CGRect screenRect_;
+    
     UIDatePicker *recordDatePicker_;
     UIView *recordDatePickerView_;
     
@@ -89,35 +90,28 @@
 //朝食ボタンをタップ
 - (IBAction)breakfastButtonPressed:(id)sender
 {
-    //押したボタンのindex取得
     selectedButtonIndex_ = 0;
-    selectedTime_ = @(selectedButtonIndex_);
-    
-    //画面遷移
-    [self performSegueWithIdentifier:@"toNextView" sender:self];
+    [self mealButtonPressed];
 }
 
 //昼食ボタンをタップ
 - (IBAction)lunchButtonPressed:(id)sender
 {
-    
-    //押したボタンのindex取得
     selectedButtonIndex_ = 1;
-    selectedTime_ = @(selectedButtonIndex_);
-    
-    //画面遷移
-    [self performSegueWithIdentifier:@"toNextView" sender:self];
-
+    [self mealButtonPressed];
 }
 
 //夕食ボタンをタップ
-- (IBAction)dinnerButtonPressed:(id)sender {
-    
+- (IBAction)dinnerButtonPressed:(id)sender
+{
     selectedButtonIndex_ = 2;
-    selectedTime_ = @(selectedButtonIndex_);
-    
-    [self performSegueWithIdentifier:@"toNextView" sender:self];
+    [self mealButtonPressed];
+}
 
+- (void)mealButtonPressed
+{
+    selectedTime_ = @(selectedButtonIndex_);
+    [self performSegueWithIdentifier:@"toNextView" sender:self];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

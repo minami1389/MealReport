@@ -186,7 +186,7 @@
     if (_imageView.image) {
         image_ = [[NSData alloc] initWithData:UIImagePNGRepresentation(_imageView.image)];
     }
-    idNumber_ = [NSString stringWithFormat:@"%@%@",_time,_day];
+    idNumber_ = [NSString stringWithFormat:@"%@%@",_day,_time];
     
     
     //アラート表示

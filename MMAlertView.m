@@ -16,13 +16,11 @@
 
 - (void)showAlertWithTitle:(NSString *)title message:(NSString *)message selfVC:(UIViewController *)selfVC
 {
-    Class class = NSClassFromString(@"UIAlertController");
-    if(class){
+    if(NSClassFromString(@"UIAlertController")){
         // UIAlertControllerを使ってアラートを表示
-        UIAlertController *alert = nil;
-        alert = [UIAlertController alertControllerWithTitle:title
-                                                    message:message
-                                             preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:title
+                                                                       message:message
+                                                                preferredStyle:UIAlertControllerStyleAlert];
         [alert addAction:[UIAlertAction actionWithTitle:@"OK"
                                                   style:UIAlertActionStyleDefault
                                                 handler:nil]];
@@ -40,13 +38,11 @@
 
 - (void)showAlertWithTitle:(NSString *)title message:(NSString *)message selfVC:(UIViewController *)selfVC cancel:(NSString *)cancel ok:(NSString *)ok action:(AlertActionBlock)alertAction
 {
-    Class class = NSClassFromString(@"UIAlertController");
-    if(class){
+    if(NSClassFromString(@"UIAlertController")){
         // UIAlertControllerを使ってアラートを表示
-        UIAlertController *alert = nil;
-        alert = [UIAlertController alertControllerWithTitle:title
-                                                    message:message
-                                             preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:title
+                                                                       message:message
+                                                                preferredStyle:UIAlertControllerStyleAlert];
         if (cancel) {
             [alert addAction:[UIAlertAction actionWithTitle:cancel
                                                       style:UIAlertActionStyleDefault
