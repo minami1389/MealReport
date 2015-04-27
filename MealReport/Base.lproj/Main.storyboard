@@ -537,7 +537,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="w3d-71-zIa" userLabel="mealPhoto - image view">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="w3d-71-zIa" userLabel="mealPhoto - image view">
                                                     <rect key="frame" x="0.0" y="0.0" width="70" height="55"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="55" id="9H9-3h-q0Q"/>
@@ -554,7 +554,7 @@
                                                                 <constraint firstAttribute="width" constant="12" id="vte-ha-tHh"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                                            <color key="textColor" red="1" green="0.49803921568627452" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="textColor" red="0.84953703703703709" green="0.38764467592592594" blue="0.26484374999999999" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="昼" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZNg-Yg-yve">
@@ -564,7 +564,7 @@
                                                                 <constraint firstAttribute="height" constant="12" id="WPh-Pm-nd2"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                                            <color key="textColor" red="1" green="0.5490196078431373" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="textColor" red="0.97254901960784312" green="0.67962962962962958" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="夜" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="22b-bm-KgR">
@@ -574,7 +574,7 @@
                                                                 <constraint firstAttribute="width" constant="12" id="FjA-x9-iKD"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                                            <color key="textColor" red="0.39215686274509803" green="0.58431372549019611" blue="0.92941176470588238" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="textColor" red="0.079108796296296302" green="0.59502314814814816" blue="0.90196078431372551" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
@@ -596,8 +596,9 @@
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MWf-5d-uXG" userLabel="day - label">
-                                                    <rect key="frame" x="2" y="2" width="15" height="15"/>
+                                                <label userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MWf-5d-uXG" userLabel="day - label">
+                                                    <rect key="frame" x="0.0" y="0.0" width="15" height="15"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="15" id="XD3-5n-HOq"/>
@@ -606,16 +607,22 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="w2G-3M-ib1">
+                                                    <rect key="frame" x="25" y="25" width="20" height="20"/>
+                                                </activityIndicatorView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="cHv-Ly-r5H" firstAttribute="leading" secondItem="nnV-8M-Glv" secondAttribute="trailing" id="2Bb-4B-orl"/>
+                                            <constraint firstAttribute="centerX" secondItem="w2G-3M-ib1" secondAttribute="centerX" id="55q-ti-91o"/>
                                             <constraint firstAttribute="centerX" secondItem="w3d-71-zIa" secondAttribute="centerX" id="GKQ-Zc-0ZJ"/>
                                             <constraint firstItem="nnV-8M-Glv" firstAttribute="leading" secondItem="Rq7-zD-LcI" secondAttribute="leading" constant="2" id="KJJ-C8-RBe"/>
-                                            <constraint firstItem="MWf-5d-uXG" firstAttribute="leading" secondItem="Rq7-zD-LcI" secondAttribute="leading" constant="2" id="Qr0-n9-TYE"/>
+                                            <constraint firstItem="MWf-5d-uXG" firstAttribute="leading" secondItem="Rq7-zD-LcI" secondAttribute="leading" id="Qr0-n9-TYE"/>
                                             <constraint firstItem="cHv-Ly-r5H" firstAttribute="top" secondItem="nnV-8M-Glv" secondAttribute="top" id="VgV-DU-Fby"/>
-                                            <constraint firstItem="MWf-5d-uXG" firstAttribute="top" secondItem="Rq7-zD-LcI" secondAttribute="top" constant="2" id="X6l-DZ-Dr7"/>
+                                            <constraint firstItem="MWf-5d-uXG" firstAttribute="top" secondItem="Rq7-zD-LcI" secondAttribute="top" id="X6l-DZ-Dr7"/>
+                                            <constraint firstAttribute="centerY" secondItem="w2G-3M-ib1" secondAttribute="centerY" id="gdX-oF-ttG"/>
                                             <constraint firstAttribute="bottom" secondItem="nnV-8M-Glv" secondAttribute="bottom" constant="2" id="pIA-Lw-eMn"/>
                                             <constraint firstAttribute="trailing" secondItem="cHv-Ly-r5H" secondAttribute="trailing" constant="2" id="pQ0-Da-8wc"/>
                                             <constraint firstItem="w3d-71-zIa" firstAttribute="top" secondItem="Rq7-zD-LcI" secondAttribute="top" id="wKC-0G-gx8"/>
@@ -624,6 +631,7 @@
                                             <outlet property="breakfastMark" destination="nlf-Dp-MTl" id="nZJ-CV-XOW"/>
                                             <outlet property="dayLabel" destination="MWf-5d-uXG" id="TB3-fF-WGt"/>
                                             <outlet property="dinnerMark" destination="22b-bm-KgR" id="Kdc-X4-Xwg"/>
+                                            <outlet property="indicator" destination="w2G-3M-ib1" id="dL6-A5-aAq"/>
                                             <outlet property="lunchMark" destination="ZNg-Yg-yve" id="BVU-GU-NgC"/>
                                             <outlet property="mealCostLabel" destination="cHv-Ly-r5H" id="ZrB-0q-gbZ"/>
                                             <outlet property="mealPhotoImageView" destination="w3d-71-zIa" id="IYA-WQ-qF2"/>

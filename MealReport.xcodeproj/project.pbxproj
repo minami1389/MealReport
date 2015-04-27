@@ -60,6 +60,7 @@
 		E9E981CC19DF1F4900AD254B /* iconYellow.png in Resources */ = {isa = PBXBuildFile; fileRef = E9E981C519DF1F4900AD254B /* iconYellow.png */; };
 		E9E981CE19DF1F5800AD254B /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9E981CD19DF1F5800AD254B /* Launch Screen.xib */; };
 		E9E981D219DF214000AD254B /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E9E981D019DF214000AD254B /* Model.xcdatamodeld */; };
+		E9FA6AD21AEE2B1E00A098AB /* MMColor.m in Sources */ = {isa = PBXBuildFile; fileRef = E9FA6AD11AEE2B1E00A098AB /* MMColor.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -146,6 +147,8 @@
 		E9E981C519DF1F4900AD254B /* iconYellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iconYellow.png; path = image/iconYellow.png; sourceTree = "<group>"; };
 		E9E981CD19DF1F5800AD254B /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = "Launch Screen.xib"; path = "image/Launch Screen.xib"; sourceTree = "<group>"; };
 		E9E981D119DF214000AD254B /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		E9FA6AD01AEE2B1E00A098AB /* MMColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMColor.h; sourceTree = "<group>"; };
+		E9FA6AD11AEE2B1E00A098AB /* MMColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMColor.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -288,6 +291,7 @@
 		E9DD495B19C5E6BC008E8739 /* MealReport */ = {
 			isa = PBXGroup;
 			children = (
+				E9FA6AD31AEE2B2A00A098AB /* MMColor */,
 				E91F5A7C1AA7833D00987AD6 /* MMString */,
 				E9B2A1BF1AA76847002E9F1E /* MMAlertView */,
 				E9B2A1BE1AA7683C002E9F1E /* MMAppDelegate */,
@@ -371,6 +375,15 @@
 				E9A8B0FF1AED1A1700B8EB0C /* Record.m */,
 			);
 			name = CoreData;
+			sourceTree = "<group>";
+		};
+		E9FA6AD31AEE2B2A00A098AB /* MMColor */ = {
+			isa = PBXGroup;
+			children = (
+				E9FA6AD01AEE2B1E00A098AB /* MMColor.h */,
+				E9FA6AD11AEE2B1E00A098AB /* MMColor.m */,
+			);
+			name = MMColor;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -548,6 +561,7 @@
 				E9A8B1001AED1A1700B8EB0C /* Record.m in Sources */,
 				E96FA2B61AEA0E47007CAB3E /* MMCalendarDetailViewController.m in Sources */,
 				E96FA2B31AE8A39C007CAB3E /* MMListTableViewCell.m in Sources */,
+				E9FA6AD21AEE2B1E00A098AB /* MMColor.m in Sources */,
 				E9DD496219C5E6BC008E8739 /* main.m in Sources */,
 				E9756C0B19C5EF1B007791FB /* MMInfoFromListViewController.m in Sources */,
 			);

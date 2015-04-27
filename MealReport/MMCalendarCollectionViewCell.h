@@ -18,5 +18,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *breakfastMark;
 @property (weak, nonatomic) IBOutlet UILabel *lunchMark;
 @property (weak, nonatomic) IBOutlet UILabel *dinnerMark;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *indicator;
 
 @end

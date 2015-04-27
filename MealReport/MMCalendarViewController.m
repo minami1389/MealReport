@@ -10,6 +10,7 @@
 #import "MMCalendarCollectionViewCell.h"
 #import "Record.h"
 #import "MMCalendarDetailViewController.h"
+#import "MMColor.h"
 
 @interface MMCalendarViewController ()
 {
@@ -20,6 +21,9 @@
     NSArray *mealRecords;
     
     NSInteger costSum_month;
+    
+    NSCache *imageCache;
+    NSOperationQueue *queue;
 }
 
 @end
@@ -36,6 +40,8 @@
     year_ = dateComps.year;
     month_ = dateComps.month;
     dayCount_ = [self daysCountAtMonth];
+    imageCache = [[NSCache alloc] init];
+    queue = [[NSOperationQueue alloc] init];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -91,72 +97,66 @@
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     MMCalendarCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"calendarCell" forIndexPath:indexPath];
-    cell.mealPhotoImageView.contentMode = UIViewContentModeScaleAspectFit;
+    [self updateCell:cell atIndexPath:indexPath];
+    
+    return cell;
+}
+
+- (void)updateCell:(MMCalendarCollectionViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
+{
     cell.breakfastMark.hidden = YES;
     cell.lunchMark.hidden = YES;
     cell.dinnerMark.hidden = YES;
+    cell.mealPhotoImageView.image = nil;
+    [cell.indicator stopAnimating];
+    cell.indicator.hidden = YES;
+    cell.mealCostLabel.hidden = YES;
     
     cell.dayLabel.text = [NSString stringWithFormat:@"%d",indexPath.row+1];
     NSInteger weekday = [self weekDay:[NSString stringWithFormat:@"%ld/%ld/%d",(long)year_,(long)month_,indexPath.row+1]];
-    if (weekday == 5) {
-        cell.layer.borderColor = [UIColor colorWithRed:173/255.0 green:216/255.0 blue:230/255.0 alpha:1.0].CGColor;
-    } else if(weekday == 6) {
-        cell.layer.borderColor = [UIColor colorWithRed:255/255.0 green:182/255.0 blue:193/255.0 alpha:1.0].CGColor;
-    } else {
-        cell.layer.borderColor = [UIColor colorWithRed:255/255.0 green:222/255.0 blue:173/255.0 alpha:1.0].CGColor;
-    }
+     if (weekday == 5) {
+         cell.layer.borderColor = [MMColor dinnerColor].CGColor;
+         cell.dayLabel.backgroundColor = [MMColor dinnerColor];
+     } else if(weekday == 6) {
+         cell.layer.borderColor = [MMColor breakfastColor].CGColor;
+         cell.dayLabel.backgroundColor = [MMColor breakfastColor];
+     } else {
+         cell.layer.borderColor = [MMColor lunchColor].CGColor;
+         cell.dayLabel.backgroundColor = [MMColor lunchColor];
+     }
+    
     
     //データ挿入
-    NSArray *records = [self getRecordsWithday:indexPath.row+1];
-    Record *record0 = nil;
-    Record *record1 = nil;
-    Record *record2 = nil;
-    for(Record *record in records) {
-        switch ([record.time integerValue]) {
-            case 0:
-                record0 = record;
-                break;
-            case 1:
-                record1 = record;
-                break;
-            case 2:
-                record2 = record;
-                break;
-            default:
-                break;
-        }
-    }
-
-    NSInteger costSum_day = 0;
     NSData *photo_data = nil;
-    if (record0) {
-        if (record0.image) { photo_data = record0.image; }
-        costSum_month += [record0.cost integerValue];
-        costSum_day += [record0.cost integerValue];
-        cell.breakfastMark.hidden = NO;
-    }
-    if (record1) {
-        if (record1.image) { photo_data = record1.image; }
-        costSum_month += [record1.cost integerValue];
-        costSum_day += [record1.cost integerValue];
-        cell.lunchMark.hidden = NO;
-    }
-    if (record2) {
-        if (record2.image) { photo_data = record2.image; }
-        costSum_month += [record2.cost integerValue];
-        costSum_day += [record2.cost integerValue];
-        cell.dinnerMark.hidden = NO;
-    }
-    /*
-    if (photo_data) {
-        [cell.mealPhotoImageView setImage:[[UIImage alloc] initWithData:photo_data]];
-        cell.mealPhotoImageView.contentMode = UIViewContentModeScaleAspectFill;
-        cell.mealPhotoImageView.alpha = 1.0;
-    }
-     */
-    cell.mealCostLabel.text = [NSString stringWithFormat:@"%ld円",(long)costSum_day];
+    NSInteger costSum_day = 0;
+    NSArray *records = [self getRecordsWithday:indexPath.row+1];
+    if (records) {
+        for(Record *record in records) {
+            if (record.image) { photo_data = record.image; }
+            costSum_day += [record.cost integerValue];
+            switch ([record.time integerValue]) {
+                case 0:
+                    cell.breakfastMark.hidden = NO;
+                    break;
+                case 1:
+                    cell.lunchMark.hidden = NO;
+                    break;
+                case 2:
+                    cell.dinnerMark.hidden = NO;
+                    break;
+                default:
+                    break;
+            }
+        }
+        cell.mealCostLabel.text = [NSString stringWithFormat:@"%d",costSum_day];
+   
     
-    return cell;
+     if (photo_data) {
+         //cell.mealPhotoImageView.image = [[UIImage alloc] initWithData:photo_data];
+     }
+    }
+     
+    
 }
 
 - (NSArray *)getRecordsWithday:(NSInteger)day
@@ -178,7 +178,7 @@
     header.delegate = self;
     [header.dayButton setTitle:[NSString stringWithFormat:@"%ld年%ld月",(long)year_,(long)month_] forState:UIControlStateNormal];
     header.sumCostLabel.text = [NSString stringWithFormat:@"合計%ld円",(long)costSum_month];
-    header.aveCostLabel.text = [NSString stringWithFormat:@"日平均%d円",costSum_month/dayCount_];
+    header.aveCostLabel.text = [NSString stringWithFormat:@"日平均%ld円",costSum_month/dayCount_];
     return header;
 }
 
