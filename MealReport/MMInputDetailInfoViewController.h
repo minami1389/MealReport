@@ -16,6 +16,7 @@
 @property (nonatomic) NSString *dateNotForDB;
 
 //DBで管理するもの
+@property (nonatomic, retain) NSString * month;
 @property (nonatomic, retain) NSString * day;
 @property (nonatomic, retain) NSNumber * time;
 

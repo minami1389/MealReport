@@ -19,7 +19,8 @@
     UIView *recordDatePickerView_;
     
     //DBで管理するもの
-    NSString *selectedDateString_;
+    NSString *selectedDateStringYMD_;
+    NSString *selectedDateStringYM_;
     NSNumber *selectedTime_;
 
     NSInteger selectedButtonIndex_;
@@ -55,7 +56,8 @@
     screenRect_ = [[UIScreen mainScreen] bounds];
     
     //表示される日付を今日に
-    selectedDateString_ = [NSString stringWithFormat:@"%@",[[self dateFormatterForDB] stringFromDate:[NSDate date]]];
+    selectedDateStringYMD_ = [NSString stringWithFormat:@"%@",[[self dateFormatterYMDForDB] stringFromDate:[NSDate date]]];
+    selectedDateStringYM_ = [NSString stringWithFormat:@"%@",[[self dateFormatterYMForDB] stringFromDate:[NSDate date]]];
     _dateLabel.text = [NSString stringWithFormat:@"%@",[[self dateFormatter] stringFromDate:[NSDate date]]];;
     
     //UIDateViewを準備
@@ -117,7 +119,8 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     MMInputDetailInfoViewController *nextView = [segue destinationViewController];
-    nextView.day = selectedDateString_;
+    nextView.month = selectedDateStringYM_;
+    nextView.day = selectedDateStringYMD_;
     nextView.time = selectedTime_;
     nextView.selectedButtonIndex = selectedButtonIndex_;
     nextView.dateNotForDB = _dateLabel.text;
@@ -143,7 +146,7 @@
     return dateFormatter;
 }
 
-- (NSDateFormatter *)dateFormatterForDB
+- (NSDateFormatter *)dateFormatterYMDForDB
 {
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     NSLocale *locale = [[NSLocale alloc] initWithLocaleIdentifier:@"jp_JP"];
@@ -152,6 +155,17 @@
     
     return dateFormatter;
 }
+
+- (NSDateFormatter *)dateFormatterYMForDB
+{
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    NSLocale *locale = [[NSLocale alloc] initWithLocaleIdentifier:@"jp_JP"];
+    [dateFormatter setLocale:locale];
+    [dateFormatter setDateFormat:@"yyyyMM"];
+    
+    return dateFormatter;
+}
+
 
 //日付をタップすると呼ばれる
 //DatePickerを出す
@@ -198,8 +212,8 @@
     NSString *date = [[self dateFormatter] stringFromDate:datePicker.date];
     _dateLabel.text = date;
     
-    NSString *dateForDB = [[self dateFormatterForDB] stringFromDate:datePicker.date];
-    selectedDateString_ = dateForDB;
+    selectedDateStringYMD_ = [[self dateFormatterYMDForDB] stringFromDate:datePicker.date];
+    selectedDateStringYM_ = [[self dateFormatterYMForDB] stringFromDate:datePicker.date];
 }
 
 - (void)presentDatePicker

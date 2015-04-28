@@ -19,5 +19,6 @@
 @property (nonatomic, retain) NSNumber * time;
 @property (nonatomic, retain) NSString * title;
 @property (nonatomic, retain) NSString * imageUrl;
+@property (nonatomic, retain) NSString * month;
 
 @end

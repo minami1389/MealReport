@@ -18,9 +18,10 @@
     NSInteger month_;
     NSInteger dayCount_;
     
-    NSArray *mealRecords;
-    
     NSInteger costSum_month;
+    
+    NSInteger selectedDay;
+    NSInteger selectedTime;
     
     NSCache *imageCache;
     NSOperationQueue *queue;
@@ -33,7 +34,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
     NSDate *today = [NSDate date];
     NSCalendar *calendar = [NSCalendar currentCalendar];
     NSDateComponents *dateComps = [calendar components:NSYearCalendarUnit | NSMonthCalendarUnit fromDate:today];
@@ -42,11 +46,8 @@
     dayCount_ = [self daysCountAtMonth];
     imageCache = [[NSCache alloc] init];
     queue = [[NSOperationQueue alloc] init];
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    [_calendarView reloadData];
+    
+    [self getCostSumMonth];
 }
 
 - (NSInteger)daysCountAtMonth
@@ -104,6 +105,8 @@
 
 - (void)updateCell:(MMCalendarCollectionViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
+    cell.selectable = NO;
+    
     cell.breakfastMark.hidden = YES;
     cell.lunchMark.hidden = YES;
     cell.dinnerMark.hidden = YES;
@@ -131,34 +134,36 @@
     NSString *imageUrl = nil;
     NSInteger costSum_day = 0;
     NSArray *records = [self getRecordsWithday:indexPath.row+1];
-    if (records) {
-        for(Record *record in records) {
-            if (record.imageUrl) { imageUrl = record.imageUrl; }
-            costSum_day += [record.cost integerValue];
-            switch ([record.time integerValue]) {
-                case 0:
-                    cell.breakfastMark.hidden = NO;
-                    break;
-                case 1:
-                    cell.lunchMark.hidden = NO;
-                    break;
-                case 2:
-                    cell.dinnerMark.hidden = NO;
-                    break;
-                default:
-                    break;
-            }
-        }
-        if (costSum_day > 0) {
-            cell.mealCostLabel.text = [NSString stringWithFormat:@"%ld円",(long)costSum_day];
-            cell.mealCostLabel.hidden = NO;
-        }
-      
-        if (imageUrl) {
-            [cell setPost:imageUrl day:[self getYMD:indexPath.row+1]];
+    for(Record *record in records) {
+        cell.selectable = YES;
+        if (record.imageUrl) { imageUrl = record.imageUrl; }
+        costSum_day += [record.cost integerValue];
+        cell.visibleTime = [record.time integerValue];
+        switch (cell.visibleTime) {
+            case 0:
+                cell.breakfastMark.hidden = NO;
+                break;
+            case 1:
+                cell.lunchMark.hidden = NO;
+                break;
+            case 2:
+                cell.dinnerMark.hidden = NO;
+                break;
+            default:
+                break;
         }
     }
-     
+    
+    if (cell.selectable) {
+        cell.mealCostLabel.text = [NSString stringWithFormat:@"%ld円",(long)costSum_day];
+        cell.mealCostLabel.hidden = NO;
+        if (imageUrl) {
+            [cell setPost:imageUrl key:[NSString stringWithFormat:@"%@%d",[self getYMD:indexPath.row+1],cell.visibleTime]];
+        } else {
+             [cell setPost:@"default" key:[NSString stringWithFormat:@"%@%d",[self getYMD:indexPath.row+1],cell.visibleTime]];
+        }
+    }
+    
     
 }
 
@@ -171,6 +176,15 @@
     if (day < 10) { day_string = [NSString stringWithFormat:@"0%ld",(long)day]; }
     
     return [NSString stringWithFormat:@"%@%@%@",year_string,month_string,day_string];
+}
+
+- (NSString *)getYM
+{
+    NSString *year_string = [NSString stringWithFormat:@"%ld",(long)year_];
+    NSString *month_string = [NSString stringWithFormat:@"%ld",(long)month_];
+    if (month_ < 10) { month_string = [NSString stringWithFormat:@"0%ld",(long)month_]; }
+    
+    return [NSString stringWithFormat:@"%@%@",year_string,month_string];
 }
 
 - (NSArray *)getRecordsWithday:(NSInteger)day
@@ -190,17 +204,38 @@
     return header;
 }
 
+- (void)getCostSumMonth
+{
+    costSum_month = 0;
+    NSArray *records = [Record MR_findByAttribute:@"month" withValue:[self getYM]];
+    for(Record *record in records) {
+        costSum_month += [record.cost integerValue];
+    }
+}
+
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self performSegueWithIdentifier:@"toDetailView" sender:self];
+    MMCalendarCollectionViewCell *cell = (MMCalendarCollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
+    if (cell.selectable) {
+        selectedDay = indexPath.row+1;
+        selectedTime = cell.visibleTime;
+        [self performSegueWithIdentifier:@"toDetailView" sender:self];
+    }
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     MMCalendarDetailViewController *nextView = [segue destinationViewController];
-    
+    nextView.record = [self getRecord];
+    nextView.index = -1;
 }
 
+- (Record *)getRecord
+{
+    NSArray *records = [Record MR_findByAttribute:@"primaryId"
+                                        withValue:[NSString stringWithFormat:@"%@%d",[self getYMD:selectedDay],selectedTime]];
+    return [records firstObject];
+}
 
 #pragma mark - MMCalendarHeaderViewDelegate
 - (void)dayButtonPushed
@@ -215,6 +250,7 @@
         month_--;
     }
     dayCount_ = [self daysCountAtMonth];
+    [self getCostSumMonth];
     [_calendarView reloadData];
 }
 
@@ -227,6 +263,7 @@
         month_++;
     }
     dayCount_ = [self daysCountAtMonth];
+    [self getCostSumMonth];
     [_calendarView reloadData];
 }
 

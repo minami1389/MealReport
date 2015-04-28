@@ -21,7 +21,10 @@
 		E91F5AC31AA834DE00987AD6 /* barIcon_calndar-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = E91F5AC01AA834DE00987AD6 /* barIcon_calndar-Small.png */; };
 		E91F5AC41AA834DE00987AD6 /* barIcon_calndar-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E91F5AC11AA834DE00987AD6 /* barIcon_calndar-Small@2x.png */; };
 		E91F5AC51AA834DE00987AD6 /* barIcon_calndar-Small@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E91F5AC21AA834DE00987AD6 /* barIcon_calndar-Small@3x.png */; };
-		E92C15B41AEF7F95008C922C /* Record.m in Sources */ = {isa = PBXBuildFile; fileRef = E92C15B31AEF7F95008C922C /* Record.m */; };
+		E92C15B71AEFCB96008C922C /* Record.m in Sources */ = {isa = PBXBuildFile; fileRef = E92C15B61AEFCB96008C922C /* Record.m */; };
+		E92C15BB1AEFDC7F008C922C /* blueWindow.png in Resources */ = {isa = PBXBuildFile; fileRef = E92C15B81AEFDC7F008C922C /* blueWindow.png */; };
+		E92C15BC1AEFDC7F008C922C /* leftArrowBlue.png in Resources */ = {isa = PBXBuildFile; fileRef = E92C15B91AEFDC7F008C922C /* leftArrowBlue.png */; };
+		E92C15BD1AEFDC7F008C922C /* rightArrowBlue.png in Resources */ = {isa = PBXBuildFile; fileRef = E92C15BA1AEFDC7F008C922C /* rightArrowBlue.png */; };
 		E945FA811AD835E90046C849 /* barIcon_list-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = E945FA7E1AD835E90046C849 /* barIcon_list-Small.png */; };
 		E945FA821AD835E90046C849 /* barIcon_list-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E945FA7F1AD835E90046C849 /* barIcon_list-Small@2x.png */; };
 		E945FA831AD835E90046C849 /* barIcon_list-Small@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E945FA801AD835E90046C849 /* barIcon_list-Small@3x.png */; };
@@ -91,8 +94,11 @@
 		E91F5AC01AA834DE00987AD6 /* barIcon_calndar-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "barIcon_calndar-Small.png"; path = "image/barIcon_calndar-Small.png"; sourceTree = "<group>"; };
 		E91F5AC11AA834DE00987AD6 /* barIcon_calndar-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "barIcon_calndar-Small@2x.png"; path = "image/barIcon_calndar-Small@2x.png"; sourceTree = "<group>"; };
 		E91F5AC21AA834DE00987AD6 /* barIcon_calndar-Small@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "barIcon_calndar-Small@3x.png"; path = "image/barIcon_calndar-Small@3x.png"; sourceTree = "<group>"; };
-		E92C15B21AEF7F95008C922C /* Record.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Record.h; sourceTree = "<group>"; };
-		E92C15B31AEF7F95008C922C /* Record.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Record.m; sourceTree = "<group>"; };
+		E92C15B51AEFCB96008C922C /* Record.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Record.h; sourceTree = "<group>"; };
+		E92C15B61AEFCB96008C922C /* Record.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Record.m; sourceTree = "<group>"; };
+		E92C15B81AEFDC7F008C922C /* blueWindow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blueWindow.png; path = image/blueWindow.png; sourceTree = "<group>"; };
+		E92C15B91AEFDC7F008C922C /* leftArrowBlue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = leftArrowBlue.png; path = image/leftArrowBlue.png; sourceTree = "<group>"; };
+		E92C15BA1AEFDC7F008C922C /* rightArrowBlue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = rightArrowBlue.png; path = image/rightArrowBlue.png; sourceTree = "<group>"; };
 		E945FA7E1AD835E90046C849 /* barIcon_list-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "barIcon_list-Small.png"; path = "image/barIcon_list-Small.png"; sourceTree = "<group>"; };
 		E945FA7F1AD835E90046C849 /* barIcon_list-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "barIcon_list-Small@2x.png"; path = "image/barIcon_list-Small@2x.png"; sourceTree = "<group>"; };
 		E945FA801AD835E90046C849 /* barIcon_list-Small@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "barIcon_list-Small@3x.png"; path = "image/barIcon_list-Small@3x.png"; sourceTree = "<group>"; };
@@ -315,6 +321,9 @@
 		E9DDDC3319C601CA00F1F160 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				E92C15B81AEFDC7F008C922C /* blueWindow.png */,
+				E92C15B91AEFDC7F008C922C /* leftArrowBlue.png */,
+				E92C15BA1AEFDC7F008C922C /* rightArrowBlue.png */,
 				E945FA7E1AD835E90046C849 /* barIcon_list-Small.png */,
 				E945FA7F1AD835E90046C849 /* barIcon_list-Small@2x.png */,
 				E945FA801AD835E90046C849 /* barIcon_list-Small@3x.png */,
@@ -348,8 +357,8 @@
 			isa = PBXGroup;
 			children = (
 				E9E981D019DF214000AD254B /* Model.xcdatamodeld */,
-				E92C15B21AEF7F95008C922C /* Record.h */,
-				E92C15B31AEF7F95008C922C /* Record.m */,
+				E92C15B51AEFCB96008C922C /* Record.h */,
+				E92C15B61AEFCB96008C922C /* Record.m */,
 			);
 			name = CoreData;
 			sourceTree = "<group>";
@@ -467,11 +476,14 @@
 				E9E981CB19DF1F4900AD254B /* iconRed.png in Resources */,
 				E945FA811AD835E90046C849 /* barIcon_list-Small.png in Resources */,
 				E945FA821AD835E90046C849 /* barIcon_list-Small@2x.png in Resources */,
+				E92C15BD1AEFDC7F008C922C /* rightArrowBlue.png in Resources */,
 				E9DD496919C5E6BC008E8739 /* Main.storyboard in Resources */,
+				E92C15BC1AEFDC7F008C922C /* leftArrowBlue.png in Resources */,
 				E977382F19E0238D00FA5805 /* background.png in Resources */,
 				E984B2851AA844BD00FDAE82 /* dinner_mark.png in Resources */,
 				E945FA831AD835E90046C849 /* barIcon_list-Small@3x.png in Resources */,
 				E9E981CE19DF1F5800AD254B /* Launch Screen.xib in Resources */,
+				E92C15BB1AEFDC7F008C922C /* blueWindow.png in Resources */,
 				E9E981CC19DF1F4900AD254B /* iconYellow.png in Resources */,
 				E9E981C619DF1F4900AD254B /* buttonFrameBlue.png in Resources */,
 			);
@@ -527,7 +539,7 @@
 			files = (
 				E91F5AAE1AA802F800987AD6 /* MMCalendarCollectionViewCell.m in Sources */,
 				E9B2A1BD1AA76829002E9F1E /* MMAlertView.m in Sources */,
-				E92C15B41AEF7F95008C922C /* Record.m in Sources */,
+				E92C15B71AEFCB96008C922C /* Record.m in Sources */,
 				E91F5A7B1AA7833000987AD6 /* MMString.m in Sources */,
 				E9756BFF19C5EE83007791FB /* MMInputDetailInfoViewController.m in Sources */,
 				E91F5AAB1AA802E300987AD6 /* MMCalendarViewController.m in Sources */,

@@ -7,6 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Record.h"
 
 @interface MMCalendarDetailViewController : UIViewController
+
+@property (weak, nonatomic) Record *record;
+@property NSInteger index;
+
+
 @end

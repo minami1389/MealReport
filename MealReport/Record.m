@@ -18,5 +18,6 @@
 @dynamic time;
 @dynamic title;
 @dynamic imageUrl;
+@dynamic month;
 
 @end

@@ -152,7 +152,6 @@
         imageUrl_ = [referenceURL absoluteString];
         
         } failureBlock:^(NSError *error) {
-        // error handling
     }];
     
     //photoLibrary dismiss
@@ -245,6 +244,7 @@
         record = [Record MR_findFirstWithPredicate:[NSPredicate predicateWithFormat:@"primaryId = %@",num]];
     }
     
+    record.month = _month;
     record.day = _day;
     record.time = _time;
     record.imageUrl = imageUrl_;
@@ -268,7 +268,7 @@
     
     NSString *num = idNumber_;
     Record *record = [Record MR_findFirstWithPredicate:[NSPredicate predicateWithFormat:@"primaryId = %@",num]];
-    NSLog(@"\ninfo{\n day:%@\n time:%@\n image:%@\n title:%@\n cost:%@\n comment:%@\n id:%@\n}",record.day,record.time,record.imageUrl,record.title,record.cost,record.comment,record.primaryId);
+    NSLog(@"\ninfo{\n month:%@\n day:%@\n time:%@\n image:%@\n title:%@\n cost:%@\n comment:%@\n id:%@\n}",record.month,record.day,record.time,record.imageUrl,record.title,record.cost,record.comment,record.primaryId);
 }
 
 //"保存が完了しました"alertを表示
