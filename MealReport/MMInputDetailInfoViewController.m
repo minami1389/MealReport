@@ -8,17 +8,18 @@
 
 #import "MMInputDetailInfoViewController.h"
 #import "Record.h"
+#import <AssetsLibrary/AssetsLibrary.h>
 
 @interface MMInputDetailInfoViewController ()
 {
     UIImage *selectedImage_;
     
     //DBで管理するもの
-    NSData *image_;
     NSString *mealTitle_;
     NSNumber *mealCost_;
     NSString *comment_;
     NSString *idNumber_;
+    NSString *imageUrl_;
     
     BOOL saveNewData;
 }
@@ -52,7 +53,6 @@
     //デフォルト値設定
     mealCost_ = @(500);
     comment_ = @"";
-    image_ = nil;
     switch (_selectedButtonIndex) {
         case 0:
             mealTitle_ = @"朝食";
@@ -69,6 +69,8 @@
         default:
             break;
     }
+    
+    imageUrl_ = nil;
     
     //タイトルの設定
     self.navigationItem.title = _dateNotForDB;
@@ -134,13 +136,27 @@
 //写真を選択したら呼ばれる
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
+    //photo取得
+    NSURL *referenceURL = [info objectForKey:UIImagePickerControllerReferenceURL];
+    
+    ALAssetsLibrary *library = [[ALAssetsLibrary alloc] init];
+    [library assetForURL:referenceURL resultBlock:^(ALAsset *asset) {
+        
+        ALAssetRepresentation *rep = [asset defaultRepresentation];
+        Byte *buffer = (Byte*)malloc((unsigned)rep.size);
+        NSUInteger buffered = [rep getBytes:buffer fromOffset:0.0 length:(unsigned)rep.size error:nil];
+        NSData *data = [NSData dataWithBytesNoCopy:buffer length:buffered freeWhenDone:YES]; //これが必要なデータ
+    
+        UIImage *image = [UIImage imageWithData:data];
+        [_imageView setImage:image];
+        imageUrl_ = [referenceURL absoluteString];
+        
+        } failureBlock:^(NSError *error) {
+        // error handling
+    }];
+    
     //photoLibrary dismiss
     [picker dismissViewControllerAnimated:YES completion:nil];
-    
-    //photo取得
-    UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
-    [_imageView setImage:image];
-    selectedImage_ = image;
     
     //imageSelectButtonメッセージ,枠線非表示
     [_imageSelectButton setTitle:@"" forState:UIControlStateNormal];
@@ -182,12 +198,7 @@
         comment_ = _commentTextView.text;
     }
     
-    //値のセット
-    if (_imageView.image) {
-        image_ = [[NSData alloc] initWithData:UIImagePNGRepresentation(_imageView.image)];
-    }
     idNumber_ = [NSString stringWithFormat:@"%@%@",_day,_time];
-    
     
     //アラート表示
     NSString *num = idNumber_;
@@ -236,7 +247,7 @@
     
     record.day = _day;
     record.time = _time;
-    record.image = image_;
+    record.imageUrl = imageUrl_;
     record.title = mealTitle_;
     record.cost = mealCost_;
     record.comment = comment_;
@@ -257,7 +268,7 @@
     
     NSString *num = idNumber_;
     Record *record = [Record MR_findFirstWithPredicate:[NSPredicate predicateWithFormat:@"primaryId = %@",num]];
-    NSLog(@"\ninfo{\n day:%@\n time:%@\n image:%@\n title:%@\n cost:%@\n comment:%@\n id:%@\n}",record.day,record.time,record.image,record.title,record.cost,record.comment,record.primaryId);
+    NSLog(@"\ninfo{\n day:%@\n time:%@\n image:%@\n title:%@\n cost:%@\n comment:%@\n id:%@\n}",record.day,record.time,record.imageUrl,record.title,record.cost,record.comment,record.primaryId);
 }
 
 //"保存が完了しました"alertを表示

@@ -21,22 +21,19 @@
 		E91F5AC31AA834DE00987AD6 /* barIcon_calndar-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = E91F5AC01AA834DE00987AD6 /* barIcon_calndar-Small.png */; };
 		E91F5AC41AA834DE00987AD6 /* barIcon_calndar-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E91F5AC11AA834DE00987AD6 /* barIcon_calndar-Small@2x.png */; };
 		E91F5AC51AA834DE00987AD6 /* barIcon_calndar-Small@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E91F5AC21AA834DE00987AD6 /* barIcon_calndar-Small@3x.png */; };
+		E92C15B41AEF7F95008C922C /* Record.m in Sources */ = {isa = PBXBuildFile; fileRef = E92C15B31AEF7F95008C922C /* Record.m */; };
 		E945FA811AD835E90046C849 /* barIcon_list-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = E945FA7E1AD835E90046C849 /* barIcon_list-Small.png */; };
 		E945FA821AD835E90046C849 /* barIcon_list-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E945FA7F1AD835E90046C849 /* barIcon_list-Small@2x.png */; };
 		E945FA831AD835E90046C849 /* barIcon_list-Small@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E945FA801AD835E90046C849 /* barIcon_list-Small@3x.png */; };
-		E96FA2B31AE8A39C007CAB3E /* MMListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E96FA2B21AE8A39C007CAB3E /* MMListTableViewCell.m */; };
 		E96FA2B61AEA0E47007CAB3E /* MMCalendarDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E96FA2B51AEA0E47007CAB3E /* MMCalendarDetailViewController.m */; };
 		E9756BF919C5E7F6007791FB /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E9756BF819C5E7F6007791FB /* README.md */; };
 		E9756BFC19C5EE49007791FB /* MMInputInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9756BFB19C5EE49007791FB /* MMInputInfoViewController.m */; };
 		E9756BFF19C5EE83007791FB /* MMInputDetailInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9756BFE19C5EE83007791FB /* MMInputDetailInfoViewController.m */; };
-		E9756C0819C5EF04007791FB /* MMListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9756C0719C5EF04007791FB /* MMListViewController.m */; };
-		E9756C0B19C5EF1B007791FB /* MMInfoFromListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9756C0A19C5EF1B007791FB /* MMInfoFromListViewController.m */; };
 		E977382F19E0238D00FA5805 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = E977382E19E0238D00FA5805 /* background.png */; };
 		E984B2841AA844BD00FDAE82 /* breakfast_mark.png in Resources */ = {isa = PBXBuildFile; fileRef = E984B2821AA844BD00FDAE82 /* breakfast_mark.png */; };
 		E984B2851AA844BD00FDAE82 /* dinner_mark.png in Resources */ = {isa = PBXBuildFile; fileRef = E984B2831AA844BD00FDAE82 /* dinner_mark.png */; };
 		E984B2871AA844F500FDAE82 /* lunch_mark.png in Resources */ = {isa = PBXBuildFile; fileRef = E984B2861AA844F500FDAE82 /* lunch_mark.png */; };
 		E984B2891AA8482100FDAE82 /* day_mark.png in Resources */ = {isa = PBXBuildFile; fileRef = E984B2881AA8482100FDAE82 /* day_mark.png */; };
-		E9A8B1001AED1A1700B8EB0C /* Record.m in Sources */ = {isa = PBXBuildFile; fileRef = E9A8B0FF1AED1A1700B8EB0C /* Record.m */; };
 		E9B2A1BD1AA76829002E9F1E /* MMAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = E9B2A1BC1AA76829002E9F1E /* MMAlertView.m */; };
 		E9DD495619C5E6BC008E8739 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9DD495519C5E6BC008E8739 /* Foundation.framework */; };
 		E9DD495819C5E6BC008E8739 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9DD495719C5E6BC008E8739 /* CoreGraphics.framework */; };
@@ -94,11 +91,11 @@
 		E91F5AC01AA834DE00987AD6 /* barIcon_calndar-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "barIcon_calndar-Small.png"; path = "image/barIcon_calndar-Small.png"; sourceTree = "<group>"; };
 		E91F5AC11AA834DE00987AD6 /* barIcon_calndar-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "barIcon_calndar-Small@2x.png"; path = "image/barIcon_calndar-Small@2x.png"; sourceTree = "<group>"; };
 		E91F5AC21AA834DE00987AD6 /* barIcon_calndar-Small@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "barIcon_calndar-Small@3x.png"; path = "image/barIcon_calndar-Small@3x.png"; sourceTree = "<group>"; };
+		E92C15B21AEF7F95008C922C /* Record.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Record.h; sourceTree = "<group>"; };
+		E92C15B31AEF7F95008C922C /* Record.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Record.m; sourceTree = "<group>"; };
 		E945FA7E1AD835E90046C849 /* barIcon_list-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "barIcon_list-Small.png"; path = "image/barIcon_list-Small.png"; sourceTree = "<group>"; };
 		E945FA7F1AD835E90046C849 /* barIcon_list-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "barIcon_list-Small@2x.png"; path = "image/barIcon_list-Small@2x.png"; sourceTree = "<group>"; };
 		E945FA801AD835E90046C849 /* barIcon_list-Small@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "barIcon_list-Small@3x.png"; path = "image/barIcon_list-Small@3x.png"; sourceTree = "<group>"; };
-		E96FA2B11AE8A39C007CAB3E /* MMListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMListTableViewCell.h; sourceTree = "<group>"; };
-		E96FA2B21AE8A39C007CAB3E /* MMListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMListTableViewCell.m; sourceTree = "<group>"; };
 		E96FA2B41AEA0E47007CAB3E /* MMCalendarDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMCalendarDetailViewController.h; sourceTree = "<group>"; };
 		E96FA2B51AEA0E47007CAB3E /* MMCalendarDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMCalendarDetailViewController.m; sourceTree = "<group>"; };
 		E9756BF819C5E7F6007791FB /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
@@ -106,10 +103,6 @@
 		E9756BFB19C5EE49007791FB /* MMInputInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMInputInfoViewController.m; sourceTree = "<group>"; };
 		E9756BFD19C5EE83007791FB /* MMInputDetailInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMInputDetailInfoViewController.h; sourceTree = "<group>"; };
 		E9756BFE19C5EE83007791FB /* MMInputDetailInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMInputDetailInfoViewController.m; sourceTree = "<group>"; };
-		E9756C0619C5EF04007791FB /* MMListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMListViewController.h; sourceTree = "<group>"; };
-		E9756C0719C5EF04007791FB /* MMListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMListViewController.m; sourceTree = "<group>"; };
-		E9756C0919C5EF1B007791FB /* MMInfoFromListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMInfoFromListViewController.h; sourceTree = "<group>"; };
-		E9756C0A19C5EF1B007791FB /* MMInfoFromListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMInfoFromListViewController.m; sourceTree = "<group>"; };
 		E977382119DF256400FA5805 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		E977382619DF26E800FA5805 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		E977382E19E0238D00FA5805 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background.png; path = image/background.png; sourceTree = "<group>"; };
@@ -117,8 +110,6 @@
 		E984B2831AA844BD00FDAE82 /* dinner_mark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = dinner_mark.png; path = image/dinner_mark.png; sourceTree = "<group>"; };
 		E984B2861AA844F500FDAE82 /* lunch_mark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lunch_mark.png; path = image/lunch_mark.png; sourceTree = "<group>"; };
 		E984B2881AA8482100FDAE82 /* day_mark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = day_mark.png; path = image/day_mark.png; sourceTree = "<group>"; };
-		E9A8B0FE1AED1A1700B8EB0C /* Record.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Record.h; sourceTree = "<group>"; };
-		E9A8B0FF1AED1A1700B8EB0C /* Record.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Record.m; sourceTree = "<group>"; };
 		E9B2A1BB1AA76829002E9F1E /* MMAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMAlertView.h; sourceTree = "<group>"; };
 		E9B2A1BC1AA76829002E9F1E /* MMAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMAlertView.m; sourceTree = "<group>"; };
 		E9DD495219C5E6BC008E8739 /* MealReport.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MealReport.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -220,19 +211,6 @@
 			name = CalendarTab;
 			sourceTree = "<group>";
 		};
-		E9756C0E19C5EF9B007791FB /* ListTab */ = {
-			isa = PBXGroup;
-			children = (
-				E9756C0619C5EF04007791FB /* MMListViewController.h */,
-				E9756C0719C5EF04007791FB /* MMListViewController.m */,
-				E96FA2B11AE8A39C007CAB3E /* MMListTableViewCell.h */,
-				E96FA2B21AE8A39C007CAB3E /* MMListTableViewCell.m */,
-				E9756C0919C5EF1B007791FB /* MMInfoFromListViewController.h */,
-				E9756C0A19C5EF1B007791FB /* MMInfoFromListViewController.m */,
-			);
-			name = ListTab;
-			sourceTree = "<group>";
-		};
 		E9B2A1BE1AA7683C002E9F1E /* MMAppDelegate */ = {
 			isa = PBXGroup;
 			children = (
@@ -297,7 +275,6 @@
 				E9B2A1BE1AA7683C002E9F1E /* MMAppDelegate */,
 				E9756C0C19C5EF4A007791FB /* InputTab */,
 				E9756C0D19C5EF8D007791FB /* CalendarTab */,
-				E9756C0E19C5EF9B007791FB /* ListTab */,
 				E9E981CF19DF20FD00AD254B /* CoreData */,
 				E9DD496719C5E6BC008E8739 /* Main.storyboard */,
 				E9DD496D19C5E6BC008E8739 /* Images.xcassets */,
@@ -371,8 +348,8 @@
 			isa = PBXGroup;
 			children = (
 				E9E981D019DF214000AD254B /* Model.xcdatamodeld */,
-				E9A8B0FE1AED1A1700B8EB0C /* Record.h */,
-				E9A8B0FF1AED1A1700B8EB0C /* Record.m */,
+				E92C15B21AEF7F95008C922C /* Record.h */,
+				E92C15B31AEF7F95008C922C /* Record.m */,
 			);
 			name = CoreData;
 			sourceTree = "<group>";
@@ -550,20 +527,17 @@
 			files = (
 				E91F5AAE1AA802F800987AD6 /* MMCalendarCollectionViewCell.m in Sources */,
 				E9B2A1BD1AA76829002E9F1E /* MMAlertView.m in Sources */,
+				E92C15B41AEF7F95008C922C /* Record.m in Sources */,
 				E91F5A7B1AA7833000987AD6 /* MMString.m in Sources */,
-				E9756C0819C5EF04007791FB /* MMListViewController.m in Sources */,
 				E9756BFF19C5EE83007791FB /* MMInputDetailInfoViewController.m in Sources */,
 				E91F5AAB1AA802E300987AD6 /* MMCalendarViewController.m in Sources */,
 				E9DD496619C5E6BC008E8739 /* MMAppDelegate.m in Sources */,
 				E9756BFC19C5EE49007791FB /* MMInputInfoViewController.m in Sources */,
 				E91F5AB11AA8031700987AD6 /* MMCalendarCollectionReusableView.m in Sources */,
 				E9E981D219DF214000AD254B /* Model.xcdatamodeld in Sources */,
-				E9A8B1001AED1A1700B8EB0C /* Record.m in Sources */,
 				E96FA2B61AEA0E47007CAB3E /* MMCalendarDetailViewController.m in Sources */,
-				E96FA2B31AE8A39C007CAB3E /* MMListTableViewCell.m in Sources */,
 				E9FA6AD21AEE2B1E00A098AB /* MMColor.m in Sources */,
 				E9DD496219C5E6BC008E8739 /* main.m in Sources */,
-				E9756C0B19C5EF1B007791FB /* MMInfoFromListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

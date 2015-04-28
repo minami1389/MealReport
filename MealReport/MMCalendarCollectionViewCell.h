@@ -20,4 +20,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *dinnerMark;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *indicator;
 
+- (void)setPost:(NSString *)imageUrl day:(NSString *)day;
+- (void)setPhotoImage:(NSString *)imageUrl day:(NSString *)day;
+
 @end

@@ -107,10 +107,11 @@
     cell.breakfastMark.hidden = YES;
     cell.lunchMark.hidden = YES;
     cell.dinnerMark.hidden = YES;
+    cell.mealCostLabel.hidden = YES;
     cell.mealPhotoImageView.image = nil;
+    
     [cell.indicator stopAnimating];
     cell.indicator.hidden = YES;
-    cell.mealCostLabel.hidden = YES;
     
     cell.dayLabel.text = [NSString stringWithFormat:@"%d",indexPath.row+1];
     NSInteger weekday = [self weekDay:[NSString stringWithFormat:@"%ld/%ld/%d",(long)year_,(long)month_,indexPath.row+1]];
@@ -127,12 +128,12 @@
     
     
     //データ挿入
-    NSData *photo_data = nil;
+    NSString *imageUrl = nil;
     NSInteger costSum_day = 0;
     NSArray *records = [self getRecordsWithday:indexPath.row+1];
     if (records) {
         for(Record *record in records) {
-            if (record.image) { photo_data = record.image; }
+            if (record.imageUrl) { imageUrl = record.imageUrl; }
             costSum_day += [record.cost integerValue];
             switch ([record.time integerValue]) {
                 case 0:
@@ -148,18 +149,20 @@
                     break;
             }
         }
-        cell.mealCostLabel.text = [NSString stringWithFormat:@"%d",costSum_day];
-   
-    
-     if (photo_data) {
-         //cell.mealPhotoImageView.image = [[UIImage alloc] initWithData:photo_data];
-     }
+        if (costSum_day > 0) {
+            cell.mealCostLabel.text = [NSString stringWithFormat:@"%ld円",(long)costSum_day];
+            cell.mealCostLabel.hidden = NO;
+        }
+      
+        if (imageUrl) {
+            [cell setPost:imageUrl day:[self getYMD:indexPath.row+1]];
+        }
     }
      
     
 }
 
-- (NSArray *)getRecordsWithday:(NSInteger)day
+- (NSString *)getYMD:(NSInteger)day
 {
     NSString *year_string = [NSString stringWithFormat:@"%ld",(long)year_];
     NSString *month_string = [NSString stringWithFormat:@"%ld",(long)month_];
@@ -167,8 +170,13 @@
     NSString *day_string = [NSString stringWithFormat:@"%ld",(long)day];
     if (day < 10) { day_string = [NSString stringWithFormat:@"0%ld",(long)day]; }
     
+    return [NSString stringWithFormat:@"%@%@%@",year_string,month_string,day_string];
+}
+
+- (NSArray *)getRecordsWithday:(NSInteger)day
+{
     NSArray *records = [Record MR_findByAttribute:@"day"
-                                        withValue:[NSString stringWithFormat:@"%@%@%@",year_string,month_string,day_string]];
+                                        withValue:[self getYMD:day]];
     return records;
 }
 
@@ -178,7 +186,7 @@
     header.delegate = self;
     [header.dayButton setTitle:[NSString stringWithFormat:@"%ld年%ld月",(long)year_,(long)month_] forState:UIControlStateNormal];
     header.sumCostLabel.text = [NSString stringWithFormat:@"合計%ld円",(long)costSum_month];
-    header.aveCostLabel.text = [NSString stringWithFormat:@"日平均%ld円",costSum_month/dayCount_];
+    header.aveCostLabel.text = [NSString stringWithFormat:@"日平均%d円",costSum_month/dayCount_];
     return header;
 }
 
