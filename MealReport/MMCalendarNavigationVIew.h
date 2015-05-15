@@ -1,5 +1,5 @@
 //
-//  MMCalendarNavigationVIew.h
+//  MMCalendarNavigationView.h
 //  MealReport
 //
 //  Created by minami on 4/30/15.
@@ -8,6 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MMCalendarNavigationVIew : UIView
+@protocol MMCalendarNavigationViewDelegate <NSObject>
 
+- (void)pushLeftArrowButton;
+- (void)pushRightArrowButton;
+
+@end
+
+@interface MMCalendarNavigationView : UIView
+
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
++ (instancetype)view;
+
+@property (nonatomic, assign) id<MMCalendarNavigationViewDelegate>delegate;
 @end

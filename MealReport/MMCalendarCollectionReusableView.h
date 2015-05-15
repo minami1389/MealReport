@@ -11,8 +11,8 @@
 @protocol MMCalendarHeaderViewDelegate <NSObject>
 
 - (void)dayButtonPushed;
-- (void)prevMonthButtonPushed;
-- (void)nextMonthButtonPushed;
+//- (void)prevMonthButtonPushed;
+//- (void)nextMonthButtonPushed;
 
 @end
 
@@ -20,10 +20,10 @@
 
 @property (nonatomic, assign) id<MMCalendarHeaderViewDelegate> delegate;
 
-@property (weak, nonatomic) IBOutlet UIButton *dayButton;
-- (IBAction)dayButtonPushed:(id)sender;
-- (IBAction)prevMonthButtonPushed:(id)sender;
-- (IBAction)nextMonthButtonPushed:(id)sender;
+//@property (weak, nonatomic) IBOutlet UIButton *dayButton;
+//- (IBAction)dayButtonPushed:(id)sender;
+//- (IBAction)prevMonthButtonPushed:(id)sender;
+//- (IBAction)nextMonthButtonPushed:(id)sender;
 @property (weak, nonatomic) IBOutlet UILabel *sumCostLabel;
 @property (weak, nonatomic) IBOutlet UILabel *aveCostLabel;
 

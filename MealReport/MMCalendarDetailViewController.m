@@ -13,14 +13,12 @@
 {
     NSArray *monthRecords;
 }
-@property (weak, nonatomic) IBOutlet UIButton *prevButton;
-@property (weak, nonatomic) IBOutlet UIButton *nextButton;
-
-@property (weak, nonatomic) IBOutlet UIButton *dayButton;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *costLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *photo;
 @property (weak, nonatomic) IBOutlet UITextView *commentTextView;
+@property (weak, nonatomic) IBOutlet UIButton *leftArrowButton;
+@property (weak, nonatomic) IBOutlet UIButton *rightArrowButton;
 @end
 
 @implementation MMCalendarDetailViewController
@@ -30,20 +28,23 @@
     
     _commentTextView.layer.borderWidth = 0.5;
     _commentTextView.layer.borderColor = [[UIColor lightGrayColor] CGColor];
-    _commentTextView.layer.cornerRadius = 5.0f;
+    //_commentTextView.layer.cornerRadius = 5.0f;
     
     _photo.layer.borderWidth = 0.5;
     _photo.layer.borderColor = [[UIColor lightGrayColor] CGColor];
-    _photo.layer.cornerRadius = 10.0f;
-    
-    self.navigationItem.title = [self monthStringConvert:_record.month];
     
     [self setInfo];
     [self getRecordIndex];
+    [self resetArrowHidden];
     
-    if (_index-1 < 0 ) { _prevButton.enabled = NO; }
-    if (_index+1 >= [monthRecords count]) { _nextButton.enabled = NO; }
-
+    // 左へスワイプ
+    UISwipeGestureRecognizer* swipeLeftGesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeLeftGesture:)];
+    swipeLeftGesture.direction = UISwipeGestureRecognizerDirectionLeft;
+    [self.view addGestureRecognizer:swipeLeftGesture];
+    // 右へスワイプ
+    UISwipeGestureRecognizer* swipeRightGesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeRightGesture:)];
+    swipeRightGesture.direction = UISwipeGestureRecognizerDirectionRight;
+    [self.view addGestureRecognizer:swipeRightGesture];
 }
 
 - (void)setInfo
@@ -62,7 +63,8 @@
         default:
             break;
     }
-    [_dayButton setTitle:[NSString stringWithFormat:@"%@日%@",[self dayStringConvert:_record.day],time] forState:UIControlStateNormal];
+    
+    self.navigationItem.title = [NSString stringWithFormat:@"%@日%@",[self dayStringConvert:_record.day],time];
     _titleLabel.text = _record.title;
     _costLabel.text = [NSString stringWithFormat:@"%@円",_record.cost];
     [self setMealPhoto:_record.imageUrl];
@@ -170,31 +172,75 @@
     _index = index;
 }
 
-- (IBAction)pushPrevButton:(id)sender
+- (BOOL)hasPrevRecord
 {
-    _index--;
-    if (_index >= 0) {
+    return _index-1 >= 0;
+}
+
+- (BOOL)hasNextRecord
+{
+    return _index+1 < [monthRecords count];
+}
+
+- (void) handleSwipeRightGesture:(UISwipeGestureRecognizer *)sender
+{
+    [self pushLeftArrowButton:sender];
+}
+
+- (void) handleSwipeLeftGesture:(UISwipeGestureRecognizer *)sender
+{
+    [self pushRightArrowButton:sender];
+}
+- (IBAction)pushLeftArrowButton:(id)sender
+{
+    if ([self hasPrevRecord]) {
+        _index--;
         _record = [monthRecords objectAtIndex:_index];
-        _nextButton.enabled = YES;
         [self setInfo];
         [self.view setNeedsLayout];
+        [self showView];
     }
-    if (_index-1 < 0) {
-        _prevButton.enabled = NO;
+    [self resetArrowHidden];
+}
+- (IBAction)pushRightArrowButton:(id)sender
+{
+    if ([self hasNextRecord]) {
+        _index++;
+        _record = [monthRecords objectAtIndex:_index];
+        [self setInfo];
+        [self.view setNeedsLayout];
+        [self showView];
+    }
+    [self resetArrowHidden];
+    
+}
+
+- (void)resetArrowHidden
+{
+    if ([self hasPrevRecord]) {
+        _leftArrowButton.hidden = NO;
+    } else {
+        _leftArrowButton.hidden = YES;
+    }
+    if ([self hasNextRecord]) {
+        _rightArrowButton.hidden = NO;
+    } else {
+        _rightArrowButton.hidden = YES;
     }
 }
-- (IBAction)pushNextButton:(id)sender
+
+- (void)showView
 {
-    _index++;
-    if (_index < [monthRecords count]) {
-        _record = [monthRecords objectAtIndex:_index];
-        _prevButton.enabled = YES;
-        [self setInfo];
-        [self.view setNeedsLayout];
-    }
-    if (_index+1 >= [monthRecords count]) {
-        _nextButton.enabled = NO;
-    }
+    _photo.alpha = 0;
+    _titleLabel.alpha = 0;
+    _costLabel.alpha = 0;
+    _commentTextView.alpha = 0;
+    [UIView animateWithDuration:0.7f animations:^{
+        _photo.alpha = 1.0;
+        _titleLabel.alpha = 1.0;
+        _costLabel.alpha = 1.0;
+        _commentTextView.alpha = 1.0;
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

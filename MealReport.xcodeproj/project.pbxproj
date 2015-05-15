@@ -21,6 +21,8 @@
 		E91F5AC31AA834DE00987AD6 /* barIcon_calndar-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = E91F5AC01AA834DE00987AD6 /* barIcon_calndar-Small.png */; };
 		E91F5AC41AA834DE00987AD6 /* barIcon_calndar-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E91F5AC11AA834DE00987AD6 /* barIcon_calndar-Small@2x.png */; };
 		E91F5AC51AA834DE00987AD6 /* barIcon_calndar-Small@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E91F5AC21AA834DE00987AD6 /* barIcon_calndar-Small@3x.png */; };
+		E92514C01AF20C3700ED8CD1 /* leftArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = E92514BE1AF20C3700ED8CD1 /* leftArrow.png */; };
+		E92514C11AF20C3700ED8CD1 /* rightArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = E92514BF1AF20C3700ED8CD1 /* rightArrow.png */; };
 		E92C15B71AEFCB96008C922C /* Record.m in Sources */ = {isa = PBXBuildFile; fileRef = E92C15B61AEFCB96008C922C /* Record.m */; };
 		E92C15BB1AEFDC7F008C922C /* blueWindow.png in Resources */ = {isa = PBXBuildFile; fileRef = E92C15B81AEFDC7F008C922C /* blueWindow.png */; };
 		E92C15BC1AEFDC7F008C922C /* leftArrowBlue.png in Resources */ = {isa = PBXBuildFile; fileRef = E92C15B91AEFDC7F008C922C /* leftArrowBlue.png */; };
@@ -28,6 +30,12 @@
 		E945FA811AD835E90046C849 /* barIcon_list-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = E945FA7E1AD835E90046C849 /* barIcon_list-Small.png */; };
 		E945FA821AD835E90046C849 /* barIcon_list-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E945FA7F1AD835E90046C849 /* barIcon_list-Small@2x.png */; };
 		E945FA831AD835E90046C849 /* barIcon_list-Small@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E945FA801AD835E90046C849 /* barIcon_list-Small@3x.png */; };
+		E95C94191AF21A37006230D8 /* leftArrow.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E95C94171AF21A37006230D8 /* leftArrow.jpg */; };
+		E95C94241AF21D9C006230D8 /* rightArrow-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = E95C94211AF21D9C006230D8 /* rightArrow-Small.png */; };
+		E95C94251AF21D9C006230D8 /* rightArrow-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E95C94221AF21D9C006230D8 /* rightArrow-Small@2x.png */; };
+		E95C94261AF21D9C006230D8 /* rightArrow-Small@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E95C94231AF21D9C006230D8 /* rightArrow-Small@3x.png */; };
+		E95C942F1AF2254D006230D8 /* MMCalendarNavigationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E95C942E1AF2254D006230D8 /* MMCalendarNavigationView.xib */; };
+		E95C94351AF225B2006230D8 /* MMCalendarNavigationView.m in Sources */ = {isa = PBXBuildFile; fileRef = E95C94341AF225B2006230D8 /* MMCalendarNavigationView.m */; };
 		E96FA2B61AEA0E47007CAB3E /* MMCalendarDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E96FA2B51AEA0E47007CAB3E /* MMCalendarDetailViewController.m */; };
 		E9756BF919C5E7F6007791FB /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E9756BF819C5E7F6007791FB /* README.md */; };
 		E9756BFC19C5EE49007791FB /* MMInputInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9756BFB19C5EE49007791FB /* MMInputInfoViewController.m */; };
@@ -94,6 +102,8 @@
 		E91F5AC01AA834DE00987AD6 /* barIcon_calndar-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "barIcon_calndar-Small.png"; path = "image/barIcon_calndar-Small.png"; sourceTree = "<group>"; };
 		E91F5AC11AA834DE00987AD6 /* barIcon_calndar-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "barIcon_calndar-Small@2x.png"; path = "image/barIcon_calndar-Small@2x.png"; sourceTree = "<group>"; };
 		E91F5AC21AA834DE00987AD6 /* barIcon_calndar-Small@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "barIcon_calndar-Small@3x.png"; path = "image/barIcon_calndar-Small@3x.png"; sourceTree = "<group>"; };
+		E92514BE1AF20C3700ED8CD1 /* leftArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = leftArrow.png; path = image/leftArrow.png; sourceTree = "<group>"; };
+		E92514BF1AF20C3700ED8CD1 /* rightArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = rightArrow.png; path = image/rightArrow.png; sourceTree = "<group>"; };
 		E92C15B51AEFCB96008C922C /* Record.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Record.h; sourceTree = "<group>"; };
 		E92C15B61AEFCB96008C922C /* Record.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Record.m; sourceTree = "<group>"; };
 		E92C15B81AEFDC7F008C922C /* blueWindow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blueWindow.png; path = image/blueWindow.png; sourceTree = "<group>"; };
@@ -102,6 +112,13 @@
 		E945FA7E1AD835E90046C849 /* barIcon_list-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "barIcon_list-Small.png"; path = "image/barIcon_list-Small.png"; sourceTree = "<group>"; };
 		E945FA7F1AD835E90046C849 /* barIcon_list-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "barIcon_list-Small@2x.png"; path = "image/barIcon_list-Small@2x.png"; sourceTree = "<group>"; };
 		E945FA801AD835E90046C849 /* barIcon_list-Small@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "barIcon_list-Small@3x.png"; path = "image/barIcon_list-Small@3x.png"; sourceTree = "<group>"; };
+		E95C94171AF21A37006230D8 /* leftArrow.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = leftArrow.jpg; path = image/leftArrow.jpg; sourceTree = "<group>"; };
+		E95C94211AF21D9C006230D8 /* rightArrow-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "rightArrow-Small.png"; path = "image/rightArrow-Small.png"; sourceTree = "<group>"; };
+		E95C94221AF21D9C006230D8 /* rightArrow-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "rightArrow-Small@2x.png"; path = "image/rightArrow-Small@2x.png"; sourceTree = "<group>"; };
+		E95C94231AF21D9C006230D8 /* rightArrow-Small@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "rightArrow-Small@3x.png"; path = "image/rightArrow-Small@3x.png"; sourceTree = "<group>"; };
+		E95C942E1AF2254D006230D8 /* MMCalendarNavigationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MMCalendarNavigationView.xib; sourceTree = "<group>"; };
+		E95C94331AF225B2006230D8 /* MMCalendarNavigationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMCalendarNavigationView.h; sourceTree = "<group>"; };
+		E95C94341AF225B2006230D8 /* MMCalendarNavigationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMCalendarNavigationView.m; sourceTree = "<group>"; };
 		E96FA2B41AEA0E47007CAB3E /* MMCalendarDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMCalendarDetailViewController.h; sourceTree = "<group>"; };
 		E96FA2B51AEA0E47007CAB3E /* MMCalendarDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMCalendarDetailViewController.m; sourceTree = "<group>"; };
 		E9756BF819C5E7F6007791FB /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
@@ -213,6 +230,9 @@
 				E91F5AB01AA8031700987AD6 /* MMCalendarCollectionReusableView.m */,
 				E96FA2B41AEA0E47007CAB3E /* MMCalendarDetailViewController.h */,
 				E96FA2B51AEA0E47007CAB3E /* MMCalendarDetailViewController.m */,
+				E95C942E1AF2254D006230D8 /* MMCalendarNavigationView.xib */,
+				E95C94331AF225B2006230D8 /* MMCalendarNavigationView.h */,
+				E95C94341AF225B2006230D8 /* MMCalendarNavigationView.m */,
 			);
 			name = CalendarTab;
 			sourceTree = "<group>";
@@ -321,6 +341,12 @@
 		E9DDDC3319C601CA00F1F160 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				E95C94211AF21D9C006230D8 /* rightArrow-Small.png */,
+				E95C94221AF21D9C006230D8 /* rightArrow-Small@2x.png */,
+				E95C94231AF21D9C006230D8 /* rightArrow-Small@3x.png */,
+				E95C94171AF21A37006230D8 /* leftArrow.jpg */,
+				E92514BE1AF20C3700ED8CD1 /* leftArrow.png */,
+				E92514BF1AF20C3700ED8CD1 /* rightArrow.png */,
 				E92C15B81AEFDC7F008C922C /* blueWindow.png */,
 				E92C15B91AEFDC7F008C922C /* leftArrowBlue.png */,
 				E92C15BA1AEFDC7F008C922C /* rightArrowBlue.png */,
@@ -460,6 +486,7 @@
 				E91F5ABF1AA82D8300987AD6 /* barIcon_pencil-Small@3x.png in Resources */,
 				E91F5AC31AA834DE00987AD6 /* barIcon_calndar-Small.png in Resources */,
 				E91F5AC41AA834DE00987AD6 /* barIcon_calndar-Small@2x.png in Resources */,
+				E95C94251AF21D9C006230D8 /* rightArrow-Small@2x.png in Resources */,
 				E91F5AC51AA834DE00987AD6 /* barIcon_calndar-Small@3x.png in Resources */,
 				E984B2871AA844F500FDAE82 /* lunch_mark.png in Resources */,
 				E91F5AB61AA81A6600987AD6 /* orange_window.png in Resources */,
@@ -472,18 +499,24 @@
 				E91F5AB51AA81A6600987AD6 /* leftArrowWindow.png in Resources */,
 				E91F5ABE1AA82D8300987AD6 /* barIcon_pencil-Small@2x.png in Resources */,
 				E984B2891AA8482100FDAE82 /* day_mark.png in Resources */,
+				E92514C11AF20C3700ED8CD1 /* rightArrow.png in Resources */,
 				E9E981C919DF1F4900AD254B /* iconBlack.png in Resources */,
 				E9E981CB19DF1F4900AD254B /* iconRed.png in Resources */,
 				E945FA811AD835E90046C849 /* barIcon_list-Small.png in Resources */,
+				E95C94261AF21D9C006230D8 /* rightArrow-Small@3x.png in Resources */,
 				E945FA821AD835E90046C849 /* barIcon_list-Small@2x.png in Resources */,
 				E92C15BD1AEFDC7F008C922C /* rightArrowBlue.png in Resources */,
+				E92514C01AF20C3700ED8CD1 /* leftArrow.png in Resources */,
 				E9DD496919C5E6BC008E8739 /* Main.storyboard in Resources */,
+				E95C94241AF21D9C006230D8 /* rightArrow-Small.png in Resources */,
+				E95C942F1AF2254D006230D8 /* MMCalendarNavigationView.xib in Resources */,
 				E92C15BC1AEFDC7F008C922C /* leftArrowBlue.png in Resources */,
 				E977382F19E0238D00FA5805 /* background.png in Resources */,
 				E984B2851AA844BD00FDAE82 /* dinner_mark.png in Resources */,
 				E945FA831AD835E90046C849 /* barIcon_list-Small@3x.png in Resources */,
 				E9E981CE19DF1F5800AD254B /* Launch Screen.xib in Resources */,
 				E92C15BB1AEFDC7F008C922C /* blueWindow.png in Resources */,
+				E95C94191AF21A37006230D8 /* leftArrow.jpg in Resources */,
 				E9E981CC19DF1F4900AD254B /* iconYellow.png in Resources */,
 				E9E981C619DF1F4900AD254B /* buttonFrameBlue.png in Resources */,
 			);
@@ -541,6 +574,7 @@
 				E9B2A1BD1AA76829002E9F1E /* MMAlertView.m in Sources */,
 				E92C15B71AEFCB96008C922C /* Record.m in Sources */,
 				E91F5A7B1AA7833000987AD6 /* MMString.m in Sources */,
+				E95C94351AF225B2006230D8 /* MMCalendarNavigationView.m in Sources */,
 				E9756BFF19C5EE83007791FB /* MMInputDetailInfoViewController.m in Sources */,
 				E91F5AAB1AA802E300987AD6 /* MMCalendarViewController.m in Sources */,
 				E9DD496619C5E6BC008E8739 /* MMAppDelegate.m in Sources */,

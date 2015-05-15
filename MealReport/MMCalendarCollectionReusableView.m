@@ -10,7 +10,8 @@
 
 @implementation MMCalendarCollectionReusableView
 
-- (IBAction)dayButtonPushed:(id)sender {
+/*
+ - (IBAction)dayButtonPushed:(id)sender {
     if ([self.delegate respondsToSelector:@selector(dayButtonPushed)]) {
         [self.delegate dayButtonPushed];
     }
@@ -27,4 +28,5 @@
         [self.delegate nextMonthButtonPushed];
     }
 }
+ */
 @end

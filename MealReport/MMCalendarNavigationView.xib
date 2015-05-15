@@ -1,15 +1,68 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+        <view contentMode="scaleToFill" id="ZBZ-FV-iFK" userLabel="navigationBarView" customClass="MMCalendarNavigationView">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2015年4月" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YU4-e6-J3K">
+                    <rect key="frame" x="119" y="10" width="82" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KE0-xX-Eoc">
+                    <rect key="frame" x="74" y="5" width="30" height="30"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                    <state key="normal" title="＜">
+                        <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="pushLeftArrowButton:" destination="ZBZ-FV-iFK" eventType="touchUpInside" id="hme-hT-2Ui"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KAR-Kh-dfD">
+                    <rect key="frame" x="216" y="5" width="30" height="30"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                    <state key="normal" title="＞">
+                        <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="pushRightArrowButton:" destination="ZBZ-FV-iFK" eventType="touchUpInside" id="iji-SJ-Agi"/>
+                    </connections>
+                </button>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="centerY" secondItem="KE0-xX-Eoc" secondAttribute="centerY" id="ADs-AQ-Tc8"/>
+                <constraint firstAttribute="centerX" secondItem="YU4-e6-J3K" secondAttribute="centerX" id="F0b-ic-k48"/>
+                <constraint firstItem="KAR-Kh-dfD" firstAttribute="leading" secondItem="YU4-e6-J3K" secondAttribute="trailing" constant="15" id="X9U-yX-2DP"/>
+                <constraint firstItem="KAR-Kh-dfD" firstAttribute="leading" secondItem="YU4-e6-J3K" secondAttribute="trailing" constant="15" id="YRX-hy-1eI"/>
+                <constraint firstItem="YU4-e6-J3K" firstAttribute="leading" secondItem="KE0-xX-Eoc" secondAttribute="trailing" constant="15" id="dJz-7k-H2E"/>
+                <constraint firstAttribute="centerY" secondItem="YU4-e6-J3K" secondAttribute="centerY" id="nCt-0P-BTj"/>
+                <constraint firstItem="YU4-e6-J3K" firstAttribute="leading" secondItem="KE0-xX-Eoc" secondAttribute="trailing" constant="15" id="nMz-Bj-vtb"/>
+                <constraint firstAttribute="centerY" secondItem="KAR-Kh-dfD" secondAttribute="centerY" id="t3H-Tf-vve"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="dJz-7k-H2E"/>
+                    <exclude reference="YRX-hy-1eI"/>
+                </mask>
+            </variation>
+            <connections>
+                <outlet property="titleLabel" destination="YU4-e6-J3K" id="KkH-xh-1Un"/>
+            </connections>
         </view>
     </objects>
 </document>

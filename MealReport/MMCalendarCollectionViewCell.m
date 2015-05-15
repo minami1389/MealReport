@@ -65,7 +65,6 @@
             
             UIImage *image;
             if ([imageUrl isEqualToString:@"default"]) {
-                self.mealPhotoImageView.contentMode = UIViewContentModeScaleAspectFit;
                 switch (self.visibleTime) {
                     case 0:
                         image = [UIImage imageNamed:@"iconRed.png"];
@@ -81,7 +80,6 @@
                 }
                 
             } else {
-                self.mealPhotoImageView.contentMode = UIViewContentModeScaleAspectFill;
                 ALAssetRepresentation *rep = [asset defaultRepresentation];
                 Byte *buffer = (Byte*)malloc((unsigned)rep.size);
                 NSUInteger buffered = [rep getBytes:buffer fromOffset:0.0 length:(unsigned)rep.size error:nil];

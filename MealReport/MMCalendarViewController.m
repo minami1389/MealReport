@@ -11,8 +11,9 @@
 #import "Record.h"
 #import "MMCalendarDetailViewController.h"
 #import "MMColor.h"
+#import "MMCalendarNavigationView.h"
 
-@interface MMCalendarViewController ()
+@interface MMCalendarViewController ()<MMCalendarNavigationViewDelegate,UICollectionViewDelegateFlowLayout>
 {
     NSInteger year_;
     NSInteger month_;
@@ -25,6 +26,8 @@
     
     NSCache *imageCache;
     NSOperationQueue *queue;
+    
+    MMCalendarNavigationView *navigationView;
 }
 
 @end
@@ -34,20 +37,37 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-}
-
-- (void)viewWillAppear:(BOOL)animated
-{
+    
+    // 左へスワイプ
+    UISwipeGestureRecognizer* swipeLeftGesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeLeftGesture:)];
+    swipeLeftGesture.direction = UISwipeGestureRecognizerDirectionLeft;
+    [self.view addGestureRecognizer:swipeLeftGesture];
+    // 右へスワイプ
+    UISwipeGestureRecognizer* swipeRightGesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeRightGesture:)];
+    swipeRightGesture.direction = UISwipeGestureRecognizerDirectionRight;
+    [self.view addGestureRecognizer:swipeRightGesture];
+    
+    navigationView = [MMCalendarNavigationView view];
+    navigationView.delegate = self;
+    self.navigationItem.titleView = navigationView;
+    
     NSDate *today = [NSDate date];
     NSCalendar *calendar = [NSCalendar currentCalendar];
     NSDateComponents *dateComps = [calendar components:NSYearCalendarUnit | NSMonthCalendarUnit fromDate:today];
     year_ = dateComps.year;
     month_ = dateComps.month;
     dayCount_ = [self daysCountAtMonth];
+    
     imageCache = [[NSCache alloc] init];
     queue = [[NSOperationQueue alloc] init];
-    
+    self.navigationItem.title = [NSString stringWithFormat:@"%ld年%ld月",(long)year_,(long)month_];
+    navigationView.titleLabel.text = [NSString stringWithFormat:@"%ld年%ld月",(long)year_,(long)month_];
     [self getCostSumMonth];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+   
 }
 
 - (NSInteger)daysCountAtMonth
@@ -198,7 +218,6 @@
 {
     MMCalendarCollectionReusableView *header = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"calendarHeader" forIndexPath:indexPath];
     header.delegate = self;
-    [header.dayButton setTitle:[NSString stringWithFormat:@"%ld年%ld月",(long)year_,(long)month_] forState:UIControlStateNormal];
     header.sumCostLabel.text = [NSString stringWithFormat:@"合計%ld円",(long)costSum_month];
     header.aveCostLabel.text = [NSString stringWithFormat:@"日平均%d円",costSum_month/dayCount_];
     return header;
@@ -249,9 +268,7 @@
     } else {
         month_--;
     }
-    dayCount_ = [self daysCountAtMonth];
-    [self getCostSumMonth];
-    [_calendarView reloadData];
+    [self reloadData];
 }
 
 - (void)nextMonthButtonPushed
@@ -262,9 +279,51 @@
     } else {
         month_++;
     }
+    [self reloadData];
+}
+
+- (void)reloadData
+{
     dayCount_ = [self daysCountAtMonth];
     [self getCostSumMonth];
+    self.navigationItem.title = [NSString stringWithFormat:@"%ld年%ld月",(long)year_,(long)month_];
+    navigationView.titleLabel.text = [NSString stringWithFormat:@"%ld年%ld月",(long)year_,(long)month_];
     [_calendarView reloadData];
+    [self showView];
+}
+
+- (void)handleSwipeRightGesture:(UISwipeGestureRecognizer *)sender
+{
+    [self prevMonthButtonPushed];
+}
+- (void)handleSwipeLeftGesture:(UISwipeGestureRecognizer *)sender
+{
+    [self nextMonthButtonPushed];
+}
+- (void)pushLeftArrowButton
+{
+    [self prevMonthButtonPushed];
+}
+- (void)pushRightArrowButton
+{
+    [self nextMonthButtonPushed];
+}
+
+- (void)showView
+{
+    [UIView animateWithDuration:0.8 animations:^{
+        _calendarView.alpha = 0.2;
+    }];
+    [UIView animateWithDuration:0.8 animations:^{
+        _calendarView.alpha = 1.0;
+    }];
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    CGFloat oneSide = (screenRect.size.width - 20) / 5;
+    return CGSizeMake(oneSide, oneSide);
 }
 
 - (void)didReceiveMemoryWarning {
