@@ -27,6 +27,9 @@
 		E92C15BB1AEFDC7F008C922C /* blueWindow.png in Resources */ = {isa = PBXBuildFile; fileRef = E92C15B81AEFDC7F008C922C /* blueWindow.png */; };
 		E92C15BC1AEFDC7F008C922C /* leftArrowBlue.png in Resources */ = {isa = PBXBuildFile; fileRef = E92C15B91AEFDC7F008C922C /* leftArrowBlue.png */; };
 		E92C15BD1AEFDC7F008C922C /* rightArrowBlue.png in Resources */ = {isa = PBXBuildFile; fileRef = E92C15BA1AEFDC7F008C922C /* rightArrowBlue.png */; };
+		E936250C1B3EFB8A00A3C3D9 /* MMLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E936250B1B3EFB8A00A3C3D9 /* MMLoginViewController.swift */; };
+		E936250E1B3EFBA600A3C3D9 /* MMSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E936250D1B3EFBA600A3C3D9 /* MMSignUpViewController.swift */; };
+		E93625111B3FBC3500A3C3D9 /* MMSignupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93625101B3FBC3500A3C3D9 /* MMSignupTableViewCell.swift */; };
 		E945FA811AD835E90046C849 /* barIcon_list-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = E945FA7E1AD835E90046C849 /* barIcon_list-Small.png */; };
 		E945FA821AD835E90046C849 /* barIcon_list-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E945FA7F1AD835E90046C849 /* barIcon_list-Small@2x.png */; };
 		E945FA831AD835E90046C849 /* barIcon_list-Small@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E945FA801AD835E90046C849 /* barIcon_list-Small@3x.png */; };
@@ -109,6 +112,10 @@
 		E92C15B81AEFDC7F008C922C /* blueWindow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blueWindow.png; path = image/blueWindow.png; sourceTree = "<group>"; };
 		E92C15B91AEFDC7F008C922C /* leftArrowBlue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = leftArrowBlue.png; path = image/leftArrowBlue.png; sourceTree = "<group>"; };
 		E92C15BA1AEFDC7F008C922C /* rightArrowBlue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = rightArrowBlue.png; path = image/rightArrowBlue.png; sourceTree = "<group>"; };
+		E936250A1B3EFB8900A3C3D9 /* MealReport-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MealReport-Bridging-Header.h"; sourceTree = "<group>"; };
+		E936250B1B3EFB8A00A3C3D9 /* MMLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMLoginViewController.swift; sourceTree = "<group>"; };
+		E936250D1B3EFBA600A3C3D9 /* MMSignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMSignUpViewController.swift; sourceTree = "<group>"; };
+		E93625101B3FBC3500A3C3D9 /* MMSignupTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMSignupTableViewCell.swift; sourceTree = "<group>"; };
 		E945FA7E1AD835E90046C849 /* barIcon_list-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "barIcon_list-Small.png"; path = "image/barIcon_list-Small.png"; sourceTree = "<group>"; };
 		E945FA7F1AD835E90046C849 /* barIcon_list-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "barIcon_list-Small@2x.png"; path = "image/barIcon_list-Small@2x.png"; sourceTree = "<group>"; };
 		E945FA801AD835E90046C849 /* barIcon_list-Small@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "barIcon_list-Small@3x.png"; path = "image/barIcon_list-Small@3x.png"; sourceTree = "<group>"; };
@@ -208,6 +215,46 @@
 			name = MMString;
 			sourceTree = "<group>";
 		};
+		E93625051B3EFB2500A3C3D9 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				E936250A1B3EFB8900A3C3D9 /* MealReport-Bridging-Header.h */,
+				E9FA6AD31AEE2B2A00A098AB /* MMColor */,
+				E91F5A7C1AA7833D00987AD6 /* MMString */,
+				E9B2A1BF1AA76847002E9F1E /* MMAlertView */,
+				E9B2A1BE1AA7683C002E9F1E /* MMAppDelegate */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
+		E93625061B3EFB4000A3C3D9 /* Content */ = {
+			isa = PBXGroup;
+			children = (
+				E936250F1B3EFBAC00A3C3D9 /* Account */,
+				E9756C0C19C5EF4A007791FB /* InputTab */,
+				E9756C0D19C5EF8D007791FB /* CalendarTab */,
+			);
+			name = Content;
+			sourceTree = "<group>";
+		};
+		E936250F1B3EFBAC00A3C3D9 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				E936250B1B3EFB8A00A3C3D9 /* MMLoginViewController.swift */,
+				E93625121B3FBC3D00A3C3D9 /* SignUp */,
+			);
+			name = Account;
+			sourceTree = "<group>";
+		};
+		E93625121B3FBC3D00A3C3D9 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				E936250D1B3EFBA600A3C3D9 /* MMSignUpViewController.swift */,
+				E93625101B3FBC3500A3C3D9 /* MMSignupTableViewCell.swift */,
+			);
+			name = SignUp;
+			sourceTree = "<group>";
+		};
 		E9756C0C19C5EF4A007791FB /* InputTab */ = {
 			isa = PBXGroup;
 			children = (
@@ -295,12 +342,8 @@
 		E9DD495B19C5E6BC008E8739 /* MealReport */ = {
 			isa = PBXGroup;
 			children = (
-				E9FA6AD31AEE2B2A00A098AB /* MMColor */,
-				E91F5A7C1AA7833D00987AD6 /* MMString */,
-				E9B2A1BF1AA76847002E9F1E /* MMAlertView */,
-				E9B2A1BE1AA7683C002E9F1E /* MMAppDelegate */,
-				E9756C0C19C5EF4A007791FB /* InputTab */,
-				E9756C0D19C5EF8D007791FB /* CalendarTab */,
+				E93625051B3EFB2500A3C3D9 /* Common */,
+				E93625061B3EFB4000A3C3D9 /* Content */,
 				E9E981CF19DF20FD00AD254B /* CoreData */,
 				E9DD496719C5E6BC008E8739 /* Main.storyboard */,
 				E9DD496D19C5E6BC008E8739 /* Images.xcassets */,
@@ -571,11 +614,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				E91F5AAE1AA802F800987AD6 /* MMCalendarCollectionViewCell.m in Sources */,
+				E93625111B3FBC3500A3C3D9 /* MMSignupTableViewCell.swift in Sources */,
 				E9B2A1BD1AA76829002E9F1E /* MMAlertView.m in Sources */,
 				E92C15B71AEFCB96008C922C /* Record.m in Sources */,
 				E91F5A7B1AA7833000987AD6 /* MMString.m in Sources */,
 				E95C94351AF225B2006230D8 /* MMCalendarNavigationView.m in Sources */,
 				E9756BFF19C5EE83007791FB /* MMInputDetailInfoViewController.m in Sources */,
+				E936250E1B3EFBA600A3C3D9 /* MMSignUpViewController.swift in Sources */,
 				E91F5AAB1AA802E300987AD6 /* MMCalendarViewController.m in Sources */,
 				E9DD496619C5E6BC008E8739 /* MMAppDelegate.m in Sources */,
 				E9756BFC19C5EE49007791FB /* MMInputInfoViewController.m in Sources */,
@@ -583,6 +628,7 @@
 				E9E981D219DF214000AD254B /* Model.xcdatamodeld in Sources */,
 				E96FA2B61AEA0E47007CAB3E /* MMCalendarDetailViewController.m in Sources */,
 				E9FA6AD21AEE2B1E00A098AB /* MMColor.m in Sources */,
+				E936250C1B3EFB8A00A3C3D9 /* MMLoginViewController.swift in Sources */,
 				E9DD496219C5E6BC008E8739 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -713,14 +759,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Minami Baba (AP5ZRGABQ7)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MealReport/MealReport-Prefix.pch";
 				INFOPLIST_FILE = "MealReport/MealReport-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "MealReport/MealReport-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -731,15 +781,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MealReport/MealReport-Prefix.pch";
 				INFOPLIST_FILE = "MealReport/MealReport-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "MealReport/MealReport-Bridging-Header.h";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
