@@ -33,32 +33,45 @@ class MMSignUpViewController: UIViewController,UITableViewDelegate,UITableViewDa
 
     //MARK: - UITableview
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 4
+        return 3
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        if section == 2 { return 2 }
+        else { return 1 }
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = tableView.dequeueReusableCellWithIdentifier("signUpCell", forIndexPath: indexPath) as! MMSignupTableViewCell
         cell.textField.addTarget(self, action: "didSelectTextField:", forControlEvents: UIControlEvents.EditingDidBegin)
         cell.textField.addTarget(self, action: "didDeSelectTextField:", forControlEvents: UIControlEvents.EditingDidEnd)
+       
         switch indexPath.section {
         case 0:
             cell.textField.keyboardType = UIKeyboardType.Default
             cell.textField.tag = TextFieldTag.userName.rawValue
+            cell.textField.placeholder = "半角英数字"
+            
         case 1:
             cell.textField.keyboardType = UIKeyboardType.EmailAddress
             cell.textField.tag = TextFieldTag.email.rawValue
+            
         case 2:
+            switch indexPath.row {
+            case 0:
             cell.textField.keyboardType = UIKeyboardType.ASCIICapable
             cell.textField.secureTextEntry = true
             cell.textField.tag = TextFieldTag.password.rawValue
-        case 3:
+            cell.textField.placeholder = "6~20文字の半角英数字"
+            case 1:
             cell.textField.keyboardType = UIKeyboardType.ASCIICapable
             cell.textField.secureTextEntry = true
             cell.textField.tag = TextFieldTag.password2.rawValue
+            cell.textField.placeholder = "もう一度入力してください"
+            default:
+            break
+            }
+            
         default:
             break
         }
@@ -73,8 +86,6 @@ class MMSignUpViewController: UIViewController,UITableViewDelegate,UITableViewDa
             return "メールアドレス"
         case 2:
             return "パスワード"
-        case 3:
-            return "パスワードの確認"
         default:
             return ""
         }
