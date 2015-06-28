@@ -139,13 +139,19 @@ class MMSignUpViewController: UIViewController,UITableViewDelegate,UITableViewDa
             completion: nil)
     }
 
+    @IBAction func didTapScreen(sender: AnyObject) {
+        self.view.endEditing(true)
+    }
+
    
     
-//MARK: - IBAction
+//MARK: - Register
     @IBAction func didPushRegisterButton(sender: AnyObject) {
         self.view.endEditing(true)
-        print("isNotInput:%@",self.isNotInput())
-      
+        if self.isNotInput() {
+            var alert = UIAlertView(title: "エラー", message: "未入力項目があります", delegate: self, cancelButtonTitle: "OK")
+            alert.show()
+        }
     }
     
     func isNotInput() -> Bool {
@@ -160,7 +166,4 @@ class MMSignUpViewController: UIViewController,UITableViewDelegate,UITableViewDa
         return string.stringByReplacingOccurrencesOfString(" ", withString: "", options: nil, range: nil)
     }
     
-    @IBAction func didTapScreen(sender: AnyObject) {
-        self.view.endEditing(true)
-    }
 }
