@@ -564,7 +564,7 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wLi-47-fHs">
-                                <rect key="frame" x="40" y="434" width="240" height="36"/>
+                                <rect key="frame" x="40" y="432" width="240" height="36"/>
                                 <color key="backgroundColor" red="0.30054976849999998" green="0.62745098040000002" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="15"/>
                                 <state key="normal" title="登録">
@@ -585,7 +585,7 @@
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="xzG-yn-JZu" firstAttribute="top" secondItem="V8k-Sa-1dQ" secondAttribute="bottom" id="5Jb-R6-U8Y"/>
-                            <constraint firstItem="wLi-47-fHs" firstAttribute="top" secondItem="Gw1-gr-OEh" secondAttribute="bottom" constant="20" id="9zI-YC-nVp"/>
+                            <constraint firstItem="xzG-yn-JZu" firstAttribute="top" secondItem="wLi-47-fHs" secondAttribute="bottom" constant="100" id="9zh-bx-8x9"/>
                             <constraint firstAttribute="trailing" secondItem="V8k-Sa-1dQ" secondAttribute="trailing" id="CKG-bo-dqN"/>
                             <constraint firstItem="Gw1-gr-OEh" firstAttribute="leading" secondItem="Azp-Kh-TJB" secondAttribute="leading" constant="30" id="Nh6-gj-qgm"/>
                             <constraint firstItem="Gw1-gr-OEh" firstAttribute="top" secondItem="4OI-Yn-JBl" secondAttribute="bottom" constant="30" id="ddc-Wf-NNC"/>
@@ -602,6 +602,7 @@
                     <navigationItem key="navigationItem" title="アカウント作成" id="5Q9-B5-pYi"/>
                     <connections>
                         <outlet property="tableView" destination="Gw1-gr-OEh" id="N11-wj-Vve"/>
+                        <outlet property="tableViewHeight" destination="37S-0R-mvU" id="Pcb-Iz-bea"/>
                         <outlet property="tableViewTopMargin" destination="ddc-Wf-NNC" id="J6c-Vu-2fn"/>
                     </connections>
                 </viewController>

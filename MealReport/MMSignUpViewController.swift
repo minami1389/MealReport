@@ -19,6 +19,7 @@ class MMSignUpViewController: UIViewController,UITableViewDelegate,UITableViewDa
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var tableViewTopMargin: NSLayoutConstraint!
+    @IBOutlet weak var tableViewHeight: NSLayoutConstraint!
     
     var userName  = ""
     var email     = ""
@@ -99,28 +100,35 @@ class MMSignUpViewController: UIViewController,UITableViewDelegate,UITableViewDa
     }
     
     func didSelectTextField(sender: UITextField) {
-        self.tableViewTopMargin.constant = self.tableViewTopMarginWithFocusTextField(sender)
-        self.changeConstraintWithAnimation()
+        self.tableViewHeight.constant = 240
+        UIView.animateWithDuration(0.3,
+            delay: 0.3,
+            options: UIViewAnimationOptions.CurveEaseOut,
+            animations: {
+                self.view.layoutIfNeeded()
+            },
+            completion: { (Bool) -> Void in
+                self.tableView.scrollToRowAtIndexPath(self.indexPathWithTextField(sender), atScrollPosition: UITableViewScrollPosition.Middle, animated: true)
+        })
     }
-    
-    func tableViewTopMarginWithFocusTextField(textField: UITextField) -> CGFloat {
+   
+    func indexPathWithTextField(textField: UITextField) -> NSIndexPath {
         switch textField.tag {
         case TextFieldTag.userName.rawValue:
-            return 30
+            return NSIndexPath(forRow: 0, inSection: 0)
         case TextFieldTag.email.rawValue:
-            return -20
+            return NSIndexPath(forRow: 0, inSection: 1)
         case TextFieldTag.password.rawValue:
-            return -70
+            return NSIndexPath(forRow: 0, inSection: 2)
         case TextFieldTag.password2.rawValue:
-            return -120
+            return NSIndexPath(forRow: 1, inSection: 2)
         default:
-            return 30
+            return NSIndexPath(forRow: 0, inSection: 0)
         }
     }
     
+    
     func didDeSelectTextField(sender: UITextField) {
-        self.tableViewTopMargin.constant = 30
-        self.changeConstraintWithAnimation()
         self.getDataBasePropertyFromTextField(sender)
     }
     
@@ -140,7 +148,10 @@ class MMSignUpViewController: UIViewController,UITableViewDelegate,UITableViewDa
 
     }
     
-    func changeConstraintWithAnimation() {
+    
+    @IBAction func didTapScreen(sender: AnyObject) {
+        self.view.endEditing(true)
+        self.tableViewHeight.constant = 320
         UIView.animateWithDuration(0.3,
             delay: 0,
             options: UIViewAnimationOptions.CurveEaseOut,
@@ -148,10 +159,6 @@ class MMSignUpViewController: UIViewController,UITableViewDelegate,UITableViewDa
                 self.view.layoutIfNeeded()
             },
             completion: nil)
-    }
-
-    @IBAction func didTapScreen(sender: AnyObject) {
-        self.view.endEditing(true)
     }
 
    
