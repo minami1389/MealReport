@@ -599,7 +599,7 @@
                             <outletCollection property="gestureRecognizers" destination="wag-XL-7aP" appends="YES" id="0XV-fp-oSZ"/>
                         </connections>
                     </view>
-                    <navigationItem key="navigationItem" title="アカウント登録" id="5Q9-B5-pYi"/>
+                    <navigationItem key="navigationItem" title="アカウント作成" id="5Q9-B5-pYi"/>
                     <connections>
                         <outlet property="tableView" destination="Gw1-gr-OEh" id="N11-wj-Vve"/>
                         <outlet property="tableViewTopMargin" destination="ddc-Wf-NNC" id="J6c-Vu-2fn"/>

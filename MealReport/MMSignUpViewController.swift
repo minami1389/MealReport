@@ -8,7 +8,7 @@
 
 import UIKit
 
-enum textFieldTag: Int {
+enum TextFieldTag: Int {
     case userName  = 1
     case email     = 2
     case password  = 3
@@ -47,18 +47,18 @@ class MMSignUpViewController: UIViewController,UITableViewDelegate,UITableViewDa
         switch indexPath.section {
         case 0:
             cell.textField.keyboardType = UIKeyboardType.Default
-            cell.textField.tag = textFieldTag.userName.rawValue
+            cell.textField.tag = TextFieldTag.userName.rawValue
         case 1:
             cell.textField.keyboardType = UIKeyboardType.EmailAddress
-            cell.textField.tag = textFieldTag.email.rawValue
+            cell.textField.tag = TextFieldTag.email.rawValue
         case 2:
             cell.textField.keyboardType = UIKeyboardType.ASCIICapable
             cell.textField.secureTextEntry = true
-            cell.textField.tag = textFieldTag.password.rawValue
+            cell.textField.tag = TextFieldTag.password.rawValue
         case 3:
             cell.textField.keyboardType = UIKeyboardType.ASCIICapable
             cell.textField.secureTextEntry = true
-            cell.textField.tag = textFieldTag.password2.rawValue
+            cell.textField.tag = TextFieldTag.password2.rawValue
         default:
             break
         }
@@ -80,6 +80,7 @@ class MMSignUpViewController: UIViewController,UITableViewDelegate,UITableViewDa
         }
     }
 
+    
 //MARK: - UITextField
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         self.view.endEditing(true)
@@ -87,39 +88,45 @@ class MMSignUpViewController: UIViewController,UITableViewDelegate,UITableViewDa
     }
     
     func didSelectTextField(sender: UITextField) {
-        var tableViewTopMargin:CGFloat
-        switch sender.tag {
-        case textFieldTag.userName.rawValue:
-            tableViewTopMargin = 30
-        case textFieldTag.email.rawValue:
-            tableViewTopMargin = -20
-        case textFieldTag.password.rawValue:
-            tableViewTopMargin = -70
-        case textFieldTag.password2.rawValue:
-            tableViewTopMargin = -120
-        default:
-            tableViewTopMargin = 30
-        }
-        self.tableViewTopMargin.constant = tableViewTopMargin
+        self.tableViewTopMargin.constant = self.tableViewTopMarginWithFocusTextField(sender)
         self.changeConstraintWithAnimation()
+    }
+    
+    func tableViewTopMarginWithFocusTextField(textField: UITextField) -> CGFloat {
+        switch textField.tag {
+        case TextFieldTag.userName.rawValue:
+            return 30
+        case TextFieldTag.email.rawValue:
+            return -20
+        case TextFieldTag.password.rawValue:
+            return -70
+        case TextFieldTag.password2.rawValue:
+            return -120
+        default:
+            return 30
+        }
     }
     
     func didDeSelectTextField(sender: UITextField) {
         self.tableViewTopMargin.constant = 30
         self.changeConstraintWithAnimation()
-        
-        switch sender.tag {
-        case textFieldTag.userName.rawValue:
-            userName = sender.text
-        case textFieldTag.email.rawValue:
-            email = sender.text
-        case textFieldTag.password.rawValue:
-            password = sender.text
-        case textFieldTag.password2.rawValue:
-            password2 = sender.text
+        self.getDataBasePropertyFromTextField(sender)
+    }
+    
+    func getDataBasePropertyFromTextField(textField: UITextField) {
+        switch textField.tag {
+        case TextFieldTag.userName.rawValue:
+            userName = textField.text
+        case TextFieldTag.email.rawValue:
+            email = textField.text
+        case TextFieldTag.password.rawValue:
+            password = textField.text
+        case TextFieldTag.password2.rawValue:
+            password2 = textField.text
         default:
             break
         }
+
     }
     
     func changeConstraintWithAnimation() {
@@ -137,7 +144,20 @@ class MMSignUpViewController: UIViewController,UITableViewDelegate,UITableViewDa
 //MARK: - IBAction
     @IBAction func didPushRegisterButton(sender: AnyObject) {
         self.view.endEditing(true)
+        print("isNotInput:%@",self.isNotInput())
       
+    }
+    
+    func isNotInput() -> Bool {
+        for (var i = TextFieldTag.userName.rawValue; i < TextFieldTag.password2.rawValue; i++) {
+            let textFieldString = (self.view.viewWithTag(i) as? UITextField)?.text
+            if self.stringToRemoveBlank(textFieldString!) == "" { return true }
+        }
+        return false
+    }
+    
+    func stringToRemoveBlank(string: String) -> String {
+        return string.stringByReplacingOccurrencesOfString(" ", withString: "", options: nil, range: nil)
     }
     
     @IBAction func didTapScreen(sender: AnyObject) {
