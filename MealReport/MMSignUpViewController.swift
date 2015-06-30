@@ -51,7 +51,6 @@ class MMSignUpViewController: UIViewController,UITableViewDelegate,UITableViewDa
         case 0:
             cell.textField.keyboardType = UIKeyboardType.Default
             cell.textField.tag = TextFieldTag.userName.rawValue
-            cell.textField.placeholder = "半角英数字"
             
         case 1:
             cell.textField.keyboardType = UIKeyboardType.EmailAddress
@@ -170,6 +169,8 @@ class MMSignUpViewController: UIViewController,UITableViewDelegate,UITableViewDa
             var alert = UIAlertView(title: "エラー", message: "未入力項目があります", delegate: self, cancelButtonTitle: "OK")
             alert.show()
         }
+        
+        //パスワードが正しいか(6~20文字の英数字、一致)
     }
     
     func isNotInput() -> Bool {
