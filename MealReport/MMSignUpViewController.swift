@@ -133,11 +133,11 @@ class MMSignUpViewController: UIViewController,UITableViewDelegate,UITableViewDa
 //MARK: - Register
     @IBAction func didPushRegisterButton(sender: AnyObject) {
         self.getDataBasePropertyFromTextField()
-        if self.isNotInput() {
+        /*if self.isNotInput() {
             self.showErrorAlert("未入力の項目があります")
         } else if self.isMisMatchPassword() {
             self.showErrorAlert("パスワードが一致しません")
-        } else if self.isMisMatchPasswordLength() {
+        } else */if self.isNotPasswordAlphaOrNum() {
             self.showErrorAlert("パスワードは6~20文字の\n半角英数字で入力してください")
         }
     }
@@ -173,6 +173,13 @@ class MMSignUpViewController: UIViewController,UITableViewDelegate,UITableViewDa
     
     func isMisMatchPasswordLength() -> Bool {
         return count(password) < 6 || count(password) > 20
+    }
+    
+    func isNotPasswordAlphaOrNum() -> Bool {
+        for char in password.lowercaseString {
+            if !((char >= "a" && char <= "z") || (char >= "0" && char <= "9")) { return true }
+        }
+        return false
     }
     
     func stringToRemoveBlank(string: String) -> String {
