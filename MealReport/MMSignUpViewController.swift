@@ -194,11 +194,12 @@ class MMSignUpViewController: UIViewController,UITableViewDelegate,UITableViewDa
         user.username = userName
         user.email = email
         user.password = password
+        SVProgressHUD.show()
         user.signUpInBackgroundWithBlock {
             (success:Bool, error:NSError?) -> Void in
-            
+            SVProgressHUD.dismiss()
             if success {
-                var alert = UIAlertView(title: "Welcome to MealReport", message: "さぁはじめましょう！", delegate: self, cancelButtonTitle: "OK")
+                var alert = UIAlertView(title: "登録完了", message: "Welcome to MealReport", delegate: self, cancelButtonTitle: "OK")
                 alert.show()
             } else {
                 if let info : [NSObject : AnyObject]? = error!.userInfo {
@@ -208,7 +209,6 @@ class MMSignUpViewController: UIViewController,UITableViewDelegate,UITableViewDa
                     self.showErrorAlert(errorMessage!)
                 }
             }
-            
         }
     }
     

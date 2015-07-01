@@ -218,7 +218,6 @@
 		E93625051B3EFB2500A3C3D9 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				E936250A1B3EFB8900A3C3D9 /* MealReport-Bridging-Header.h */,
 				E9FA6AD31AEE2B2A00A098AB /* MMColor */,
 				E91F5A7C1AA7833D00987AD6 /* MMString */,
 				E9B2A1BF1AA76847002E9F1E /* MMAlertView */,
@@ -355,6 +354,7 @@
 		E9DD495C19C5E6BC008E8739 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E936250A1B3EFB8900A3C3D9 /* MealReport-Bridging-Header.h */,
 				E9DD495D19C5E6BC008E8739 /* MealReport-Info.plist */,
 				E9DD495E19C5E6BC008E8739 /* InfoPlist.strings */,
 				E9DD496119C5E6BC008E8739 /* main.m */,
