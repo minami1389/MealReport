@@ -45,6 +45,7 @@ class MMSignUpViewController: UIViewController,UITableViewDelegate,UITableViewDa
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = tableView.dequeueReusableCellWithIdentifier("signUpCell", forIndexPath: indexPath) as! MMSignupTableViewCell
         cell.textField.addTarget(self, action: "didSelectTextField:", forControlEvents: UIControlEvents.EditingDidBegin)
+        cell.textField.addTarget(self, action: "didDeSelectTextField:", forControlEvents: UIControlEvents.EditingDidEnd)
        
         switch indexPath.section {
         case 0:
@@ -94,28 +95,17 @@ class MMSignUpViewController: UIViewController,UITableViewDelegate,UITableViewDa
         self.tableViewHeight.constant = 260
         UIView.animateWithDuration(0,
             delay: 0.3,
-            options: UIViewAnimationOptions.CurveEaseOut,
+            options: nil,
             animations: {
                 self.view.layoutIfNeeded()
             },
             completion:nil)
     }
    
-    func indexPathWithTextField(textField: UITextField) -> NSIndexPath {
-        switch textField.tag {
-        case TextFieldTag.userName.rawValue:
-            return NSIndexPath(forRow: 0, inSection: 0)
-        case TextFieldTag.email.rawValue:
-            return NSIndexPath(forRow: 0, inSection: 1)
-        case TextFieldTag.password.rawValue:
-            return NSIndexPath(forRow: 0, inSection: 2)
-        case TextFieldTag.password2.rawValue:
-            return NSIndexPath(forRow: 1, inSection: 2)
-        default:
-            return NSIndexPath(forRow: 0, inSection: 0)
-        }
+    func didDeSelectTextField(sender: UITextField) {
+        self.view.layoutIfNeeded()
     }
-    
+   
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         self.keyboardShouldClose()
         return true
@@ -126,7 +116,8 @@ class MMSignUpViewController: UIViewController,UITableViewDelegate,UITableViewDa
     }
     
     func keyboardShouldClose() {
-         self.view.endEditing(true)
+        self.view.endEditing(true)
+        self.view.layoutIfNeeded()
         self.tableViewHeight.constant = 320
         UIView.animateWithDuration(0.3,
             delay: 0,
@@ -143,16 +134,17 @@ class MMSignUpViewController: UIViewController,UITableViewDelegate,UITableViewDa
     @IBAction func didPushRegisterButton(sender: AnyObject) {
         self.getDataBasePropertyFromTextField()
         if self.isNotInput() {
-            var alert = UIAlertView(title: "エラー", message: "未入力項目があります", delegate: self, cancelButtonTitle: "OK")
-            alert.show()
-            return
+            self.showErrorAlert("未入力の項目があります")
+        } else if self.isMisMatchPassword() {
+            self.showErrorAlert("パスワードが一致しません")
+        } else if self.isMisMatchPasswordLength() {
+            self.showErrorAlert("パスワードは6~20文字の\n半角英数字で入力してください")
         }
-        
-        if !self.isMatchPassword() {
-            var alert = UIAlertView(title: "エラー", message: "パスワードが一致しません", delegate: self, cancelButtonTitle: "OK")
-            alert.show()
-            return
-        }
+    }
+    
+    func showErrorAlert(message: String) {
+        var alert = UIAlertView(title: "エラー", message: message, delegate: self, cancelButtonTitle: "OK")
+        alert.show()
     }
     
     func getDataBasePropertyFromTextField() {
@@ -171,15 +163,16 @@ class MMSignUpViewController: UIViewController,UITableViewDelegate,UITableViewDa
     }
     
     func isNotInput() -> Bool {
-        if userName == "" || email == "" || password == "" || password2 == "" {
-            return true
-        } else {
-            return false
-        }
+        if userName == "" || email == "" || password == "" || password2 == "" { return true }
+        return false
     }
     
-    func isMatchPassword() -> Bool {
-        return password == password2
+    func isMisMatchPassword() -> Bool {
+        return !(password == password2)
+    }
+    
+    func isMisMatchPasswordLength() -> Bool {
+        return count(password) < 6 || count(password) > 20
     }
     
     func stringToRemoveBlank(string: String) -> String {
