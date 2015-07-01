@@ -134,13 +134,13 @@ class MMSignUpViewController: UIViewController,UITableViewDelegate,UITableViewDa
     func getDataBasePropertyFromTextField(textField: UITextField) {
         switch textField.tag {
         case TextFieldTag.userName.rawValue:
-            userName = textField.text
+            userName = self.stringToRemoveBlank(textField.text)
         case TextFieldTag.email.rawValue:
-            email = textField.text
+            email = self.stringToRemoveBlank(textField.text)
         case TextFieldTag.password.rawValue:
-            password = textField.text
+            password = self.stringToRemoveBlank(textField.text)
         case TextFieldTag.password2.rawValue:
-            password2 = textField.text
+            password2 = self.stringToRemoveBlank(textField.text)
         default:
             break
         }
@@ -168,17 +168,25 @@ class MMSignUpViewController: UIViewController,UITableViewDelegate,UITableViewDa
         if self.isNotInput() {
             var alert = UIAlertView(title: "エラー", message: "未入力項目があります", delegate: self, cancelButtonTitle: "OK")
             alert.show()
+            return
         }
         
-        //パスワードが正しいか(6~20文字の英数字、一致)
+        if !self.isMatchPassword() {
+            var alert = UIAlertView(title: "エラー", message: "パスワードが一致しません", delegate: self, cancelButtonTitle: "OK")
+            return
+        }
     }
     
     func isNotInput() -> Bool {
-        for (var i = TextFieldTag.userName.rawValue; i < TextFieldTag.password2.rawValue; i++) {
-            let textFieldString = (self.view.viewWithTag(i) as? UITextField)?.text
-            if self.stringToRemoveBlank(textFieldString!) == "" { return true }
+        if userName == "" || email == "" || password == "" || password2 == "" {
+            return true
+        } else {
+            return false
         }
-        return false
+    }
+    
+    func isMatchPassword() -> Bool {
+        return password == password2
     }
     
     func stringToRemoveBlank(string: String) -> String {

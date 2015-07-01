@@ -15,6 +15,11 @@
     //MagicalRecord
     [MagicalRecord setupCoreDataStack];
     
+    //Parse
+    [Parse setApplicationId:@"zjXY2eV5SAfMADZpKmZMas66V8nqmzFAQsUWitpd"
+                  clientKey:@"tW69MD8v206MMiPOXyYCHIsD82fzPQfvTJat7rvF"];
+ 
+    
     return YES;
 }
 							
