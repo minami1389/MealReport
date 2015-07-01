@@ -45,7 +45,6 @@ class MMSignUpViewController: UIViewController,UITableViewDelegate,UITableViewDa
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = tableView.dequeueReusableCellWithIdentifier("signUpCell", forIndexPath: indexPath) as! MMSignupTableViewCell
         cell.textField.addTarget(self, action: "didSelectTextField:", forControlEvents: UIControlEvents.EditingDidBegin)
-        cell.textField.addTarget(self, action: "didDeSelectTextField:", forControlEvents: UIControlEvents.EditingDidEnd)
        
         switch indexPath.section {
         case 0:
@@ -57,19 +56,17 @@ class MMSignUpViewController: UIViewController,UITableViewDelegate,UITableViewDa
             cell.textField.tag = TextFieldTag.email.rawValue
             
         case 2:
+            cell.textField.keyboardType = UIKeyboardType.ASCIICapable
+            cell.textField.secureTextEntry = true
             switch indexPath.row {
             case 0:
-            cell.textField.keyboardType = UIKeyboardType.ASCIICapable
-            cell.textField.secureTextEntry = true
-            cell.textField.tag = TextFieldTag.password.rawValue
-            cell.textField.placeholder = "6~20文字の半角英数字"
+                cell.textField.tag = TextFieldTag.password.rawValue
+                cell.textField.placeholder = "6~20文字の半角英数字"
             case 1:
-            cell.textField.keyboardType = UIKeyboardType.ASCIICapable
-            cell.textField.secureTextEntry = true
-            cell.textField.tag = TextFieldTag.password2.rawValue
-            cell.textField.placeholder = "もう一度入力してください"
+                cell.textField.tag = TextFieldTag.password2.rawValue
+                cell.textField.placeholder = "もう一度入力してください"
             default:
-            break
+                break
             }
             
         default:
@@ -119,27 +116,6 @@ class MMSignUpViewController: UIViewController,UITableViewDelegate,UITableViewDa
         }
     }
     
-    
-    func didDeSelectTextField(sender: UITextField) {
-        self.getDataBasePropertyFromTextField(sender)
-    }
-    
-    func getDataBasePropertyFromTextField(textField: UITextField) {
-        switch textField.tag {
-        case TextFieldTag.userName.rawValue:
-            userName = self.stringToRemoveBlank(textField.text)
-        case TextFieldTag.email.rawValue:
-            email = self.stringToRemoveBlank(textField.text)
-        case TextFieldTag.password.rawValue:
-            password = self.stringToRemoveBlank(textField.text)
-        case TextFieldTag.password2.rawValue:
-            password2 = self.stringToRemoveBlank(textField.text)
-        default:
-            break
-        }
-
-    }
-    
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         self.keyboardShouldClose()
         return true
@@ -165,7 +141,7 @@ class MMSignUpViewController: UIViewController,UITableViewDelegate,UITableViewDa
     
 //MARK: - Register
     @IBAction func didPushRegisterButton(sender: AnyObject) {
-        self.view.endEditing(true)
+        self.getDataBasePropertyFromTextField()
         if self.isNotInput() {
             var alert = UIAlertView(title: "エラー", message: "未入力項目があります", delegate: self, cancelButtonTitle: "OK")
             alert.show()
@@ -176,6 +152,21 @@ class MMSignUpViewController: UIViewController,UITableViewDelegate,UITableViewDa
             var alert = UIAlertView(title: "エラー", message: "パスワードが一致しません", delegate: self, cancelButtonTitle: "OK")
             alert.show()
             return
+        }
+    }
+    
+    func getDataBasePropertyFromTextField() {
+        if let textField = self.view.viewWithTag(TextFieldTag.userName.rawValue) as? UITextField {
+            userName = self.stringToRemoveBlank(textField.text)
+        }
+        if let textField = self.view.viewWithTag(TextFieldTag.email.rawValue) as? UITextField {
+            email = self.stringToRemoveBlank(textField.text)
+        }
+        if let textField = self.view.viewWithTag(TextFieldTag.password.rawValue) as? UITextField {
+            password = self.stringToRemoveBlank(textField.text)
+        }
+        if let textField = self.view.viewWithTag(TextFieldTag.password2.rawValue) as? UITextField {
+            password2 = self.stringToRemoveBlank(textField.text)
         }
     }
     
