@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 enum TextFieldTag: Int {
     case userName  = 1
@@ -133,12 +134,14 @@ class MMSignUpViewController: UIViewController,UITableViewDelegate,UITableViewDa
 //MARK: - Register
     @IBAction func didPushRegisterButton(sender: AnyObject) {
         self.getDataBasePropertyFromTextField()
-        /*if self.isNotInput() {
+        if self.isNotInput() {
             self.showErrorAlert("未入力の項目があります")
         } else if self.isMisMatchPassword() {
             self.showErrorAlert("パスワードが一致しません")
-        } else */if self.isNotPasswordAlphaOrNum() {
+        } else if self.isNotPasswordAlphaOrNum() || self.isMisMatchPasswordLength() {
             self.showErrorAlert("パスワードは6~20文字の\n半角英数字で入力してください")
+        } else {
+            self.createUser()
         }
     }
     
@@ -184,6 +187,29 @@ class MMSignUpViewController: UIViewController,UITableViewDelegate,UITableViewDa
     
     func stringToRemoveBlank(string: String) -> String {
         return string.stringByReplacingOccurrencesOfString(" ", withString: "", options: nil, range: nil)
+    }
+    
+    func createUser() {
+        let user = PFUser()
+        user.username = userName
+        user.email = email
+        user.password = password
+        user.signUpInBackgroundWithBlock {
+            (success:Bool, error:NSError?) -> Void in
+            
+            if success {
+                var alert = UIAlertView(title: "Welcome to MealReport", message: "さぁはじめましょう！", delegate: self, cancelButtonTitle: "OK")
+                alert.show()
+            } else {
+                if let info : [NSObject : AnyObject]? = error!.userInfo {
+                    let errorCode = info!["code"] as? Int
+                    var errorMessage = info!["error"] as? String
+                    if errorCode == 125 { errorMessage = "メールアドレスが正しくありません" }
+                    self.showErrorAlert(errorMessage!)
+                }
+            }
+            
+        }
     }
     
 }
