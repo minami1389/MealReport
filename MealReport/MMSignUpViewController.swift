@@ -93,22 +93,15 @@ class MMSignUpViewController: UIViewController,UITableViewDelegate,UITableViewDa
 
     
 //MARK: - UITextField
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
-        self.view.endEditing(true)
-        return true
-    }
-    
     func didSelectTextField(sender: UITextField) {
-        self.tableViewHeight.constant = 240
-        UIView.animateWithDuration(0.3,
+        self.tableViewHeight.constant = 260
+        UIView.animateWithDuration(0,
             delay: 0.3,
             options: UIViewAnimationOptions.CurveEaseOut,
             animations: {
                 self.view.layoutIfNeeded()
             },
-            completion: { (Bool) -> Void in
-                self.tableView.scrollToRowAtIndexPath(self.indexPathWithTextField(sender), atScrollPosition: UITableViewScrollPosition.Middle, animated: true)
-        })
+            completion:nil)
     }
    
     func indexPathWithTextField(textField: UITextField) -> NSIndexPath {
@@ -147,9 +140,17 @@ class MMSignUpViewController: UIViewController,UITableViewDelegate,UITableViewDa
 
     }
     
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        self.keyboardShouldClose()
+        return true
+    }
     
     @IBAction func didTapScreen(sender: AnyObject) {
-        self.view.endEditing(true)
+        self.keyboardShouldClose()
+    }
+    
+    func keyboardShouldClose() {
+         self.view.endEditing(true)
         self.tableViewHeight.constant = 320
         UIView.animateWithDuration(0.3,
             delay: 0,
@@ -157,10 +158,10 @@ class MMSignUpViewController: UIViewController,UITableViewDelegate,UITableViewDa
             animations: {
                 self.view.layoutIfNeeded()
             },
-            completion: nil)
+            completion:nil)
     }
+    
 
-   
     
 //MARK: - Register
     @IBAction func didPushRegisterButton(sender: AnyObject) {
@@ -173,6 +174,7 @@ class MMSignUpViewController: UIViewController,UITableViewDelegate,UITableViewDa
         
         if !self.isMatchPassword() {
             var alert = UIAlertView(title: "エラー", message: "パスワードが一致しません", delegate: self, cancelButtonTitle: "OK")
+            alert.show()
             return
         }
     }
