@@ -27,13 +27,6 @@ class MMSignUpViewController: UIViewController,UITableViewDelegate,UITableViewDa
     var password  = ""
     var password2 = ""
     
-    var didCreateUser = false
-   
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
 
     //MARK: - UITableview
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -196,34 +189,34 @@ class MMSignUpViewController: UIViewController,UITableViewDelegate,UITableViewDa
         user.username = userName
         user.email = email
         user.password = password
+        
         SVProgressHUD.show()
+        
         user.signUpInBackgroundWithBlock {
             (success:Bool, error:NSError?) -> Void in
             SVProgressHUD.dismiss()
             if success {
-                self.didCreateUser = true
-                var alert = UIAlertView(title: "認証メールを送信しました", message: "メール内のURLをクリックして登録を完了してください", delegate: self, cancelButtonTitle: "OK")
-                alert.show()
+                let nextVC = MMAuthenticationViewController()
+                self.presentViewController(nextVC, animated: true, completion: nil)
             } else {
-                if let info : [NSObject : AnyObject]? = error!.userInfo {
-                    let errorCode = info!["code"] as? Int
-                    var errorMessage = info!["error"] as? String
-                    if errorCode == 125 { errorMessage = "メールアドレスが正しくありません" }
-                    else if errorCode == 202 { errorMessage = "このユーザー名はすでに使われています"}
-                    else if errorCode == 203 { errorMessage = "このメールアドレスはすでに使われています"}
-                    self.showErrorAlert(errorMessage!)
-                    print("errorCode:%d",errorCode)
-                }
+                self.showErrorAlertByResponce(error)
             }
+        }
+        
+    }
+    
+    func showErrorAlertByResponce(error: NSError?) {
+        if let info : [NSObject : AnyObject]? = error!.userInfo {
+            let errorCode = info!["code"] as? Int
+            var errorMessage = info!["error"] as? String
+            if errorCode == 125 { errorMessage = "メールアドレスが正しくありません" }
+            else if errorCode == 202 { errorMessage = "このユーザー名はすでに使われています"}
+            else if errorCode == 203 { errorMessage = "このメールアドレスはすでに使われています"}
+            self.showErrorAlert(errorMessage!)
+            print("errorCode:%d",errorCode)
         }
     }
     
-    func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
-        if (buttonIndex == alertView.cancelButtonIndex) {
-            if didCreateUser {
-                self.performSegueWithIdentifier("toTopVC", sender: self)
-            }
-        }
-    }
+    
     
 }

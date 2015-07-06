@@ -508,7 +508,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hTa-Wn-BtC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-330" y="120"/>
+            <point key="canvasLocation" x="-330" y="-592"/>
         </scene>
         <!--SignUp View Controller-->
         <scene sceneID="17S-ra-yhw">
@@ -604,7 +604,6 @@
                         <outlet property="tableView" destination="Gw1-gr-OEh" id="N11-wj-Vve"/>
                         <outlet property="tableViewHeight" destination="37S-0R-mvU" id="Pcb-Iz-bea"/>
                         <outlet property="tableViewTopMargin" destination="ddc-Wf-NNC" id="J6c-Vu-2fn"/>
-                        <segue destination="GLZ-03-Tj4" kind="modal" identifier="toTopVC" id="ipf-af-CKr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0sY-vb-Zsk" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -614,7 +613,25 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-330" y="780"/>
+            <point key="canvasLocation" x="-330" y="120"/>
+        </scene>
+        <!--Authentication View Controller-->
+        <scene sceneID="RZF-kd-BE6">
+            <objects>
+                <viewController id="tW4-Qy-Win" customClass="MMAuthenticationViewController" customModule="MealReport" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Cec-Im-sP0"/>
+                        <viewControllerLayoutGuide type="bottom" id="IYT-D2-8uN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ZwU-1k-WgK">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4zp-Zy-qqj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-330" y="861"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="rfO-XV-KFU">

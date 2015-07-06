@@ -30,6 +30,7 @@
 		E936250C1B3EFB8A00A3C3D9 /* MMLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E936250B1B3EFB8A00A3C3D9 /* MMLoginViewController.swift */; };
 		E936250E1B3EFBA600A3C3D9 /* MMSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E936250D1B3EFBA600A3C3D9 /* MMSignUpViewController.swift */; };
 		E93625111B3FBC3500A3C3D9 /* MMSignupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93625101B3FBC3500A3C3D9 /* MMSignupTableViewCell.swift */; };
+		E93806271B4ADB45004D294D /* MMAuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93806261B4ADB45004D294D /* MMAuthenticationViewController.swift */; };
 		E945FA811AD835E90046C849 /* barIcon_list-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = E945FA7E1AD835E90046C849 /* barIcon_list-Small.png */; };
 		E945FA821AD835E90046C849 /* barIcon_list-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E945FA7F1AD835E90046C849 /* barIcon_list-Small@2x.png */; };
 		E945FA831AD835E90046C849 /* barIcon_list-Small@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E945FA801AD835E90046C849 /* barIcon_list-Small@3x.png */; };
@@ -116,6 +117,7 @@
 		E936250B1B3EFB8A00A3C3D9 /* MMLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMLoginViewController.swift; sourceTree = "<group>"; };
 		E936250D1B3EFBA600A3C3D9 /* MMSignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMSignUpViewController.swift; sourceTree = "<group>"; };
 		E93625101B3FBC3500A3C3D9 /* MMSignupTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMSignupTableViewCell.swift; sourceTree = "<group>"; };
+		E93806261B4ADB45004D294D /* MMAuthenticationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMAuthenticationViewController.swift; sourceTree = "<group>"; };
 		E945FA7E1AD835E90046C849 /* barIcon_list-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "barIcon_list-Small.png"; path = "image/barIcon_list-Small.png"; sourceTree = "<group>"; };
 		E945FA7F1AD835E90046C849 /* barIcon_list-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "barIcon_list-Small@2x.png"; path = "image/barIcon_list-Small@2x.png"; sourceTree = "<group>"; };
 		E945FA801AD835E90046C849 /* barIcon_list-Small@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "barIcon_list-Small@3x.png"; path = "image/barIcon_list-Small@3x.png"; sourceTree = "<group>"; };
@@ -241,6 +243,7 @@
 			children = (
 				E936250B1B3EFB8A00A3C3D9 /* MMLoginViewController.swift */,
 				E93625121B3FBC3D00A3C3D9 /* SignUp */,
+				E93806261B4ADB45004D294D /* MMAuthenticationViewController.swift */,
 			);
 			name = Account;
 			sourceTree = "<group>";
@@ -623,6 +626,7 @@
 				E936250E1B3EFBA600A3C3D9 /* MMSignUpViewController.swift in Sources */,
 				E91F5AAB1AA802E300987AD6 /* MMCalendarViewController.m in Sources */,
 				E9DD496619C5E6BC008E8739 /* MMAppDelegate.m in Sources */,
+				E93806271B4ADB45004D294D /* MMAuthenticationViewController.swift in Sources */,
 				E9756BFC19C5EE49007791FB /* MMInputInfoViewController.m in Sources */,
 				E91F5AB11AA8031700987AD6 /* MMCalendarCollectionReusableView.m in Sources */,
 				E9E981D219DF214000AD254B /* Model.xcdatamodeld in Sources */,
