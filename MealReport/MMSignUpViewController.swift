@@ -26,6 +26,8 @@ class MMSignUpViewController: UIViewController,UITableViewDelegate,UITableViewDa
     var email     = ""
     var password  = ""
     var password2 = ""
+    
+    var didCreateUser = false
    
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -199,15 +201,27 @@ class MMSignUpViewController: UIViewController,UITableViewDelegate,UITableViewDa
             (success:Bool, error:NSError?) -> Void in
             SVProgressHUD.dismiss()
             if success {
-                var alert = UIAlertView(title: "登録完了", message: "Welcome to MealReport", delegate: self, cancelButtonTitle: "OK")
+                self.didCreateUser = true
+                var alert = UIAlertView(title: "認証メールを送信しました", message: "メール内のURLをクリックして登録を完了してください", delegate: self, cancelButtonTitle: "OK")
                 alert.show()
             } else {
                 if let info : [NSObject : AnyObject]? = error!.userInfo {
                     let errorCode = info!["code"] as? Int
                     var errorMessage = info!["error"] as? String
                     if errorCode == 125 { errorMessage = "メールアドレスが正しくありません" }
+                    else if errorCode == 202 { errorMessage = "このユーザー名はすでに使われています"}
+                    else if errorCode == 203 { errorMessage = "このメールアドレスはすでに使われています"}
                     self.showErrorAlert(errorMessage!)
+                    print("errorCode:%d",errorCode)
                 }
+            }
+        }
+    }
+    
+    func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
+        if (buttonIndex == alertView.cancelButtonIndex) {
+            if didCreateUser {
+                self.performSegueWithIdentifier("toTopVC", sender: self)
             }
         }
     }

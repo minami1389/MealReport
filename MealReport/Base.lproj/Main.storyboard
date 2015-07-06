@@ -604,6 +604,7 @@
                         <outlet property="tableView" destination="Gw1-gr-OEh" id="N11-wj-Vve"/>
                         <outlet property="tableViewHeight" destination="37S-0R-mvU" id="Pcb-Iz-bea"/>
                         <outlet property="tableViewTopMargin" destination="ddc-Wf-NNC" id="J6c-Vu-2fn"/>
+                        <segue destination="GLZ-03-Tj4" kind="modal" identifier="toTopVC" id="ipf-af-CKr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0sY-vb-Zsk" userLabel="First Responder" sceneMemberID="firstResponder"/>
