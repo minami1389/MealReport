@@ -260,7 +260,7 @@
     
     [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
     
-    [self checkData];
+    //[self checkData];
 }
 
 //データをチェック
