@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		30E4D0FEDDF5C47B4EA044B9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DCBEE6DA0655A2958DBBAAD /* libPods.a */; };
+		E91F06021BBC0BF4004FBAEA /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E91F06011BBC0BF4004FBAEA /* Settings.bundle */; };
 		E91F5A7B1AA7833000987AD6 /* MMString.m in Sources */ = {isa = PBXBuildFile; fileRef = E91F5A7A1AA7833000987AD6 /* MMString.m */; };
 		E91F5AAB1AA802E300987AD6 /* MMCalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E91F5AAA1AA802E300987AD6 /* MMCalendarViewController.m */; };
 		E91F5AAE1AA802F800987AD6 /* MMCalendarCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E91F5AAD1AA802F800987AD6 /* MMCalendarCollectionViewCell.m */; };
@@ -85,6 +86,7 @@
 		6DCBEE6DA0655A2958DBBAAD /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D21C2FF0273E808B0F87E5C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		B79E2607FA705862839FDE04 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		E91F06011BBC0BF4004FBAEA /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		E91F5A791AA7833000987AD6 /* MMString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMString.h; sourceTree = "<group>"; };
 		E91F5A7A1AA7833000987AD6 /* MMString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMString.m; sourceTree = "<group>"; };
 		E91F5AA91AA802E300987AD6 /* MMCalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMCalendarViewController.h; sourceTree = "<group>"; };
@@ -295,6 +297,7 @@
 		E9DD495B19C5E6BC008E8739 /* MealReport */ = {
 			isa = PBXGroup;
 			children = (
+				E91F06011BBC0BF4004FBAEA /* Settings.bundle */,
 				E9FA6AD31AEE2B2A00A098AB /* MMColor */,
 				E91F5A7C1AA7833D00987AD6 /* MMString */,
 				E9B2A1BF1AA76847002E9F1E /* MMAlertView */,
@@ -512,6 +515,7 @@
 				E95C942F1AF2254D006230D8 /* MMCalendarNavigationView.xib in Resources */,
 				E92C15BC1AEFDC7F008C922C /* leftArrowBlue.png in Resources */,
 				E977382F19E0238D00FA5805 /* background.png in Resources */,
+				E91F06021BBC0BF4004FBAEA /* Settings.bundle in Resources */,
 				E984B2851AA844BD00FDAE82 /* dinner_mark.png in Resources */,
 				E945FA831AD835E90046C849 /* barIcon_list-Small@3x.png in Resources */,
 				E9E981CE19DF1F5800AD254B /* Launch Screen.xib in Resources */,
