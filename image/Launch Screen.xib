@@ -15,7 +15,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
                 </imageView>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Copyright (c) 2015年 Minami Baba. All rights reserved." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="8ie-xW-0ye">
-                    <rect key="frame" x="20" y="436" width="441" height="14"/>
+                    <rect key="frame" x="20" y="446" width="441" height="14"/>
                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
@@ -31,7 +31,7 @@
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="gmV-Tj-JMy" secondAttribute="bottom" id="7X0-7p-nz5"/>
                 <constraint firstAttribute="trailing" secondItem="gmV-Tj-JMy" secondAttribute="trailing" id="Fp5-Es-Mil"/>
-                <constraint firstAttribute="bottom" secondItem="8ie-xW-0ye" secondAttribute="bottom" constant="30" id="Kzo-t9-V3l"/>
+                <constraint firstAttribute="bottom" secondItem="8ie-xW-0ye" secondAttribute="bottom" constant="20" id="Kzo-t9-V3l"/>
                 <constraint firstAttribute="centerY" secondItem="kId-c2-rCX" secondAttribute="centerY" id="M0H-WJ-ocs"/>
                 <constraint firstItem="8ie-xW-0ye" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" symbolic="YES" id="MfP-vx-nX0"/>
                 <constraint firstAttribute="centerX" secondItem="kId-c2-rCX" secondAttribute="centerX" id="OxI-he-vb2"/>

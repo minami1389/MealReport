@@ -67,7 +67,7 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-   
+   [self reloadData];
 }
 
 - (NSInteger)daysCountAtMonth
