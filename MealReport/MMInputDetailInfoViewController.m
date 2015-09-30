@@ -133,6 +133,11 @@
     
 }
 
+//写真選択をキャンセルしたら呼ばれる
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+    [picker dismissViewControllerAnimated:YES completion:nil];
+}
+
 //写真を選択したら呼ばれる
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
