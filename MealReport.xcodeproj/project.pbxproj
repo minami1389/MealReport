@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		30E4D0FEDDF5C47B4EA044B9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DCBEE6DA0655A2958DBBAAD /* libPods.a */; };
 		E91F06021BBC0BF4004FBAEA /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E91F06011BBC0BF4004FBAEA /* Settings.bundle */; };
+		E91F06061BBC13EF004FBAEA /* icon-60.png in Resources */ = {isa = PBXBuildFile; fileRef = E91F06031BBC13EF004FBAEA /* icon-60.png */; };
+		E91F06071BBC13EF004FBAEA /* icon-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E91F06041BBC13EF004FBAEA /* icon-60@2x.png */; };
+		E91F06081BBC13EF004FBAEA /* icon-60@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E91F06051BBC13EF004FBAEA /* icon-60@3x.png */; };
+		E91F060B1BBC143A004FBAEA /* icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E91F06091BBC143A004FBAEA /* icon-Small@2x.png */; };
+		E91F060C1BBC143A004FBAEA /* icon-Spotlight-40@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E91F060A1BBC143A004FBAEA /* icon-Spotlight-40@2x.png */; };
 		E91F5A7B1AA7833000987AD6 /* MMString.m in Sources */ = {isa = PBXBuildFile; fileRef = E91F5A7A1AA7833000987AD6 /* MMString.m */; };
 		E91F5AAB1AA802E300987AD6 /* MMCalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E91F5AAA1AA802E300987AD6 /* MMCalendarViewController.m */; };
 		E91F5AAE1AA802F800987AD6 /* MMCalendarCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E91F5AAD1AA802F800987AD6 /* MMCalendarCollectionViewCell.m */; };
@@ -87,6 +92,11 @@
 		8D21C2FF0273E808B0F87E5C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		B79E2607FA705862839FDE04 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		E91F06011BBC0BF4004FBAEA /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		E91F06031BBC13EF004FBAEA /* icon-60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-60.png"; path = "image/icon-60.png"; sourceTree = "<group>"; };
+		E91F06041BBC13EF004FBAEA /* icon-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-60@2x.png"; path = "image/icon-60@2x.png"; sourceTree = "<group>"; };
+		E91F06051BBC13EF004FBAEA /* icon-60@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-60@3x.png"; path = "image/icon-60@3x.png"; sourceTree = "<group>"; };
+		E91F06091BBC143A004FBAEA /* icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-Small@2x.png"; path = "image/icon-Small@2x.png"; sourceTree = "<group>"; };
+		E91F060A1BBC143A004FBAEA /* icon-Spotlight-40@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-Spotlight-40@2x.png"; path = "image/icon-Spotlight-40@2x.png"; sourceTree = "<group>"; };
 		E91F5A791AA7833000987AD6 /* MMString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMString.h; sourceTree = "<group>"; };
 		E91F5A7A1AA7833000987AD6 /* MMString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMString.m; sourceTree = "<group>"; };
 		E91F5AA91AA802E300987AD6 /* MMCalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMCalendarViewController.h; sourceTree = "<group>"; };
@@ -344,6 +354,11 @@
 		E9DDDC3319C601CA00F1F160 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				E91F06091BBC143A004FBAEA /* icon-Small@2x.png */,
+				E91F060A1BBC143A004FBAEA /* icon-Spotlight-40@2x.png */,
+				E91F06031BBC13EF004FBAEA /* icon-60.png */,
+				E91F06041BBC13EF004FBAEA /* icon-60@2x.png */,
+				E91F06051BBC13EF004FBAEA /* icon-60@3x.png */,
 				E95C94211AF21D9C006230D8 /* rightArrow-Small.png */,
 				E95C94221AF21D9C006230D8 /* rightArrow-Small@2x.png */,
 				E95C94231AF21D9C006230D8 /* rightArrow-Small@3x.png */,
@@ -492,6 +507,7 @@
 				E95C94251AF21D9C006230D8 /* rightArrow-Small@2x.png in Resources */,
 				E91F5AC51AA834DE00987AD6 /* barIcon_calndar-Small@3x.png in Resources */,
 				E984B2871AA844F500FDAE82 /* lunch_mark.png in Resources */,
+				E91F06071BBC13EF004FBAEA /* icon-60@2x.png in Resources */,
 				E91F5AB61AA81A6600987AD6 /* orange_window.png in Resources */,
 				E984B2841AA844BD00FDAE82 /* breakfast_mark.png in Resources */,
 				E91F5ABD1AA82D8300987AD6 /* barIcon_pencil-Small.png in Resources */,
@@ -501,10 +517,12 @@
 				E91F5AB71AA81A6600987AD6 /* rightArrowWindow.png in Resources */,
 				E91F5AB51AA81A6600987AD6 /* leftArrowWindow.png in Resources */,
 				E91F5ABE1AA82D8300987AD6 /* barIcon_pencil-Small@2x.png in Resources */,
+				E91F06061BBC13EF004FBAEA /* icon-60.png in Resources */,
 				E984B2891AA8482100FDAE82 /* day_mark.png in Resources */,
 				E92514C11AF20C3700ED8CD1 /* rightArrow.png in Resources */,
 				E9E981C919DF1F4900AD254B /* iconBlack.png in Resources */,
 				E9E981CB19DF1F4900AD254B /* iconRed.png in Resources */,
+				E91F060C1BBC143A004FBAEA /* icon-Spotlight-40@2x.png in Resources */,
 				E945FA811AD835E90046C849 /* barIcon_list-Small.png in Resources */,
 				E95C94261AF21D9C006230D8 /* rightArrow-Small@3x.png in Resources */,
 				E945FA821AD835E90046C849 /* barIcon_list-Small@2x.png in Resources */,
@@ -518,8 +536,10 @@
 				E91F06021BBC0BF4004FBAEA /* Settings.bundle in Resources */,
 				E984B2851AA844BD00FDAE82 /* dinner_mark.png in Resources */,
 				E945FA831AD835E90046C849 /* barIcon_list-Small@3x.png in Resources */,
+				E91F060B1BBC143A004FBAEA /* icon-Small@2x.png in Resources */,
 				E9E981CE19DF1F5800AD254B /* Launch Screen.xib in Resources */,
 				E92C15BB1AEFDC7F008C922C /* blueWindow.png in Resources */,
+				E91F06081BBC13EF004FBAEA /* icon-60@3x.png in Resources */,
 				E95C94191AF21A37006230D8 /* leftArrow.jpg in Resources */,
 				E9E981CC19DF1F4900AD254B /* iconYellow.png in Resources */,
 				E9E981C619DF1F4900AD254B /* buttonFrameBlue.png in Resources */,

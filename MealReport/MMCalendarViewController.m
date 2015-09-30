@@ -218,8 +218,8 @@
 {
     MMCalendarCollectionReusableView *header = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"calendarHeader" forIndexPath:indexPath];
     header.delegate = self;
-    header.sumCostLabel.text = [NSString stringWithFormat:@"合計%ld円",(long)costSum_month];
-    header.aveCostLabel.text = [NSString stringWithFormat:@"日平均%d円",costSum_month/dayCount_];
+    header.sumCostLabel.text = [NSString stringWithFormat:@"合計 %ld円",(long)costSum_month];
+    header.aveCostLabel.text = [NSString stringWithFormat:@"平均 %ld円/日",costSum_month/dayCount_];
     return header;
 }
 
